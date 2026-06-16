@@ -110,15 +110,21 @@ body {
 	padding: var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);
 }
 
-.editor-styles-wrapper .pivora-posts-section .pivora-latest-posts .wp-block-post-template {
+.editor-styles-wrapper .pivora-post-card {
+	border-radius: 18px;
+	overflow: clip;
+}
+
+.editor-styles-wrapper .site-main--blog .pivora-blog-query .wp-block-post-template {
 	display: grid !important;
 	gap: var(--wp--preset--spacing--60);
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.editor-styles-wrapper .pivora-post-card {
-	border-radius: 18px;
-	overflow: clip;
+.editor-styles-wrapper .pivora-posts-section .pivora-latest-posts .wp-block-post-template {
+	display: grid !important;
+	gap: var(--wp--preset--spacing--60);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .editor-styles-wrapper .pivora-price-card--featured {
