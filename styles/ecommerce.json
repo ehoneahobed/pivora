@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Ecommerce",
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "color": "#10201b",
+          "name": "Ink",
+          "slug": "ink"
+        },
+        {
+          "color": "#46615a",
+          "name": "Slate",
+          "slug": "slate"
+        },
+        {
+          "color": "#f3faf7",
+          "name": "Cloud",
+          "slug": "cloud"
+        },
+        {
+          "color": "#ffffff",
+          "name": "White",
+          "slug": "white"
+        },
+        {
+          "color": "#087f5b",
+          "name": "Blue",
+          "slug": "blue"
+        },
+        {
+          "color": "#0f766e",
+          "name": "Teal",
+          "slug": "teal"
+        },
+        {
+          "color": "#c2410c",
+          "name": "Amber",
+          "slug": "amber"
+        },
+        {
+          "color": "#d8e8e1",
+          "name": "Line",
+          "slug": "line"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "elements": {
+      "button": {
+        "border": {
+          "radius": "999px"
+        }
+      },
+      "heading": {
+        "typography": {
+          "fontWeight": "780",
+          "lineHeight": "1.1"
+        }
+      }
+    }
+  }
+}

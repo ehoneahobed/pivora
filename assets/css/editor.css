@@ -1,0 +1,159 @@
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+.editor-styles-wrapper {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--ink);
+}
+
+.editor-styles-wrapper .pivora-card {
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--border-radius--medium);
+	padding: var(--wp--preset--spacing--60);
+}
+
+.editor-styles-wrapper .pivora-hero {
+	background: var(--wp--preset--color--cloud);
+	border-bottom: 1px solid var(--wp--preset--color--line);
+	padding-bottom: var(--wp--preset--spacing--90);
+	padding-top: var(--wp--preset--spacing--90);
+}
+
+.editor-styles-wrapper .pivora-eyebrow {
+	color: var(--wp--preset--color--teal);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.editor-styles-wrapper .pivora-feature-section .pivora-feature-grid {
+	display: grid !important;
+	gap: var(--wp--preset--spacing--60);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.editor-styles-wrapper .pivora-feature-section .pivora-feature {
+	border-radius: 18px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: var(--wp--preset--spacing--70);
+}
+
+.editor-styles-wrapper .pivora-feature__icon {
+	align-items: center;
+	background: rgba(15, 118, 110, 0.08);
+	border: 1px solid rgba(15, 118, 110, 0.18);
+	border-radius: 999px;
+	color: var(--wp--preset--color--teal);
+	display: inline-flex;
+	font-weight: 900;
+	height: 2.65rem;
+	justify-content: center;
+	margin-block-end: var(--wp--preset--spacing--60);
+	width: 2.65rem;
+}
+
+.editor-styles-wrapper .pivora-cta-section .pivora-cta {
+	align-items: center;
+	background: var(--wp--preset--color--ink);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 18px;
+	color: var(--wp--preset--color--white);
+	display: grid !important;
+	gap: var(--wp--preset--spacing--70);
+	grid-template-columns: minmax(0, 1fr) auto;
+	padding: var(--wp--preset--spacing--80);
+}
+
+.editor-styles-wrapper .pivora-section {
+	padding-bottom: var(--wp--preset--spacing--90);
+	padding-top: var(--wp--preset--spacing--90);
+}
+
+.editor-styles-wrapper .pivora-section--muted {
+	background: var(--wp--preset--color--cloud);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--border-radius--large);
+	padding: var(--wp--preset--spacing--80);
+}
+
+.editor-styles-wrapper .pivora-metrics {
+	border-bottom: 1px solid var(--wp--preset--color--line);
+	gap: 0;
+}
+
+.editor-styles-wrapper .pivora-metric {
+	border-right: 1px solid var(--wp--preset--color--line);
+	padding: var(--wp--preset--spacing--70);
+}
+
+.editor-styles-wrapper .pivora-service-section .pivora-service-grid {
+	display: grid !important;
+	gap: var(--wp--preset--spacing--40);
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.editor-styles-wrapper .pivora-service-chip {
+	align-items: center;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 14px;
+	color: var(--wp--preset--color--ink);
+	display: flex;
+	font-weight: 700;
+	margin: 0;
+	min-height: 3.75rem;
+	padding: var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);
+}
+
+.editor-styles-wrapper .pivora-posts-section .pivora-latest-posts .wp-block-post-template {
+	display: grid !important;
+	gap: var(--wp--preset--spacing--60);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.editor-styles-wrapper .pivora-post-card {
+	border-radius: 18px;
+	overflow: clip;
+}
+
+.editor-styles-wrapper .pivora-price-card--featured {
+	background: var(--wp--preset--color--ink);
+	border-color: var(--wp--preset--color--ink);
+	color: var(--wp--preset--color--white);
+}
+
+.editor-styles-wrapper .pivora-project-card {
+	background: var(--wp--preset--color--cloud);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--border-radius--large);
+	padding: var(--wp--preset--spacing--70);
+}
+
+.editor-styles-wrapper .pivora-editorial-feature {
+	border-bottom: 1px solid var(--wp--preset--color--line);
+	border-top: 1px solid var(--wp--preset--color--line);
+}
+
+
+.editor-styles-wrapper .pivora-hero--premium {
+	background: var(--wp--preset--color--cloud);
+}
+
+.editor-styles-wrapper .pivora-hero-preview {
+	background: var(--wp--preset--color--white);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 18px;
+	box-shadow: 0 30px 90px rgba(15, 23, 42, 0.12);
+	padding: var(--wp--preset--spacing--50);
+}
+
+.editor-styles-wrapper .pivora-hero-preview__bar,
+.editor-styles-wrapper .pivora-hero-preview__stats {
+	background: var(--wp--preset--color--ink);
+	color: var(--wp--preset--color--white);
+}

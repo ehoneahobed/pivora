@@ -1,0 +1,46 @@
+{
+  "name": "pivora",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A modern, block-first, multi-purpose WordPress theme built for fast, accessible, SEO-ready websites.",
+  "author": "Pivora",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "wordpress",
+    "wordpress-theme",
+    "block-theme",
+    "full-site-editing",
+    "seo-ready"
+  ],
+  "homepage": "https://example.com/pivora",
+  "repository": {
+    "type": "git",
+    "url": "https://example.com/pivora.git"
+  },
+  "bugs": {
+    "url": "https://example.com/pivora/support"
+  },
+  "devDependencies": {
+    "@wordpress/env": "^10.30.0",
+    "@wordpress/scripts": "^30.0.0",
+    "postcss": "^8.4.0"
+  },
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "env": "wp-env",
+    "env:start": "wp-env start --auto-port",
+    "env:stop": "wp-env stop",
+    "env:status": "wp-env status",
+    "env:logs": "wp-env logs",
+    "wp": "wp-env run cli wp",
+    "php": "wp-env run cli php",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style \"assets/css/**/*.css\"",
+    "lint:js": "wp-scripts lint-js \"assets/js/**/*.js\" --no-error-on-unmatched-pattern",
+    "check:php": "wp-env run cli composer --working-dir=/var/www/html/wp-content/themes/pivora run check:php",
+    "check:php:fix": "wp-env run cli composer --working-dir=/var/www/html/wp-content/themes/pivora run fix:php",
+    "check:json": "wp-scripts lint-pkg-json",
+    "check": "npm run check:json && npm run lint:css && npm run check:php"
+  }
+}

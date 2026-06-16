@@ -1,0 +1,24 @@
+{
+  "name": "pivora/pivora",
+  "description": "A modern, block-first, multi-purpose WordPress theme built for fast, accessible, SEO-ready websites.",
+  "version": "0.1.0",
+  "type": "wordpress-theme",
+  "license": "GPL-2.0-or-later",
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.1",
+    "phpcompatibility/php-compatibility": "^9.3",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "squizlabs/php_codesniffer": "^3.10",
+    "wp-coding-standards/wpcs": "^3.1"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "sort-packages": true
+  },
+  "scripts": {
+    "check:php": "phpcs",
+    "fix:php": "phpcbf"
+  }
+}
