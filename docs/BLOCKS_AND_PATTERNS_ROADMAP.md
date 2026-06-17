@@ -15,17 +15,19 @@ This document is the build queue for making Pivora competitive with top block th
 
 ## What Pivora already ships
 
-- **28 patterns** — sections, starters (business, SaaS, blog, portfolio, store), WooCommerce pack (`patterns/`, `inc/patterns.php`)
-- **7 custom blocks** — in `plugins/pivora-core/` (theme shows install notice when plugin is inactive)
-- **3 plugin-only patterns** — lead capture, integrations strip, agency starter (`plugins/pivora-core/patterns/`)
+- **44 theme patterns** — 8 heroes, 5 CTAs, sections, pricing variants, starters, WooCommerce pack (`patterns/`, `inc/patterns.php`)
+- **9 custom blocks** — in `plugins/pivora-core/` (theme shows install notice when plugin is inactive)
+- **5 plugin-only patterns** — lead capture, integrations strip, agency starter, announcement bar, social links footer (`plugins/pivora-core/patterns/`)
 - **6 demo kits** — includes agency kit via **Pivora → Demo Import**
 - **3 header + 2 footer variants** — `parts/header-centered.html`, `header-minimal.html`, `footer-columns.html`
 - **4 style variations** — `styles/*.json`
+- **Hero + CTA layout CSS** — `assets/css/hero-variants.css`, `cta-variants.css`, `button-block-styles.css` (frontend + editor)
 - **Blog archive toolbar** — search, filters, sort (`inc/blog-archive.php`)
 - **Blog / single layout switchers** — `Appearance → Blog Layouts`
 - **Sidebar template part** — `parts/sidebar.html`
 - **Page display options** — hide title (`inc/page-settings.php`)
 - **Template reset** — `Appearance → Reset Templates`
+- **SEO plugin compatibility** — `inc/compatibility/seo-plugins.php`
 
 ## Build queue
 
@@ -50,6 +52,9 @@ This document is the build queue for making Pivora competitive with top block th
 | A15 | Block style: Image (rounded, shadow) | Block style | done | `inc/block-styles.php` |
 | A16 | Block style: List (checkmarks, steps) | Block style | done | `inc/block-styles.php` |
 | A17 | Block style: Quote (testimonial, pull) | Block style | done | `inc/block-styles.php` |
+| A18 | Hero pattern library (8 variants) | Pattern | done | `patterns/hero-*.php`, `hero-variants.css` |
+| A19 | CTA pattern library (5 variants) | Pattern | done | `patterns/cta-*.php`, `cta-variants.css` |
+| A20 | Hero + CTA button block styles | Block style | done | `button-block-styles.css`, `inc/block-styles.php` |
 
 **Phase A acceptance criteria**
 
@@ -115,6 +120,10 @@ Registered in `inc/block-styles.php`. Applied in the block toolbar under **Style
 | `core/list` | Steps | `is-style-pivora-steps` | Numbered process |
 | `core/quote` | Testimonial | `is-style-pivora-testimonial` | Quote cards |
 | `core/quote` | Pull quote | `is-style-pivora-pullquote` | Editorial emphasis |
+| `core/button` | Hero gold / teal / green / purple / ink (+ outline variants) | `is-style-pivora-hero-*` | Hero CTAs |
+| `core/button` | CTA amber / coral | `is-style-pivora-cta-*` | Sale + download CTAs |
+
+Hero and CTA button styles live in `assets/css/button-block-styles.css`.
 
 ## Pattern authoring checklist
 
@@ -146,6 +155,7 @@ Registered in `inc/block-styles.php`. Applied in the block toolbar under **Style
 - [STARTER_SITES.md](./STARTER_SITES.md) — starter compositions
 - [ADMIN_TESTING.md](./ADMIN_TESTING.md) — QA checklist
 - [DEVELOPMENT.md](./DEVELOPMENT.md) — local environment
+- [V1_RELEASE_PLAN.md](./V1_RELEASE_PLAN.md) — release checklist
 
 ## Roadmap complete — pre-1.0 block integration
 
@@ -156,7 +166,7 @@ Phases A–D are shipped. **Before 1.0**, custom blocks are wired into patterns 
 | **Pivora theme** | Patterns, templates, block styles, blog layouts, WooCommerce |
 | **Pivora Core plugin** | Custom blocks, demo import, bonus patterns |
 
-### Block-powered patterns (1.0)
+### Block-powered patterns (0.1.0+)
 
 When Pivora Core is active, these sections use custom blocks (core-block fallback without plugin):
 
@@ -172,7 +182,7 @@ When Pivora Core is active, these sections use custom blocks (core-block fallbac
 
 Plugin-only patterns: `pivora-core/announcement-bar`, `pivora-core/social-links-footer`.
 
-### Production checklist (1.0)
+### Production checklist (pre-1.0 → 1.0.0)
 
 - [x] Native `@wordpress/scripts` block discovery
 - [x] Self-contained block CSS (`shared/_surface.scss`)

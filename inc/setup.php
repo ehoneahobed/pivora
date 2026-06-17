@@ -32,6 +32,7 @@ function pivora_setup(): void {
 			'assets/css/editor.css',
 			'assets/css/hero-variants.css',
 			'assets/css/button-block-styles.css',
+			'assets/css/cta-variants.css',
 		)
 	);
 }

@@ -16,18 +16,20 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function pivora_register_block_styles(): void {
 	$button_styles = array(
-		'pivora-outline'         => __( 'Outline', 'pivora' ),
-		'pivora-pill'            => __( 'Pill', 'pivora' ),
-		'pivora-ghost'           => __( 'Ghost', 'pivora' ),
-		'pivora-hero-gold'       => __( 'Hero gold', 'pivora' ),
+		'pivora-outline'           => __( 'Outline', 'pivora' ),
+		'pivora-pill'              => __( 'Pill', 'pivora' ),
+		'pivora-ghost'             => __( 'Ghost', 'pivora' ),
+		'pivora-hero-gold'         => __( 'Hero gold', 'pivora' ),
 		'pivora-hero-gold-outline' => __( 'Hero gold outline', 'pivora' ),
-		'pivora-hero-teal'       => __( 'Hero teal', 'pivora' ),
+		'pivora-hero-teal'         => __( 'Hero teal', 'pivora' ),
 		'pivora-hero-teal-outline' => __( 'Hero teal outline', 'pivora' ),
-		'pivora-hero-green'      => __( 'Hero green', 'pivora' ),
-		'pivora-hero-ink-outline' => __( 'Hero ink outline', 'pivora' ),
-		'pivora-hero-purple'     => __( 'Hero purple', 'pivora' ),
-		'pivora-hero-purple-soft' => __( 'Hero purple soft', 'pivora' ),
-		'pivora-hero-ink'        => __( 'Hero ink', 'pivora' ),
+		'pivora-hero-green'        => __( 'Hero green', 'pivora' ),
+		'pivora-hero-ink-outline'  => __( 'Hero ink outline', 'pivora' ),
+		'pivora-hero-purple'       => __( 'Hero purple', 'pivora' ),
+		'pivora-hero-purple-soft'  => __( 'Hero purple soft', 'pivora' ),
+		'pivora-hero-ink'          => __( 'Hero ink', 'pivora' ),
+		'pivora-cta-amber'         => __( 'CTA amber', 'pivora' ),
+		'pivora-cta-coral'         => __( 'CTA coral', 'pivora' ),
 	);
 
 	foreach ( $button_styles as $slug => $label ) {

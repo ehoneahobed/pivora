@@ -20,9 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 function pivora_block( string $name, array $attributes = array() ): void {
 	$json = wp_json_encode( $attributes, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES );
 
-	echo sprintf(
+	$attrs = $json ? $json : '{}';
+
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Block pattern JSON from wp_json_encode().
+	printf(
 		"<!-- wp:%s %s /-->\n",
-		$name,
-		$json ?: '{}'
+		esc_html( $name ),
+		$attrs // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	);
 }

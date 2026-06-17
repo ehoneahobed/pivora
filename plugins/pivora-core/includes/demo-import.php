@@ -356,10 +356,15 @@ function pivora_import_demo_kit( string $kit_slug ) {
 	update_option( 'pivora_active_demo_kit', $kit_slug );
 
 	if ( $contact_id ) {
+		$contact_markup = pivora_load_pattern_markup( 'pivora/contact-section' );
+		if ( ! $contact_markup ) {
+			$contact_markup = '<!-- wp:paragraph --><p>Reach out to discuss your next project.</p><!-- /wp:paragraph -->';
+		}
+
 		wp_update_post(
 			array(
 				'ID'           => $contact_id,
-				'post_content' => pivora_load_pattern_markup( 'pivora/contact-section' ) ?: '<!-- wp:paragraph --><p>Reach out to discuss your next project.</p><!-- /wp:paragraph -->',
+				'post_content' => $contact_markup,
 			)
 		);
 		delete_post_meta( $contact_id, '_wp_page_template' );
@@ -554,7 +559,8 @@ function pivora_core_render_demo_preview_banner_styles(): void {
  * @param string               $kit_slug Kit identifier.
  */
 function pivora_core_render_demo_kit_preview_document( string $markup, array $kit, string $kit_slug ): void {
-	?><!DOCTYPE html>
+	?>
+	<!DOCTYPE html>
 	<html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -565,10 +571,13 @@ function pivora_core_render_demo_kit_preview_document( string $markup, array $ki
 	<?php wp_body_open(); ?>
 	<?php pivora_core_render_demo_preview_banner( $kit, $kit_slug ); ?>
 	<?php
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Block template output from do_blocks().
 	echo do_blocks( '<!-- wp:template-part {"slug":"header","tagName":"header"} /-->' );
 	echo '<main id="content" class="wp-block-group site-main site-main--front">';
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Demo kit pattern markup from registered patterns.
 	echo do_blocks( $markup );
 	echo '</main>';
+	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Block template output from do_blocks().
 	echo do_blocks( '<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->' );
 	wp_footer();
 	?>
@@ -696,14 +705,18 @@ function pivora_core_render_demo_import_page(): void {
 		return;
 	}
 
-	$kits        = pivora_get_demo_kits();
-	$active_kit  = get_option( 'pivora_active_demo_kit', '' );
-	$done_kit    = isset( $_GET['pivora_demo_done'] ) ? sanitize_key( wp_unslash( (string) $_GET['pivora_demo_done'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	$error       = isset( $_GET['pivora_demo_error'] ) ? sanitize_text_field( wp_unslash( rawurldecode( (string) $_GET['pivora_demo_error'] ) ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	$front_page  = (int) get_option( 'page_on_front' );
-	$front_url   = $front_page ? get_permalink( $front_page ) : home_url( '/' );
-	$site_editor = admin_url( 'site-editor.php' );
-	$default_kit = $active_kit ?: 'business';
+	$kits       = pivora_get_demo_kits();
+	$active_kit = get_option( 'pivora_active_demo_kit', '' );
+	$done_kit   = isset( $_GET['pivora_demo_done'] ) ? sanitize_key( wp_unslash( (string) $_GET['pivora_demo_done'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	$error      = '';
+	if ( isset( $_GET['pivora_demo_error'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$raw_error = wp_unslash( $_GET['pivora_demo_error'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$error     = sanitize_text_field( rawurldecode( (string) $raw_error ) );
+	}
+	$front_page            = (int) get_option( 'page_on_front' );
+	$front_url             = $front_page ? get_permalink( $front_page ) : home_url( '/' );
+	$site_editor           = admin_url( 'site-editor.php' );
+	$default_kit           = $active_kit ? $active_kit : 'business';
 	$default_preview_label = sprintf(
 		/* translators: %s: demo kit label */
 		__( '%s preview', 'pivora-core' ),
@@ -756,7 +769,7 @@ function pivora_core_render_demo_import_page(): void {
 						__( '%s preview', 'pivora-core' ),
 						(string) $kit['label']
 					);
-					$is_selected   = $slug === $default_kit;
+					$is_selected = $slug === $default_kit;
 					?>
 					<div class="pivora-demo-kit-card<?php echo $is_selected ? ' is-selected' : ''; ?>" data-kit="<?php echo esc_attr( $slug ); ?>">
 						<div class="pivora-demo-kit-card__header">

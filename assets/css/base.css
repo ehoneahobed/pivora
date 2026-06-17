@@ -646,7 +646,7 @@ a:hover {
 	background:
 		linear-gradient(90deg, rgba(6, 10, 24, 0.96) 0%, rgba(6, 10, 24, 0.86) 36%, rgba(6, 10, 24, 0.36) 72%, rgba(6, 10, 24, 0.18) 100%),
 		linear-gradient(180deg, rgba(6, 10, 24, 0.12), rgba(6, 10, 24, 0.64)),
-		url(../images/pivora-hero-bg.png);
+		url(../images/pivora-hero-bg.jpg);
 	background-position: center;
 	background-size: cover;
 	border-bottom: 0;
@@ -2031,6 +2031,9 @@ a:hover {
 }
 
 .pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight.pivora-price-card--featured {
+	background: #8b5cf6;
+	border-color: #8b5cf6;
+	box-shadow: 0 24px 60px rgba(139, 92, 246, 0.35);
 	transform: none;
 }
 
@@ -2038,18 +2041,12 @@ a:hover {
 	color: rgba(255, 255, 255, 0.82);
 }
 
-.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight.pivora-price-card--featured {
-	background: #8b5cf6;
-	border-color: #8b5cf6;
-	box-shadow: 0 24px 60px rgba(139, 92, 246, 0.35);
-}
-
 .pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight.pivora-price-card--featured .wp-block-button__link {
 	color: #8b5cf6;
 }
 
 .pivora-pricing-section--green-band {
-	background: linear-gradient(90deg, #2ea44f 0 8%, #ffffff 8% 92%, #2ea44f 92% 100%);
+	background: linear-gradient(90deg, #2ea44f 0 8%, #fff 8% 92%, #2ea44f 92% 100%);
 }
 
 .pivora-pricing-section--green-band .pivora-pricing-toggle--green {

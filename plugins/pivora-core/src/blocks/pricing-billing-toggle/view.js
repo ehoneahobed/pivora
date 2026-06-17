@@ -47,9 +47,6 @@
 		}
 
 		const buttons = toggle.querySelectorAll( '[data-billing-cycle]' );
-		const legacyOptions = toggle.querySelectorAll(
-			'.pivora-pricing-toggle__option'
-		);
 		const defaultCycle =
 			toggle.dataset.defaultCycle === 'yearly' ? 'yearly' : 'monthly';
 
@@ -58,11 +55,19 @@
 		if ( buttons.length ) {
 			buttons.forEach( ( button ) => {
 				button.addEventListener( 'click', function () {
-					activateCycle( section, toggle, button.dataset.billingCycle );
+					activateCycle(
+						section,
+						toggle,
+						button.dataset.billingCycle
+					);
 				} );
 			} );
 			return;
 		}
+
+		const legacyOptions = toggle.querySelectorAll(
+			'.pivora-pricing-toggle__option'
+		);
 
 		legacyOptions.forEach( ( option, index ) => {
 			option.style.cursor = 'pointer';

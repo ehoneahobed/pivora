@@ -12,19 +12,19 @@ $contact_url = home_url( '/contact/' );
 
 $plans = array(
 	array(
-		'variant'           => 'spotlight',
-		'tier'              => __( 'Freebie', 'pivora' ),
-		'description'       => __( 'Ideal for individuals who need quick access to basic features.', 'pivora' ),
-		'price'             => '$0',
-		'term'              => __( '/ Month', 'pivora' ),
-		'includedFeatures'  => implode(
+		'variant'          => 'spotlight',
+		'tier'             => __( 'Freebie', 'pivora' ),
+		'description'      => __( 'Ideal for individuals who need quick access to basic features.', 'pivora' ),
+		'price'            => '$0',
+		'term'             => __( '/ Month', 'pivora' ),
+		'includedFeatures' => implode(
 			"\n",
 			array(
 				__( '20,000+ of PNG & SVG graphics', 'pivora' ),
 				__( 'Access to 100 million stock images', 'pivora' ),
 			)
 		),
-		'excludedFeatures'  => implode(
+		'excludedFeatures' => implode(
 			"\n",
 			array(
 				__( 'Upload custom icons and fonts', 'pivora' ),
@@ -35,17 +35,17 @@ $plans = array(
 				__( 'Create teams to collaborate on designs', 'pivora' ),
 			)
 		),
-		'ctaText'           => __( 'Get Started Now', 'pivora' ),
-		'ctaUrl'            => $contact_url,
-		'ctaOutline'        => true,
+		'ctaText'          => __( 'Get Started Now', 'pivora' ),
+		'ctaUrl'           => $contact_url,
+		'ctaOutline'       => true,
 	),
 	array(
-		'variant'           => 'spotlight',
-		'tier'              => __( 'Professional', 'pivora' ),
-		'description'       => __( 'Ideal for individuals who need advanced features and tools for client work.', 'pivora' ),
-		'price'             => '$25',
-		'term'              => __( '/ Month', 'pivora' ),
-		'includedFeatures'  => implode(
+		'variant'          => 'spotlight',
+		'tier'             => __( 'Professional', 'pivora' ),
+		'description'      => __( 'Ideal for individuals who need advanced features and tools for client work.', 'pivora' ),
+		'price'            => '$25',
+		'term'             => __( '/ Month', 'pivora' ),
+		'includedFeatures' => implode(
 			"\n",
 			array(
 				__( '20,000+ of PNG & SVG graphics', 'pivora' ),
@@ -58,18 +58,18 @@ $plans = array(
 				__( 'Create teams to collaborate on designs', 'pivora' ),
 			)
 		),
-		'excludedFeatures'  => '',
-		'ctaText'           => __( 'Get Started Now', 'pivora' ),
-		'ctaUrl'            => $contact_url,
-		'featured'          => true,
+		'excludedFeatures' => '',
+		'ctaText'          => __( 'Get Started Now', 'pivora' ),
+		'ctaUrl'           => $contact_url,
+		'featured'         => true,
 	),
 	array(
-		'variant'           => 'spotlight',
-		'tier'              => __( 'Enterprise', 'pivora' ),
-		'description'       => __( 'Ideal for businesses who need personalized services and security for large teams.', 'pivora' ),
-		'price'             => '$100',
-		'term'              => __( '/ Month', 'pivora' ),
-		'includedFeatures'  => implode(
+		'variant'          => 'spotlight',
+		'tier'             => __( 'Enterprise', 'pivora' ),
+		'description'      => __( 'Ideal for businesses who need personalized services and security for large teams.', 'pivora' ),
+		'price'            => '$100',
+		'term'             => __( '/ Month', 'pivora' ),
+		'includedFeatures' => implode(
 			"\n",
 			array(
 				__( '20,000+ of PNG & SVG graphics', 'pivora' ),
@@ -82,10 +82,10 @@ $plans = array(
 				__( 'Create teams to collaborate on designs', 'pivora' ),
 			)
 		),
-		'excludedFeatures'  => '',
-		'ctaText'           => __( 'Get Started Now', 'pivora' ),
-		'ctaUrl'            => $contact_url,
-		'ctaOutline'        => true,
+		'excludedFeatures' => '',
+		'ctaText'          => __( 'Get Started Now', 'pivora' ),
+		'ctaUrl'           => $contact_url,
+		'ctaOutline'       => true,
 	),
 );
 

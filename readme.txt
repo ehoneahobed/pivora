@@ -3,7 +3,7 @@ Contributors: ehoneahobed
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.0
-Stable tag: 1.0.0
+Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,14 +15,14 @@ Pivora is a block-first WordPress theme focused on clean architecture, fast rend
 
 **Included out of the box**
 
-* Polished front-page pattern stack (hero, metrics, features, services, latest posts, CTA)
-* Blog templates (home, archive, single, search, index) with card grids and cloud header bands
-* Inner page templates (default, landing, full width, blank, 404)
-* WooCommerce block templates (shop archive and single product) with matching product card styling
-* 28+ business, content, and ecommerce patterns with block styles
-* Style variations (Editorial, Bold, Ecommerce)
+* 44 block patterns — 8 heroes, 5 CTAs, pricing variants, metrics, FAQ, testimonials, WooCommerce sections, and 5 landing starters
+* Blog templates (home, archive, single, search, index) with card grids, sidebar layouts, and archive toolbar
+* Inner page templates (default, landing, full width, blank, with-sidebar, 404)
+* WooCommerce block templates (shop archive and single product) with cart, checkout, and account styling
+* Block styles for buttons, groups, images, lists, and quotes — plus hero/CTA button styles with editor parity
+* Style variations (Minimal, Editorial, Bold, Ecommerce)
 * Header and footer template-part variants (default, centered, minimal, columns)
-* Skip link, focus styles, and keyboard-friendly navigation
+* Skip link, focus styles, reduced-motion support, and SEO plugin compatibility
 
 The theme provides strong SEO foundations through semantic markup, responsive layouts, accessible navigation, and performance-conscious asset loading. It does not replace dedicated SEO plugins.
 
@@ -47,7 +47,7 @@ See `docs/SETUP.md` for the full CLI bootstrap guide.
 
 = Does Pivora work without the Pivora Core plugin? =
 
-Yes. Patterns, templates, blog layouts, and WooCommerce support are built into the theme. Pivora Core adds seven custom blocks, demo kit import, and three bonus patterns.
+Yes. Patterns, templates, blog layouts, and WooCommerce support are built into the theme. Pivora Core adds nine custom blocks, demo kit import, and five bonus patterns.
 
 = Does Pivora work with WooCommerce? =
 
@@ -68,17 +68,17 @@ Pivora is distributed under the terms of the GNU GPL.
 
 == Resources ==
 
-No third-party fonts or images are bundled. Pattern preview gradients and placeholders are CSS-only.
+No third-party fonts are bundled. Pattern preview gradients and placeholders are CSS-only. The centered hero background uses `assets/images/pivora-hero-bg.jpg`.
 
 == Changelog ==
 
-= 1.0.0 =
-* Production release: 28+ patterns, block styles, template-part variants, style variations
+= 0.1.0 =
+* Pre-release preview — feature-rich but not yet fully QA'd; 1.0.0 follows stability testing
+* 44 theme patterns (8 heroes, 5 CTAs), block styles, 19 templates, 12 template parts
+* Hero and CTA variant CSS with explicit button block styles for editor/frontend parity
 * Blog layout switcher (4 archive styles, 4 single styles) under Appearance → Blog Layouts
 * Pivora Starters — business, SaaS, blog, store, and portfolio landing compositions
-* WooCommerce block templates and product patterns
+* WooCommerce block templates, cart/checkout/account styling, and product patterns
+* SEO plugin compatibility (Yoast SEO, Rank Math, The SEO Framework)
 * Companion plugin integration notice (Pivora Core)
-* CI, packaging scripts, and wp-scripts block build pipeline
-
-= 0.1.0 =
-* Initial release scaffold
+* CI, packaging scripts, Theme Check script, and wp-scripts block build pipeline

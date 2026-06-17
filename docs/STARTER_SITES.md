@@ -7,6 +7,7 @@ Pivora includes one-click **starter compositions** in the block inserter under *
 | Starter | Best for | Sections included |
 |---------|----------|-------------------|
 | **Business landing** | SaaS, agencies, services | Hero, metrics, features, services, pricing, CTA |
+| **SaaS landing** | Startups, product launches | SaaS hero, metrics, features, pricing, CTA |
 | **Blog landing** | Editorial, publishing | Editorial feature, latest posts, CTA |
 | **Store landing** | WooCommerce demos | Store hero, benefits, features, CTA |
 | **Portfolio landing** | Creatives, studios | Portfolio grid, editorial feature, CTA |

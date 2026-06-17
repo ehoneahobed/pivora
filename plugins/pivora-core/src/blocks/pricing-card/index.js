@@ -79,6 +79,7 @@ function PriceRow( { price, term, priceYearly, termYearly, setAttributes } ) {
 
 		syncCycle();
 
+		/* global MutationObserver */
 		const observer = new MutationObserver( syncCycle );
 		observer.observe( section, {
 			attributes: true,
@@ -211,7 +212,10 @@ function Edit( { attributes, setAttributes } ) {
 					{ isSpotlight ? (
 						<>
 							<TextareaControl
-								label={ __( 'Included features', 'pivora-core' ) }
+								label={ __(
+									'Included features',
+									'pivora-core'
+								) }
 								help={ __(
 									'One feature per line. Shown with a checkmark.',
 									'pivora-core'
@@ -224,7 +228,10 @@ function Edit( { attributes, setAttributes } ) {
 								}
 							/>
 							<TextareaControl
-								label={ __( 'Excluded features', 'pivora-core' ) }
+								label={ __(
+									'Excluded features',
+									'pivora-core'
+								) }
 								help={ __(
 									'One feature per line. Shown with an X icon.',
 									'pivora-core'
@@ -240,7 +247,10 @@ function Edit( { attributes, setAttributes } ) {
 					) : (
 						<TextareaControl
 							label={ __( 'Features', 'pivora-core' ) }
-							help={ __( 'One feature per line.', 'pivora-core' ) }
+							help={ __(
+								'One feature per line.',
+								'pivora-core'
+							) }
 							value={ features }
 							onChange={ ( value ) =>
 								setAttributes( { features: value } )
@@ -319,7 +329,10 @@ function Edit( { attributes, setAttributes } ) {
 								onChange={ ( value ) =>
 									setAttributes( { ctaText: value } )
 								}
-								placeholder={ __( 'Button label', 'pivora-core' ) }
+								placeholder={ __(
+									'Button label',
+									'pivora-core'
+								) }
 								href={ ctaUrl || '#' }
 							/>
 						</div>
@@ -366,7 +379,10 @@ function Edit( { attributes, setAttributes } ) {
 								onChange={ ( value ) =>
 									setAttributes( { ctaText: value } )
 								}
-								placeholder={ __( 'Button label', 'pivora-core' ) }
+								placeholder={ __(
+									'Button label',
+									'pivora-core'
+								) }
 								href={ ctaUrl || '#' }
 							/>
 						</div>

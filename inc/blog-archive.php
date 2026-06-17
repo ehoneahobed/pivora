@@ -150,8 +150,8 @@ function pivora_render_blog_sort_hidden_fields( string $orderby ): void {
 	$paged = max( 1, (int) get_query_var( 'paged' ), (int) get_query_var( 'page' ) );
 	if ( $paged > 1 ) {
 		printf(
-			'<input type="hidden" name="paged" value="%d" />',
-			$paged
+			'<input type="hidden" name="paged" value="%s" />',
+			esc_attr( (string) $paged )
 		);
 	}
 
@@ -183,7 +183,6 @@ function pivora_render_blog_sort_control(): string {
 	<?php
 	return (string) ob_get_clean();
 }
-add_shortcode( 'pivora_blog_sort', 'pivora_render_blog_sort_control' );
 
 /**
  * Renders category filter pills for the blog archive toolbar.
@@ -234,7 +233,6 @@ function pivora_render_blog_category_filter(): string {
 	<?php
 	return (string) ob_get_clean();
 }
-add_shortcode( 'pivora_blog_categories', 'pivora_render_blog_category_filter' );
 
 /**
  * Renders the current archive result count.
@@ -257,7 +255,6 @@ function pivora_render_blog_results_count(): string {
 		esc_html( $label )
 	);
 }
-add_shortcode( 'pivora_blog_results', 'pivora_render_blog_results_count' );
 
 /**
  * Renders the blog archive search field.
@@ -314,7 +311,6 @@ function pivora_render_blog_toolbar(): string {
 	<?php
 	return (string) ob_get_clean();
 }
-add_shortcode( 'pivora_blog_toolbar', 'pivora_render_blog_toolbar' );
 
 /**
  * Prepends the toolbar markup inside the blog archive shell.

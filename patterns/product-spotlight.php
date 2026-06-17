@@ -50,8 +50,8 @@ $shop_url = esc_url( home_url( '/shop/' ) );
 
 		<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 		<div class="wp-block-buttons">
-			<!-- wp:button {"url":"<?php echo $shop_url; ?>"} -->
-			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo $shop_url; ?>"><?php esc_html_e( 'View all products', 'pivora' ); ?></a></div>
+			<!-- wp:button {"url":"<?php echo esc_url( $shop_url ); ?>"} -->
+			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'View all products', 'pivora' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

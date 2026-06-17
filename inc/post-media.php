@@ -51,7 +51,7 @@ function pivora_should_render_post_placeholder( array $block ): bool {
 /**
  * Renders a placeholder featured image when a post has no thumbnail.
  *
- * @param string   $block_content Rendered block HTML.
+ * @param string               $block_content Rendered block HTML.
  * @param array<string, mixed> $block Block data.
  * @return string
  */

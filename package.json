@@ -1,6 +1,6 @@
 {
   "name": "pivora",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "A modern, block-first, multi-purpose WordPress theme built for fast, accessible, SEO-ready websites.",
   "author": "ehoneahobed",
@@ -43,6 +43,8 @@
     "check:php:fix": "wp-env run cli composer --working-dir=/var/www/html/wp-content/themes/pivora run fix:php",
     "check:json": "wp-scripts lint-pkg-json",
     "check": "npm run check:json && npm run lint:css && npm run lint:js && npm run build && npm run check:php",
+    "check:theme": "bash scripts/theme-check.sh",
+    "check:budget": "bash scripts/check-asset-budget.sh",
     "setup:demo": "wp-env run cli bash /var/www/html/wp-content/themes/pivora/scripts/setup-demo.sh",
     "setup:demo:full": "PIVORA_INSTALL_WOO=1 npm run setup:demo",
     "setup:demo:business": "PIVORA_DEMO_KIT=business npm run setup:demo",

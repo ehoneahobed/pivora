@@ -3,7 +3,7 @@ Contributors: ehoneahobed
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.0
-Stable tag: 1.0.0
+Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,8 +60,8 @@ Yes. Blocks ship their own surface styles with `theme.json` preset fallbacks.
 
 == Changelog ==
 
-= 1.0.0 =
-* Production release: seven blocks with self-contained styles
+= 0.1.0 =
+* Pre-release preview: nine blocks with self-contained styles (not yet fully QA'd)
 * Demo import for six kits (business, SaaS, blog, portfolio, store, agency)
 * Native wp-scripts block discovery build (no copy scripts)
 * `pivora-core` text domain and `load_plugin_textdomain`

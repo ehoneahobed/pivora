@@ -19,6 +19,8 @@ npm run env:status
 npm run wp -- theme list
 npm run wp -- theme activate pivora
 npm run check
+npm run check:budget
+npm run check:theme
 npm run lint:css
 npm run check:php
 ```

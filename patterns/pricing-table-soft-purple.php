@@ -101,11 +101,11 @@ $plans = array(
 				pivora_block(
 					'pivora/pricing-billing-toggle',
 					array(
-						'monthlyLabel'  => __( 'Billed Monthly', 'pivora' ),
-						'yearlyLabel'   => __( 'Billed Yearly', 'pivora' ),
-						'saveLabel'     => __( '(save 15%)', 'pivora' ),
-						'defaultCycle'  => 'yearly',
-						'styleVariant'  => 'purple',
+						'monthlyLabel' => __( 'Billed Monthly', 'pivora' ),
+						'yearlyLabel'  => __( 'Billed Yearly', 'pivora' ),
+						'saveLabel'    => __( '(save 15%)', 'pivora' ),
+						'defaultCycle' => 'yearly',
+						'styleVariant' => 'purple',
 					)
 				);
 				?>

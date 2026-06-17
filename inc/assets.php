@@ -52,6 +52,13 @@ function pivora_enqueue_assets(): void {
 		pivora_asset_version( 'assets/css/button-block-styles.css' )
 	);
 
+	wp_enqueue_style(
+		'pivora-cta-variants',
+		PIVORA_URI . 'assets/css/cta-variants.css',
+		array( 'pivora-base' ),
+		pivora_asset_version( 'assets/css/cta-variants.css' )
+	);
+
 	if ( function_exists( 'pivora_is_woocommerce_active' ) && pivora_is_woocommerce_active() ) {
 		wp_enqueue_style(
 			'pivora-woocommerce',

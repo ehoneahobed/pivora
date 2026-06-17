@@ -30,8 +30,8 @@ $shop_url = esc_url( home_url( '/shop/' ) );
 
 			<!-- wp:buttons -->
 			<div class="wp-block-buttons">
-				<!-- wp:button {"className":"is-style-pivora-outline","url":"<?php echo $shop_url; ?>"} -->
-				<div class="wp-block-button is-style-pivora-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo $shop_url; ?>"><?php esc_html_e( 'View shop', 'pivora' ); ?></a></div>
+				<!-- wp:button {"className":"is-style-pivora-outline","url":"<?php echo esc_url( $shop_url ); ?>"} -->
+				<div class="wp-block-button is-style-pivora-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'View shop', 'pivora' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
@@ -41,27 +41,27 @@ $shop_url = esc_url( home_url( '/shop/' ) );
 		<!-- wp:group {"className":"pivora-product-categories__grid","layout":{"type":"flex","flexWrap":"wrap"}} -->
 		<div class="wp-block-group pivora-product-categories__grid">
 			<!-- wp:paragraph {"className":"pivora-product-category-card"} -->
-			<p class="pivora-product-category-card"><a href="<?php echo $shop_url; ?>"><?php esc_html_e( 'New arrivals', 'pivora' ); ?></a></p>
+			<p class="pivora-product-category-card"><a href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'New arrivals', 'pivora' ); ?></a></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"className":"pivora-product-category-card"} -->
-			<p class="pivora-product-category-card"><a href="<?php echo $shop_url; ?>"><?php esc_html_e( 'Best sellers', 'pivora' ); ?></a></p>
+			<p class="pivora-product-category-card"><a href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'Best sellers', 'pivora' ); ?></a></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"className":"pivora-product-category-card"} -->
-			<p class="pivora-product-category-card"><a href="<?php echo $shop_url; ?>"><?php esc_html_e( 'Bundles', 'pivora' ); ?></a></p>
+			<p class="pivora-product-category-card"><a href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'Bundles', 'pivora' ); ?></a></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"className":"pivora-product-category-card"} -->
-			<p class="pivora-product-category-card"><a href="<?php echo $shop_url; ?>"><?php esc_html_e( 'Accessories', 'pivora' ); ?></a></p>
+			<p class="pivora-product-category-card"><a href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'Accessories', 'pivora' ); ?></a></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"className":"pivora-product-category-card"} -->
-			<p class="pivora-product-category-card"><a href="<?php echo $shop_url; ?>"><?php esc_html_e( 'Gifts', 'pivora' ); ?></a></p>
+			<p class="pivora-product-category-card"><a href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'Gifts', 'pivora' ); ?></a></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"className":"pivora-product-category-card"} -->
-			<p class="pivora-product-category-card"><a href="<?php echo $shop_url; ?>"><?php esc_html_e( 'Sale', 'pivora' ); ?></a></p>
+			<p class="pivora-product-category-card"><a href="<?php echo esc_url( $shop_url ); ?>"><?php esc_html_e( 'Sale', 'pivora' ); ?></a></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->

@@ -18,6 +18,8 @@ final class Pivora_Core {
 
 	/**
 	 * Plugin singleton.
+	 *
+	 * @var Pivora_Core|null
 	 */
 	private static ?Pivora_Core $instance = null;
 
@@ -62,7 +64,10 @@ final class Pivora_Core {
 			return;
 		}
 
-		$block_paths = glob( $blocks_dir . '*', GLOB_ONLYDIR ) ?: array();
+		$block_paths = glob( $blocks_dir . '*', GLOB_ONLYDIR );
+		if ( false === $block_paths ) {
+			$block_paths = array();
+		}
 
 		foreach ( $block_paths as $block_path ) {
 			if ( ! file_exists( $block_path . '/block.json' ) ) {

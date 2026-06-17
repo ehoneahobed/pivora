@@ -19,14 +19,14 @@ function pivora_register_page_display_meta(): void {
 		'page',
 		'pivora_hide_page_title',
 		array(
-			'auth_callback' => static function (): bool {
+			'auth_callback'     => static function (): bool {
 				return current_user_can( 'edit_pages' );
 			},
-			'default'       => false,
+			'default'           => false,
 			'sanitize_callback' => 'rest_sanitize_boolean',
-			'show_in_rest'  => true,
-			'single'        => true,
-			'type'          => 'boolean',
+			'show_in_rest'      => true,
+			'single'            => true,
+			'type'              => 'boolean',
 		)
 	);
 }

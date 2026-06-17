@@ -32,8 +32,8 @@ function pivora_get_header_variants(): array {
  */
 function pivora_get_footer_variants(): array {
 	return array(
-		'footer'          => __( 'Simple footer', 'pivora' ),
-		'footer-columns'  => __( 'Footer columns', 'pivora' ),
+		'footer'         => __( 'Simple footer', 'pivora' ),
+		'footer-columns' => __( 'Footer columns', 'pivora' ),
 	);
 }
 

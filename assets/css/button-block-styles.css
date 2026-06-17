@@ -180,3 +180,39 @@
 	border-color: #1e293b;
 	color: var(--wp--preset--color--white);
 }
+
+.wp-block-button.is-style-pivora-cta-amber .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-cta-amber .wp-block-button__link.wp-element-button {
+	background: #f59e0b;
+	border: 2px solid #f59e0b;
+	border-radius: 4px;
+	color: var(--wp--preset--color--white);
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	padding: 0.85rem 1.35rem;
+	text-transform: uppercase;
+}
+
+.wp-block-button.is-style-pivora-cta-amber .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-cta-amber .wp-block-button__link.wp-element-button:hover {
+	background: #d97706;
+	border-color: #d97706;
+	color: var(--wp--preset--color--white);
+}
+
+.wp-block-button.is-style-pivora-cta-coral .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-cta-coral .wp-block-button__link.wp-element-button {
+	background: #f97316;
+	border: 2px solid #f97316;
+	border-radius: 999px;
+	color: var(--wp--preset--color--white);
+	font-weight: 800;
+	padding: 0.85rem 1.35rem;
+}
+
+.wp-block-button.is-style-pivora-cta-coral .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-cta-coral .wp-block-button__link.wp-element-button:hover {
+	background: #ea580c;
+	border-color: #ea580c;
+	color: var(--wp--preset--color--white);
+}

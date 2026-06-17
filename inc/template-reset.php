@@ -27,7 +27,10 @@ function pivora_reset_template_customizations(): array {
 	);
 	$theme   = get_stylesheet();
 
-	foreach ( array( 'wp_template' => 'templates', 'wp_template_part' => 'parts' ) as $post_type => $key ) {
+	foreach ( array(
+		'wp_template'      => 'templates',
+		'wp_template_part' => 'parts',
+	) as $post_type => $key ) {
 		$items = get_block_templates(
 			array(
 				'theme' => $theme,
@@ -105,18 +108,21 @@ function pivora_render_template_reset_page(): void {
 		return;
 	}
 
-	$theme   = get_stylesheet();
-	$custom  = array(
+	$theme  = get_stylesheet();
+	$custom = array(
 		'templates' => array(),
 		'parts'     => array(),
 	);
 
-	foreach ( array( 'wp_template' => 'templates', 'wp_template_part' => 'parts' ) as $post_type => $key ) {
+	foreach ( array(
+		'wp_template'      => 'templates',
+		'wp_template_part' => 'parts',
+	) as $post_type => $key ) {
 		$items = get_block_templates( array( 'theme' => $theme ), $post_type );
 
 		foreach ( $items as $item ) {
 			if ( ! empty( $item->wp_id ) && $item->has_theme_file ) {
-				$custom[ $key ][] = $item->title ?: $item->slug;
+				$custom[ $key ][] = ( $item->title ) ? $item->title : $item->slug;
 			}
 		}
 	}

@@ -10,6 +10,7 @@
 	<exclude-pattern>*/plugins/pivora-core/src/*</exclude-pattern>
 	<exclude-pattern>*/plugins/pivora-core/build/*</exclude-pattern>
 	<exclude-pattern>*/dist/*</exclude-pattern>
+	<exclude-pattern>*/scripts/*</exclude-pattern>
 
 	<arg name="extensions" value="php"/>
 	<arg name="basepath" value="."/>

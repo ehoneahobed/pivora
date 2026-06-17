@@ -34,3 +34,6 @@ jobs:
 
       - name: Lint and build
         run: npm run check
+
+      - name: Asset budget
+        run: npm run check:budget
