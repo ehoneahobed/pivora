@@ -9,8 +9,8 @@
  */
 
 ?>
-<!-- wp:group {"align":"full","className":"pivora-section pivora-feature-section","layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull pivora-section pivora-feature-section">
+<!-- wp:group {"align":"full","className":"pivora-section pivora-feature-section","anchor":"patterns","layout":{"type":"constrained"}} -->
+<div id="patterns" class="wp-block-group alignfull pivora-section pivora-feature-section">
 	<!-- wp:group {"align":"wide","className":"pivora-feature-section__inner","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide pivora-feature-section__inner">
 		<!-- wp:group {"className":"pivora-section__heading","layout":{"type":"default"}} -->

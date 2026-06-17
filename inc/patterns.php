@@ -39,6 +39,11 @@ function pivora_register_pattern_categories(): void {
 		'pivora-ctas',
 		array( 'label' => __( 'Pivora CTAs', 'pivora' ) )
 	);
+
+	register_block_pattern_category(
+		'pivora-starters',
+		array( 'label' => __( 'Pivora Starters', 'pivora' ) )
+	);
 }
 add_action( 'init', 'pivora_register_pattern_categories' );
 
@@ -123,6 +128,34 @@ function pivora_register_patterns(): void {
 			'title'      => __( 'Simple call to action', 'pivora' ),
 			'categories' => array( 'pivora-ctas' ),
 			'file'       => 'patterns/cta-simple.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/starter-business-landing',
+			'title'      => __( 'Business landing starter', 'pivora' ),
+			'categories' => array( 'pivora-starters' ),
+			'file'       => 'patterns/starter-business-landing.php',
+			'viewport'   => 1440,
+		),
+		array(
+			'name'       => 'pivora/starter-blog-landing',
+			'title'      => __( 'Blog landing starter', 'pivora' ),
+			'categories' => array( 'pivora-starters' ),
+			'file'       => 'patterns/starter-blog-landing.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/starter-store-landing',
+			'title'      => __( 'Store landing starter', 'pivora' ),
+			'categories' => array( 'pivora-starters' ),
+			'file'       => 'patterns/starter-store-landing.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/starter-portfolio-landing',
+			'title'      => __( 'Portfolio landing starter', 'pivora' ),
+			'categories' => array( 'pivora-starters' ),
+			'file'       => 'patterns/starter-portfolio-landing.php',
 			'viewport'   => 1200,
 		),
 	);

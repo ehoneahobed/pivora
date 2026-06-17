@@ -1,22 +1,37 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"constrained"}} -->
-<main id="content" class="wp-block-group site-main">
-	<!-- wp:group {"align":"wide","className":"pivora-empty-state","layout":{"type":"constrained","contentSize":"720px"}} -->
-	<div class="wp-block-group alignwide pivora-empty-state">
-		<!-- wp:heading {"textAlign":"center","level":1} -->
-		<h1 class="wp-block-heading has-text-align-center">Page Not Found</h1>
-		<!-- /wp:heading -->
+<!-- wp:group {"tagName":"main","className":"site-main site-main--page site-main--404","layout":{"type":"constrained"}} -->
+<main id="content" class="wp-block-group site-main site-main--page site-main--404">
+	<!-- wp:group {"align":"full","className":"pivora-page__header-band pivora-page__header-band--centered","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull pivora-page__header-band pivora-page__header-band--centered">
+		<!-- wp:group {"align":"wide","className":"pivora-empty-state","layout":{"type":"default"}} -->
+		<div class="wp-block-group alignwide pivora-empty-state">
+			<!-- wp:paragraph {"className":"pivora-eyebrow"} -->
+			<p class="pivora-eyebrow">404</p>
+			<!-- /wp:paragraph -->
 
-		<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
-		<p class="has-text-align-center has-medium-font-size">The page you requested could not be found. Try searching or return to the homepage.</p>
-		<!-- /wp:paragraph -->
+			<!-- wp:heading {"level":1} -->
+			<h1 class="wp-block-heading">Page not found</h1>
+			<!-- /wp:heading -->
 
-		<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search this site","buttonText":"Search"} /-->
+			<!-- wp:paragraph {"className":"pivora-empty-state__lede"} -->
+			<p class="pivora-empty-state__lede">The page you requested could not be found. Try searching or return to the homepage.</p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search this site","buttonText":"Search","className":"pivora-blog-search"} /-->
+
+			<!-- wp:buttons {"className":"pivora-empty-state__action"} -->
+			<div class="wp-block-buttons pivora-empty-state__action">
+				<!-- wp:button {"className":"is-style-outline"} -->
+				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/">Back to homepage</a></div>
+				<!-- /wp:button -->
+			</div>
+			<!-- /wp:buttons -->
+		</div>
+		<!-- /wp:group -->
 	</div>
 	<!-- /wp:group -->
 </main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
-

@@ -20,17 +20,30 @@ Host PHP is not required for the local WordPress runtime because PHP runs inside
 npm install
 npm run env:start
 npm run env -- run cli composer --working-dir=/var/www/html/wp-content/themes/pivora install
+npm run setup:demo
 ```
+
+The `setup:demo` command activates Pivora, creates core pages, configures Reading settings, and seeds a sample post — no wp-admin required. See [SETUP.md](./SETUP.md) for details.
 
 The local WordPress site should start at:
 
 - Development site: `http://localhost:8888`
 - Test site: `http://localhost:8889`
 
-Default login:
+Default login (reset anytime with `npm run setup:demo`):
 
+- Dashboard: `http://localhost:8888/wp-admin/`
+- Site Editor: `http://localhost:8888/wp-admin/site-editor.php`
 - Username: `admin`
 - Password: `password`
+
+Full WooCommerce demo:
+
+```bash
+npm run setup:demo:full
+```
+
+See [SETUP.md](./SETUP.md) and [ADMIN_TESTING.md](./ADMIN_TESTING.md) for the site-owner test checklist.
 
 ## Activate The Theme
 

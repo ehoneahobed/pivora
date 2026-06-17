@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "A modern, block-first, multi-purpose WordPress theme built for fast, accessible, SEO-ready websites.",
-  "author": "Pivora",
+  "author": "ehoneahobed",
   "license": "GPL-2.0-or-later",
   "keywords": [
     "wordpress",
@@ -12,13 +12,13 @@
     "full-site-editing",
     "seo-ready"
   ],
-  "homepage": "https://example.com/pivora",
+  "homepage": "https://github.com/ehoneahobed/pivora",
   "repository": {
     "type": "git",
-    "url": "https://example.com/pivora.git"
+    "url": "https://github.com/ehoneahobed/pivora.git"
   },
   "bugs": {
-    "url": "https://example.com/pivora/support"
+    "url": "https://github.com/ehoneahobed/pivora/issues"
   },
   "devDependencies": {
     "@wordpress/env": "^10.30.0",
@@ -41,6 +41,8 @@
     "check:php": "wp-env run cli composer --working-dir=/var/www/html/wp-content/themes/pivora run check:php",
     "check:php:fix": "wp-env run cli composer --working-dir=/var/www/html/wp-content/themes/pivora run fix:php",
     "check:json": "wp-scripts lint-pkg-json",
-    "check": "npm run check:json && npm run lint:css && npm run check:php"
+    "check": "npm run check:json && npm run lint:css && npm run check:php",
+    "setup:demo": "wp-env run cli bash /var/www/html/wp-content/themes/pivora/scripts/setup-demo.sh",
+    "setup:demo:full": "PIVORA_INSTALL_WOO=1 npm run setup:demo"
   }
 }

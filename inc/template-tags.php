@@ -25,3 +25,13 @@ function pivora_body_classes( array $classes ): array {
 	return $classes;
 }
 add_filter( 'body_class', 'pivora_body_classes' );
+
+/**
+ * Returns a sanitized front-end URL for pattern and template links.
+ *
+ * @param string $path Site path relative to home, e.g. `/blog/` or `/#patterns`.
+ * @return string
+ */
+function pivora_url( string $path = '/' ): string {
+	return esc_url( home_url( $path ) );
+}

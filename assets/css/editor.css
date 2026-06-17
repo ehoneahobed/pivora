@@ -133,16 +133,56 @@ body {
 	color: var(--wp--preset--color--white);
 }
 
+.editor-styles-wrapper .pivora-pricing-section .pivora-pricing {
+	display: grid !important;
+	gap: var(--wp--preset--spacing--60);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.editor-styles-wrapper .pivora-price-card {
+	border-radius: 18px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
 .editor-styles-wrapper .pivora-project-card {
 	background: var(--wp--preset--color--cloud);
 	border: 1px solid var(--wp--preset--color--line);
-	border-radius: var(--wp--custom--border-radius--large);
+	border-radius: 18px;
 	padding: var(--wp--preset--spacing--70);
 }
 
+.editor-styles-wrapper .pivora-project-card--accent {
+	background: var(--wp--preset--color--ink);
+	color: var(--wp--preset--color--white);
+}
+
+.editor-styles-wrapper .pivora-project-card--highlight {
+	background: linear-gradient(145deg, var(--wp--preset--color--blue), var(--wp--preset--color--teal));
+	color: var(--wp--preset--color--white);
+}
+
 .editor-styles-wrapper .pivora-editorial-feature {
-	border-bottom: 1px solid var(--wp--preset--color--line);
-	border-top: 1px solid var(--wp--preset--color--line);
+	background: var(--wp--preset--color--cloud);
+}
+
+.editor-styles-wrapper .pivora-editorial-feature__visual {
+	background: linear-gradient(160deg, rgba(15, 118, 110, 0.12), rgba(37, 99, 235, 0.18));
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 18px;
+	min-height: 18rem;
+	padding: var(--wp--preset--spacing--70);
+}
+
+.editor-styles-wrapper .pivora-store-hero {
+	background: var(--wp--preset--color--cloud);
+}
+
+.editor-styles-wrapper .pivora-store-benefits {
+	display: grid !important;
+	gap: 0;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 

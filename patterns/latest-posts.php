@@ -33,8 +33,8 @@
 
 			<!-- wp:buttons {"className":"pivora-posts-section__action"} -->
 			<div class="wp-block-buttons pivora-posts-section__action">
-				<!-- wp:button {"className":"is-style-outline"} -->
-				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'View Articles', 'pivora' ); ?></a></div>
+				<!-- wp:button {"className":"is-style-outline","url":"<?php echo esc_url( home_url( '/blog/' ) ); ?>"} -->
+				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'View Articles', 'pivora' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->

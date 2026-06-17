@@ -1,12 +1,29 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","className":"site-main","layout":{"type":"constrained"}} -->
-<main id="content" class="wp-block-group site-main">
-	<!-- wp:post-title {"level":1,"align":"wide"} /-->
-	<!-- wp:post-featured-image {"align":"wide","aspectRatio":"16/9"} /-->
-	<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+<!-- wp:group {"tagName":"main","className":"site-main site-main--page","layout":{"type":"constrained"}} -->
+<main id="content" class="wp-block-group site-main site-main--page">
+	<!-- wp:group {"align":"full","className":"pivora-page__header-band","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull pivora-page__header-band">
+		<!-- wp:group {"align":"wide","className":"pivora-page__header","layout":{"type":"default"}} -->
+		<div class="wp-block-group alignwide pivora-page__header">
+			<!-- wp:post-title {"level":1} /-->
+		</div>
+		<!-- /wp:group -->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"tagName":"article","className":"pivora-page","layout":{"type":"default"}} -->
+	<article class="wp-block-group pivora-page">
+		<!-- wp:post-featured-image {"align":"wide","className":"pivora-page__featured","aspectRatio":"16/9"} /-->
+
+		<!-- wp:group {"align":"wide","className":"pivora-page__content","layout":{"type":"default"}} -->
+		<div class="wp-block-group alignwide pivora-page__content">
+			<!-- wp:post-content {"layout":{"type":"constrained","contentSize":"720px"}} /-->
+		</div>
+		<!-- /wp:group -->
+	</article>
+	<!-- /wp:group -->
 </main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
-

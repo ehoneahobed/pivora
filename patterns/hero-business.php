@@ -27,12 +27,12 @@
 
 		<!-- wp:buttons {"className":"pivora-hero__actions"} -->
 		<div class="wp-block-buttons pivora-hero__actions">
-			<!-- wp:button -->
-			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Explore Patterns', 'pivora' ); ?></a></div>
+			<!-- wp:button {"url":"<?php echo esc_url( home_url( '/#patterns' ) ); ?>"} -->
+			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/#patterns' ) ); ?>"><?php esc_html_e( 'Explore Patterns', 'pivora' ); ?></a></div>
 			<!-- /wp:button -->
 
-			<!-- wp:button {"className":"is-style-outline"} -->
-			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'View Templates', 'pivora' ); ?></a></div>
+			<!-- wp:button {"className":"is-style-outline","url":"<?php echo esc_url( home_url( '/blog/' ) ); ?>"} -->
+			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><?php esc_html_e( 'View Templates', 'pivora' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

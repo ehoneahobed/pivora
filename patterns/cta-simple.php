@@ -33,8 +33,8 @@
 
 			<!-- wp:buttons {"className":"pivora-cta__action"} -->
 			<div class="wp-block-buttons pivora-cta__action">
-				<!-- wp:button -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Start Building', 'pivora' ); ?></a></div>
+				<!-- wp:button {"url":"<?php echo esc_url( home_url( '/contact/' ) ); ?>"} -->
+				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Start Building', 'pivora' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->

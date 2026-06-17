@@ -1,0 +1,45 @@
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main site-main--single site-main--single-minimal","layout":{"type":"constrained"}} -->
+<main id="content" class="wp-block-group site-main site-main--single site-main--single-minimal">
+	<!-- wp:group {"tagName":"article","className":"pivora-single pivora-single--minimal","layout":{"type":"default"}} -->
+	<article class="wp-block-group pivora-single pivora-single--minimal">
+		<!-- wp:group {"align":"wide","className":"pivora-single__intro","layout":{"type":"default"}} -->
+		<div class="wp-block-group alignwide pivora-single__intro">
+			<!-- wp:group {"className":"post-meta pivora-single__meta","layout":{"type":"flex","flexWrap":"wrap"}} -->
+			<div class="wp-block-group post-meta pivora-single__meta">
+				<!-- wp:post-date {"fontSize":"small"} /-->
+				<!-- wp:post-terms {"term":"category","fontSize":"small"} /-->
+			</div>
+			<!-- /wp:group -->
+
+			<!-- wp:post-title {"level":1} /-->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:post-featured-image {"align":"wide","className":"pivora-single__featured","aspectRatio":"16/9"} /-->
+
+		<!-- wp:group {"align":"wide","className":"pivora-single__content","layout":{"type":"default"}} -->
+		<div class="wp-block-group alignwide pivora-single__content">
+			<!-- wp:post-content {"layout":{"type":"constrained","contentSize":"640px"}} /-->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:group {"align":"wide","className":"pivora-single__footer","layout":{"type":"default"}} -->
+		<div class="wp-block-group alignwide pivora-single__footer">
+			<!-- wp:post-terms {"term":"post_tag","className":"pivora-single__tags","fontSize":"small"} /-->
+
+			<!-- wp:group {"className":"pivora-single__nav","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+			<div class="wp-block-group pivora-single__nav">
+				<!-- wp:post-navigation-link {"type":"previous","label":"Previous article"} /-->
+				<!-- wp:post-navigation-link {"label":"Next article"} /-->
+			</div>
+			<!-- /wp:group -->
+		</div>
+		<!-- /wp:group -->
+	</article>
+	<!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

@@ -248,6 +248,31 @@
       "area": "footer",
       "name": "footer",
       "title": "Footer"
+    },
+    {
+      "area": "blog",
+      "name": "blog-query",
+      "title": "Blog Query"
+    },
+    {
+      "area": "blog",
+      "name": "blog-query-grid",
+      "title": "Blog Query: Card Grid"
+    },
+    {
+      "area": "blog",
+      "name": "blog-query-list",
+      "title": "Blog Query: Split List"
+    },
+    {
+      "area": "blog",
+      "name": "blog-query-magazine",
+      "title": "Blog Query: Magazine Lead"
+    },
+    {
+      "area": "blog",
+      "name": "blog-query-compact",
+      "title": "Blog Query: Compact Cards"
     }
   ],
   "customTemplates": [
@@ -271,6 +296,27 @@
         "page"
       ],
       "title": "Blank Canvas"
+    },
+    {
+      "name": "single-magazine",
+      "postTypes": [
+        "post"
+      ],
+      "title": "Single: Magazine Hero"
+    },
+    {
+      "name": "single-minimal",
+      "postTypes": [
+        "post"
+      ],
+      "title": "Single: Minimal Focus"
+    },
+    {
+      "name": "single-feature",
+      "postTypes": [
+        "post"
+      ],
+      "title": "Single: Feature Split"
     }
   ]
 }

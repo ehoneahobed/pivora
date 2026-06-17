@@ -1,0 +1,30 @@
+<!-- wp:group {"align":"wide","className":"pivora-blog-archive","layout":{"type":"default"}} -->
+<div class="wp-block-group alignwide pivora-blog-archive">
+	<!-- wp:query {"queryId":10,"query":{"perPage":9,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"className":"pivora-blog-query pivora-blog-query--grid"} -->
+	<div class="wp-block-query pivora-blog-query pivora-blog-query--grid">
+		<!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+			<!-- wp:group {"tagName":"article","className":"pivora-card pivora-post-card","layout":{"type":"constrained"}} -->
+			<article class="wp-block-group pivora-card pivora-post-card">
+				<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/10"} /-->
+				<!-- wp:post-title {"isLink":true,"fontSize":"large"} /-->
+				<!-- wp:post-excerpt {"moreText":"Read article","excerptLength":22} /-->
+				<!-- wp:post-date {"fontSize":"small","className":"pivora-post-card__date"} /-->
+			</article>
+			<!-- /wp:group -->
+		<!-- /wp:post-template -->
+
+		<!-- wp:query-pagination {"className":"pivora-blog-pagination","layout":{"type":"flex","justifyContent":"space-between"}} -->
+			<!-- wp:query-pagination-previous /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+
+		<!-- wp:query-no-results -->
+			<!-- wp:paragraph {"className":"pivora-blog-empty"} -->
+			<p class="pivora-blog-empty">No posts were found.</p>
+			<!-- /wp:paragraph -->
+		<!-- /wp:query-no-results -->
+	</div>
+	<!-- /wp:query -->
+</div>
+<!-- /wp:group -->
