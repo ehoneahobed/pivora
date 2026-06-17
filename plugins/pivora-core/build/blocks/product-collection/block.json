@@ -1,0 +1,73 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pivora/product-collection",
+  "version": "1.0.0",
+  "title": "Product Collection",
+  "category": "pivora",
+  "icon": "store",
+  "description": "Curated WooCommerce products by hand-pick or category.",
+  "keywords": [
+    "woocommerce",
+    "products",
+    "collection",
+    "category"
+  ],
+  "textdomain": "pivora-core",
+  "attributes": {
+    "source": {
+      "type": "string",
+      "default": "latest"
+    },
+    "categoryId": {
+      "type": "number",
+      "default": 0
+    },
+    "productIds": {
+      "type": "array",
+      "default": []
+    },
+    "postsToShow": {
+      "type": "number",
+      "default": 4
+    },
+    "columns": {
+      "type": "number",
+      "default": 4
+    },
+    "orderBy": {
+      "type": "string",
+      "default": "date"
+    },
+    "order": {
+      "type": "string",
+      "default": "desc"
+    },
+    "showPrice": {
+      "type": "boolean",
+      "default": true
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "View product"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "left",
+      "center",
+      "right",
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "style": "file:./style-index.css"
+}

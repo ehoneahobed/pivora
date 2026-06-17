@@ -196,10 +196,10 @@ plugins/pivora-core/
 
 | # | Item | Status | Files / notes |
 |---|------|--------|----------------|
-| P5.1 | **Mini-cart block** — drawer or dropdown, WC Blocks compatible | pending | `src/blocks/mini-cart/` |
-| P5.2 | **Free shipping progress bar** block | pending | Requires WC cart session |
-| P5.3 | **Curated collection block** — hand-pick products or category | pending | Extends P2.5 |
-| P5.4 | Store kit uses live products when WC sample data present | pending | `demo-import.php` |
+| P5.1 | **Mini-cart block** — drawer or dropdown, WC Blocks compatible | done | `src/blocks/mini-cart/` |
+| P5.2 | **Free shipping progress bar** block | done | `src/blocks/shipping-progress/` |
+| P5.3 | **Curated collection block** — hand-pick products or category | done | `src/blocks/product-collection/` |
+| P5.4 | Store kit uses live products when WC sample data present | done | `demo-import.php` + `seed_store_products()` |
 
 **Acceptance criteria**
 
@@ -253,6 +253,9 @@ Update this table when adding blocks.
 | Process steps | `pivora/process-steps` | No | `process-steps` | Core ordered list |
 | Comparison tabs | `pivora/comparison-tabs` | Yes (`view.js`) | `comparison-table` | Core table |
 | Woo product grid | `pivora/product-grid` | No | `product-spotlight` | Core query loop |
+| Product collection | `pivora/product-collection` | No | store patterns | Core query loop |
+| Mini cart | `pivora/mini-cart` | Yes (`view.js`) | — | — |
+| Shipping progress | `pivora/shipping-progress` | Yes (`view.js`) | — | — |
 | Lead capture | `pivora/lead-capture` | No | `lead-capture-band`, contact, newsletter | Paragraph placeholder |
 | Form embed | `pivora/form-embed` | No | contact (when form plugin active) | Plugin form blocks |
 | Slide-in CTA | `pivora/slide-in-cta` | Yes (`view.js`) | — | — |

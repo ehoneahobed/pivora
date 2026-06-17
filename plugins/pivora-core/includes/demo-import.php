@@ -334,6 +334,8 @@ function pivora_core_prepare_woocommerce_demo() {
 		WC_Install::create_pages();
 	}
 
+	pivora_core_seed_store_products();
+
 	return true;
 }
 

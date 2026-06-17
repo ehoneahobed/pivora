@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pivora/shipping-progress",
+  "version": "1.0.0",
+  "title": "Shipping Progress",
+  "category": "pivora",
+  "icon": "car",
+  "description": "Free shipping progress bar based on cart subtotal.",
+  "keywords": [
+    "woocommerce",
+    "shipping",
+    "free shipping",
+    "cart"
+  ],
+  "textdomain": "pivora-core",
+  "attributes": {
+    "goalAmount": {
+      "type": "number",
+      "default": 0
+    },
+    "message": {
+      "type": "string",
+      "default": "Add {amount} more for free shipping."
+    },
+    "successMessage": {
+      "type": "string",
+      "default": "You unlocked free shipping."
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "left",
+      "center",
+      "right",
+      "wide",
+      "full"
+    ],
+    "color": {
+      "text": true,
+      "background": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php",
+  "style": "file:./style-index.css"
+}

@@ -1,6 +1,6 @@
 <?php
 /**
- * Product grid block render callback.
+ * Product collection block render callback.
  *
  * @package Pivora_Core
  *
@@ -16,22 +16,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! pivora_core_is_woocommerce_active() ) {
-	pivora_core_render_woocommerce_inactive_notice( 'pivora-product-grid' );
+	pivora_core_render_woocommerce_inactive_notice( 'pivora-product-collection' );
 	return;
 }
 
-$columns    = isset( $attributes['columns'] ) ? max( 1, min( 4, (int) $attributes['columns'] ) ) : 3;
+$columns    = isset( $attributes['columns'] ) ? max( 1, min( 4, (int) $attributes['columns'] ) ) : 4;
 $query_args = pivora_core_build_product_query_args( $attributes );
 $query      = new WP_Query( $query_args );
 
 $wrapper_attributes = get_block_wrapper_attributes(
 	array(
-		'class' => 'pivora-product-grid pivora-product-spotlight__grid',
+		'class' => 'pivora-product-collection pivora-product-grid',
 	)
 );
 
 if ( ! $query->have_posts() ) {
-	echo '<div ' . $wrapper_attributes . '><p class="pivora-product-grid__empty">' . esc_html__( 'Add products to your store to populate this grid.', 'pivora-core' ) . '</p></div>';
+	echo '<div ' . $wrapper_attributes . '><p class="pivora-product-grid__empty">' . esc_html__( 'Add products or choose a category to populate this collection.', 'pivora-core' ) . '</p></div>';
 	wp_reset_postdata();
 	return;
 }

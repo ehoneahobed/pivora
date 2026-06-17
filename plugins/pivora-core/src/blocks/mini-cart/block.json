@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pivora/mini-cart",
+	"version": "1.0.0",
+	"title": "Mini Cart",
+	"category": "pivora",
+	"icon": "cart",
+	"description": "Dropdown mini cart with live WooCommerce fragments.",
+	"keywords": [ "woocommerce", "cart", "mini-cart", "shop" ],
+	"textdomain": "pivora-core",
+	"attributes": {
+		"cartLabel": {
+			"type": "string",
+			"default": "Cart"
+		},
+		"showCount": {
+			"type": "boolean",
+			"default": true
+		},
+		"checkoutText": {
+			"type": "string",
+			"default": "Checkout"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "left", "center", "right", "wide", "full" ],
+		"spacing": { "margin": true, "padding": true }
+	},
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php",
+	"style": "file:./style-index.css"
+}

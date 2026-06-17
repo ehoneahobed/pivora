@@ -12,6 +12,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Lighthouse performance and accessibility gates on representative pages
 - WordPress.org / public release after stability is confirmed
 
+## [0.8.0] - 2026-06-17
+
+Pivora Core plugin only (theme remains 0.1.0).
+
+### Added
+
+**Phase 5 — WooCommerce behavior**
+
+- **Mini cart** (`pivora/mini-cart`) — dropdown cart with WooCommerce fragments and accessible toggle
+- **Shipping progress** (`pivora/shipping-progress`) — free shipping goal bar with auto-detect or manual threshold
+- **Product collection** (`pivora/product-collection`) — latest, category, or hand-picked product queries
+- Shared WooCommerce helpers in `includes/integrations/woocommerce.php`
+
+### Changed
+
+- **Product grid** render path now uses shared product card helpers
+- Store kit WooCommerce import seeds demo products when the catalog is empty
+
 ## [0.7.0] - 2026-06-17
 
 Pivora Core plugin only (theme remains 0.1.0).
@@ -168,7 +186,9 @@ Pre-release preview. Feature-complete for testing; stability and full QA are pen
 - Editor grid and full-width breakout rules for split hero and CTA layouts
 - Blog toolbar no longer uses shortcodes (Theme Check compliant)
 
-[Unreleased]: https://github.com/ehoneahobed/pivora/compare/0.4.0...HEAD
+[Unreleased]: https://github.com/ehoneahobed/pivora/compare/0.8.0...HEAD
+[0.8.0]: https://github.com/ehoneahobed/pivora/releases/tag/0.8.0
+[0.7.0]: https://github.com/ehoneahobed/pivora/releases/tag/0.7.0
 [0.4.0]: https://github.com/ehoneahobed/pivora/releases/tag/0.4.0
 [0.3.0]: https://github.com/ehoneahobed/pivora/compare/0.2.0...0.3.0
 [0.2.0]: https://github.com/ehoneahobed/pivora/compare/0.1.0...0.2.0
