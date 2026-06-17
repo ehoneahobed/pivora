@@ -109,6 +109,27 @@ function pivora_register_patterns(): void {
 			'viewport'   => 1440,
 		),
 		array(
+			'name'       => 'pivora/hero-fintech',
+			'title'      => __( 'Fintech hero (app showcase)', 'pivora' ),
+			'categories' => array( 'pivora-saas', 'pivora-business' ),
+			'file'       => 'patterns/hero-fintech.php',
+			'viewport'   => 1440,
+		),
+		array(
+			'name'       => 'pivora/hero-jobs-dark',
+			'title'      => __( 'Jobs hero (dark search)', 'pivora' ),
+			'categories' => array( 'pivora-saas', 'pivora-business' ),
+			'file'       => 'patterns/hero-jobs-dark.php',
+			'viewport'   => 1440,
+		),
+		array(
+			'name'       => 'pivora/hero-jobs-search',
+			'title'      => __( 'Jobs hero (search + visual)', 'pivora' ),
+			'categories' => array( 'pivora-saas', 'pivora-business' ),
+			'file'       => 'patterns/hero-jobs-search.php',
+			'viewport'   => 1440,
+		),
+		array(
 			'name'       => 'pivora/metrics-band',
 			'title'      => __( 'Metrics band', 'pivora' ),
 			'categories' => array( 'pivora-business', 'pivora-sections' ),

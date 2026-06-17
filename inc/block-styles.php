@@ -25,6 +25,9 @@ function pivora_register_block_styles(): void {
 		'pivora-hero-teal-outline' => __( 'Hero teal outline', 'pivora' ),
 		'pivora-hero-green'      => __( 'Hero green', 'pivora' ),
 		'pivora-hero-ink-outline' => __( 'Hero ink outline', 'pivora' ),
+		'pivora-hero-purple'     => __( 'Hero purple', 'pivora' ),
+		'pivora-hero-purple-soft' => __( 'Hero purple soft', 'pivora' ),
+		'pivora-hero-ink'        => __( 'Hero ink', 'pivora' ),
 	);
 
 	foreach ( $button_styles as $slug => $label ) {

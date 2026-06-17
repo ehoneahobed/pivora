@@ -52,6 +52,13 @@
 	text-transform: lowercase;
 }
 
+.pivora-hero__highlight--purple-underline {
+	box-shadow: inset 0 -0.55em 0 rgba(91, 33, 182, 0.22);
+	color: inherit;
+	display: inline-block;
+	padding-inline: 0.05em;
+}
+
 .pivora-hero__trust {
 	align-items: center;
 	gap: var(--wp--preset--spacing--50);
@@ -490,6 +497,435 @@
 	margin: 0;
 }
 
+/* Fintech app showcase hero */
+.pivora-hero--fintech {
+	background: var(--wp--preset--color--white);
+	border-bottom: 1px solid var(--wp--preset--color--line);
+	padding-block: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.pivora-hero--fintech .pivora-hero__fintech-shell {
+	margin-inline: auto;
+	max-width: min(1320px, 100%);
+	width: 100%;
+}
+
+.pivora-hero--fintech .pivora-hero__fintech-columns {
+	align-items: center;
+	display: grid !important;
+	gap: clamp(0.75rem, 1.5vw, 1.25rem);
+	grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.pivora-hero--fintech .pivora-hero__fintech-columns > .wp-block-column {
+	flex-basis: auto !important;
+	width: auto !important;
+}
+
+.pivora-hero--fintech .pivora-hero__column--copy {
+	padding-inline-end: 0;
+}
+
+.pivora-hero--fintech .pivora-hero__column--visual {
+	padding-inline-start: 0;
+}
+
+.pivora-hero--fintech .pivora-hero__title {
+	font-size: clamp(2.2rem, 3.8vw, 3.35rem) !important;
+	line-height: 1.06;
+	max-width: none;
+	text-transform: none;
+}
+
+.pivora-hero--fintech .pivora-hero__lede {
+	max-width: 36rem;
+}
+
+.pivora-hero--fintech .pivora-hero__announcement {
+	align-items: center;
+	gap: var(--wp--preset--spacing--40);
+	margin-block-end: var(--wp--preset--spacing--60);
+}
+
+.pivora-hero--fintech .pivora-hero__announcement-badge {
+	background: #5b21b6;
+	border-radius: 999px;
+	color: var(--wp--preset--color--white);
+	font-size: 0.68rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	margin: 0;
+	padding: 0.25rem 0.55rem;
+	text-transform: uppercase;
+}
+
+.pivora-hero--fintech .pivora-hero__announcement-copy {
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+	margin: 0;
+}
+
+.pivora-hero--fintech .pivora-hero__store-actions {
+	gap: var(--wp--preset--spacing--40);
+	margin-block-start: var(--wp--preset--spacing--70);
+}
+
+.pivora-hero--fintech .pivora-hero__rating {
+	align-items: center;
+	gap: var(--wp--preset--spacing--40);
+	margin-block-start: var(--wp--preset--spacing--60);
+}
+
+.pivora-hero--fintech .pivora-hero__rating-label,
+.pivora-hero--fintech .pivora-hero__rating-copy {
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+	margin: 0;
+}
+
+.pivora-hero--fintech .pivora-hero__device {
+	background: linear-gradient(135deg, #7c3aed, #f97316);
+	border-radius: 28px;
+	margin-inline: 0;
+	max-width: none;
+	min-height: clamp(20rem, 32vw, 26rem);
+	padding: var(--wp--preset--spacing--60);
+	position: relative;
+	width: 100%;
+}
+
+.pivora-hero--fintech .pivora-hero__device-screen {
+	background: var(--wp--preset--color--white);
+	border-radius: 22px;
+	box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18);
+	margin-inline: auto;
+	max-width: 13rem;
+	padding: var(--wp--preset--spacing--70) var(--wp--preset--spacing--50);
+	text-align: center;
+}
+
+.pivora-hero--fintech .pivora-hero__device-score {
+	color: #5b21b6;
+	font-size: 2.4rem;
+	font-weight: 900;
+	line-height: 1;
+	margin: 0;
+}
+
+.pivora-hero--fintech .pivora-hero__device-label {
+	font-size: 0.95rem;
+	font-weight: 800;
+	margin: var(--wp--preset--spacing--30) 0 0;
+}
+
+.pivora-hero--fintech .pivora-hero__device-sub {
+	color: var(--wp--preset--color--slate);
+	font-size: 0.72rem;
+	margin: var(--wp--preset--spacing--20) 0 0;
+}
+
+.pivora-hero--fintech .pivora-hero__device-card {
+	background: var(--wp--preset--color--white);
+	border-radius: 12px;
+	bottom: 1.25rem;
+	box-shadow: var(--wp--custom--shadow--soft);
+	padding: var(--wp--preset--spacing--40);
+	position: absolute;
+	right: -0.75rem;
+	width: min(11rem, 70%);
+}
+
+.pivora-hero--fintech .pivora-hero__device-card-title {
+	font-size: 0.72rem;
+	font-weight: 700;
+	line-height: 1.4;
+	margin: 0;
+}
+
+.pivora-hero--fintech .pivora-hero__logos--inline {
+	align-items: center;
+	border-top: 1px solid var(--wp--preset--color--line);
+	gap: var(--wp--preset--spacing--50) var(--wp--preset--spacing--70);
+	margin-block-start: clamp(2.5rem, 5vw, 3.5rem);
+	padding-block-start: var(--wp--preset--spacing--70);
+}
+
+.pivora-hero--fintech .pivora-hero__logos--inline .pivora-hero__logos-label {
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	margin: 0;
+}
+
+.pivora-hero--fintech .pivora-hero__logos--inline .pivora-hero__logo-item {
+	color: var(--wp--preset--color--ink);
+	font-size: 1rem;
+	font-weight: 800;
+	margin: 0;
+	opacity: 0.7;
+}
+
+/* Dark jobs search hero */
+.pivora-hero--jobs-dark {
+	background:
+		radial-gradient(circle at 12% 18%, rgba(167, 139, 250, 0.35), transparent 42%),
+		radial-gradient(circle at 88% 72%, rgba(124, 58, 237, 0.28), transparent 38%),
+		linear-gradient(145deg, #4c1d95, #312e81 58%, #1e1b4b);
+	border-bottom: 0;
+	color: var(--wp--preset--color--white);
+	overflow: clip;
+	padding-block: clamp(4rem, 8vw, 6rem);
+	position: relative;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__lede {
+	color: rgba(255, 255, 255, 0.82);
+	max-width: 34rem;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__title {
+	color: var(--wp--preset--color--white);
+	font-size: clamp(2.4rem, 4.5vw, 3.8rem) !important;
+	line-height: 1.02;
+	max-width: 12ch;
+	text-transform: none;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__jobs-dark-columns {
+	align-items: center;
+	display: grid !important;
+	gap: clamp(1.5rem, 3vw, 2.5rem);
+	grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+
+.pivora-hero--jobs-dark .pivora-hero__jobs-dark-columns > .wp-block-column {
+	flex-basis: auto !important;
+	width: auto !important;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__column--profiles {
+	max-width: 18rem;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__job-search {
+	align-items: center;
+	background: var(--wp--preset--color--white);
+	border-radius: 999px;
+	box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+	gap: var(--wp--preset--spacing--30);
+	margin-block-start: var(--wp--preset--spacing--70);
+	max-width: 32rem;
+	padding: 0.35rem;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__job-search-input {
+	color: var(--wp--preset--color--slate);
+	flex: 1;
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0;
+	min-width: 0;
+	padding: 0.85rem 1rem;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__job-search-action {
+	margin: 0;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__candidate {
+	align-items: center;
+	display: grid;
+	gap: var(--wp--preset--spacing--40);
+	grid-template-columns: auto minmax(0, 1fr);
+	margin-block-end: var(--wp--preset--spacing--60);
+}
+
+.pivora-hero--jobs-dark .pivora-hero__candidate--offset {
+	margin-inline-start: 1.5rem;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__candidate-avatar {
+	align-items: center;
+	border: 2px dashed rgba(255, 255, 255, 0.55);
+	border-radius: 999px;
+	color: var(--wp--preset--color--white);
+	display: inline-flex;
+	font-size: 0.75rem;
+	font-weight: 800;
+	height: 3.25rem;
+	justify-content: center;
+	margin: 0;
+	width: 3.25rem;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__candidate-card {
+	background: var(--wp--preset--color--white);
+	border-radius: 14px;
+	box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
+	color: var(--wp--preset--color--ink);
+	padding: var(--wp--preset--spacing--50);
+}
+
+.pivora-hero--jobs-dark .pivora-hero__candidate-name {
+	font-size: 0.92rem;
+	font-weight: 800;
+	margin: 0 0 var(--wp--preset--spacing--20);
+}
+
+.pivora-hero--jobs-dark .pivora-hero__candidate-status {
+	color: var(--wp--preset--color--slate);
+	font-size: 0.78rem;
+	margin: 0 0 var(--wp--preset--spacing--30);
+}
+
+.pivora-hero--jobs-dark .pivora-hero__candidate-meta {
+	align-items: center;
+	gap: var(--wp--preset--spacing--30);
+}
+
+.pivora-hero--jobs-dark .pivora-hero__status-badge {
+	border-radius: 999px;
+	font-size: 0.68rem;
+	font-weight: 800;
+	margin: 0;
+	padding: 0.2rem 0.55rem;
+	text-transform: uppercase;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__status-badge--done {
+	background: rgba(15, 118, 110, 0.14);
+	color: var(--wp--preset--color--teal);
+}
+
+.pivora-hero--jobs-dark .pivora-hero__status-badge--pending {
+	background: rgba(245, 158, 11, 0.16);
+	color: #b45309;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__logo-carousel {
+	align-items: center;
+	background: var(--wp--preset--color--white);
+	border-radius: 18px 18px 0 0;
+	gap: var(--wp--preset--spacing--60);
+	justify-content: center;
+	margin-block-start: clamp(2.5rem, 5vw, 3.5rem);
+	padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--70);
+}
+
+.pivora-hero--jobs-dark .pivora-hero__logo-carousel .pivora-hero__logo-item {
+	color: var(--wp--preset--color--ink);
+	font-size: 1rem;
+	font-weight: 800;
+	margin: 0;
+	opacity: 0.75;
+}
+
+.pivora-hero--jobs-dark .pivora-hero__carousel-control {
+	color: var(--wp--preset--color--slate);
+	font-size: 1.35rem;
+	font-weight: 700;
+	margin: 0;
+}
+
+/* Light jobs search hero */
+.pivora-hero--jobs-search {
+	background: var(--wp--preset--color--white);
+	border-bottom: 1px solid var(--wp--preset--color--line);
+	padding-block: clamp(3.5rem, 7vw, 5.5rem);
+}
+
+.pivora-hero--jobs-search .pivora-hero__jobs-search-columns {
+	align-items: center;
+	display: grid !important;
+	gap: clamp(1.5rem, 3vw, 2.5rem);
+	grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+}
+
+.pivora-hero--jobs-search .pivora-hero__jobs-search-columns > .wp-block-column {
+	flex-basis: auto !important;
+	width: auto !important;
+}
+
+.pivora-hero--jobs-search .pivora-hero__title {
+	font-size: clamp(2.2rem, 3.8vw, 3.2rem) !important;
+	line-height: 1.08;
+	max-width: 14ch;
+	text-transform: none;
+}
+
+.pivora-hero--jobs-search .pivora-hero__job-search--split {
+	align-items: stretch;
+	background: var(--wp--preset--color--white);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 14px;
+	box-shadow: var(--wp--custom--shadow--soft);
+	flex-wrap: nowrap;
+	gap: 0;
+	margin-block-start: var(--wp--preset--spacing--70);
+	max-width: 36rem;
+	overflow: clip;
+}
+
+.pivora-hero--jobs-search .pivora-hero__job-search-field {
+	align-items: center;
+	border-right: 1px solid var(--wp--preset--color--line);
+	color: var(--wp--preset--color--slate);
+	display: inline-flex;
+	flex: 1;
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0;
+	min-width: 0;
+	padding: 0.9rem 1rem;
+}
+
+.pivora-hero--jobs-search .pivora-hero__job-search-field:last-of-type {
+	border-right: 0;
+}
+
+.pivora-hero--jobs-search .pivora-hero__job-search-action {
+	margin: 0;
+}
+
+.pivora-hero--jobs-search .pivora-hero__job-search-action .wp-block-button__link {
+	border-radius: 0 12px 12px 0 !important;
+	height: 100%;
+}
+
+.pivora-hero--jobs-search .pivora-hero__tags {
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+	margin-block-start: var(--wp--preset--spacing--50);
+}
+
+.pivora-hero--jobs-search .pivora-hero__jobs-visual {
+	background:
+		linear-gradient(125deg, rgba(91, 33, 182, 0.08), rgba(91, 33, 182, 0.02)),
+		repeating-linear-gradient(115deg, rgba(91, 33, 182, 0.14) 0 2px, transparent 2px 42px);
+	border-radius: 0 0 0 42%;
+	margin-inline-start: auto;
+	max-width: 22rem;
+	min-height: 20rem;
+	padding: var(--wp--preset--spacing--70);
+	position: relative;
+}
+
+.pivora-hero--jobs-search .pivora-hero__jobs-figure {
+	align-items: flex-end;
+	background: linear-gradient(180deg, rgba(37, 99, 235, 0.12), rgba(15, 118, 110, 0.18));
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 18px;
+	color: var(--wp--preset--color--slate);
+	display: flex;
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+	justify-content: center;
+	margin: 0;
+	min-height: 16rem;
+	padding: var(--wp--preset--spacing--60);
+	text-align: center;
+}
+
 @media (max-width: 1024px) {
 
 	.pivora-hero--saas-split .pivora-hero__columns {
@@ -504,5 +940,42 @@
 	.pivora-hero--saas-signup .pivora-hero__preview-head,
 	.pivora-hero--saas-signup .pivora-hero__preview-row {
 		grid-template-columns: 1fr 1fr;
+	}
+
+	.pivora-hero--fintech .pivora-hero__fintech-columns,
+	.pivora-hero--jobs-dark .pivora-hero__jobs-dark-columns,
+	.pivora-hero--jobs-search .pivora-hero__jobs-search-columns {
+		grid-template-columns: 1fr;
+	}
+
+	.pivora-hero--fintech .pivora-hero__title,
+	.pivora-hero--jobs-dark .pivora-hero__title,
+	.pivora-hero--jobs-search .pivora-hero__title {
+		max-width: none;
+	}
+
+	.pivora-hero--jobs-dark .pivora-hero__column--profiles,
+	.pivora-hero--jobs-search .pivora-hero__jobs-visual {
+		margin-inline: auto;
+		max-width: none;
+	}
+
+	.pivora-hero--jobs-search .pivora-hero__job-search--split {
+		flex-wrap: wrap;
+	}
+
+	.pivora-hero--jobs-search .pivora-hero__job-search-field {
+		border-bottom: 1px solid var(--wp--preset--color--line);
+		border-right: 0;
+		flex: 1 1 100%;
+	}
+
+	.pivora-hero--jobs-search .pivora-hero__job-search-action {
+		flex: 1 1 100%;
+	}
+
+	.pivora-hero--jobs-search .pivora-hero__job-search-action .wp-block-button,
+	.pivora-hero--jobs-search .pivora-hero__job-search-action .wp-block-button__link {
+		width: 100%;
 	}
 }

@@ -129,3 +129,54 @@
 	background: transparent;
 	color: var(--wp--preset--color--teal);
 }
+
+.wp-block-button.is-style-pivora-hero-purple .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-purple .wp-block-button__link.wp-element-button {
+	background: #5b21b6;
+	border: 2px solid #5b21b6;
+	border-radius: 999px;
+	color: var(--wp--preset--color--white);
+	font-weight: 800;
+	padding: 0.85rem 1.35rem;
+}
+
+.wp-block-button.is-style-pivora-hero-purple .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-purple .wp-block-button__link.wp-element-button:hover {
+	background: #4c1d95;
+	border-color: #4c1d95;
+	color: var(--wp--preset--color--white);
+}
+
+.wp-block-button.is-style-pivora-hero-purple-soft .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-purple-soft .wp-block-button__link.wp-element-button {
+	background: #ede9fe;
+	border: 2px solid #ede9fe;
+	border-radius: 999px;
+	color: #5b21b6;
+	font-weight: 800;
+	padding: 0.85rem 1.35rem;
+}
+
+.wp-block-button.is-style-pivora-hero-purple-soft .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-purple-soft .wp-block-button__link.wp-element-button:hover {
+	background: #ddd6fe;
+	border-color: #ddd6fe;
+	color: #4c1d95;
+}
+
+.wp-block-button.is-style-pivora-hero-ink .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-ink .wp-block-button__link.wp-element-button {
+	background: var(--wp--preset--color--ink);
+	border: 2px solid var(--wp--preset--color--ink);
+	border-radius: 999px;
+	color: var(--wp--preset--color--white);
+	font-weight: 700;
+	padding: 0.75rem 1.15rem;
+}
+
+.wp-block-button.is-style-pivora-hero-ink .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-ink .wp-block-button__link.wp-element-button:hover {
+	background: #1e293b;
+	border-color: #1e293b;
+	color: var(--wp--preset--color--white);
+}
