@@ -305,6 +305,13 @@ function pivora_register_patterns(): void {
 			'viewport'   => 1200,
 		),
 		array(
+			'name'       => 'pivora/process-steps',
+			'title'      => __( 'Process steps', 'pivora' ),
+			'categories' => array( 'pivora-sections', 'pivora-business' ),
+			'file'       => 'patterns/process-steps.php',
+			'viewport'   => 1200,
+		),
+		array(
 			'name'       => 'pivora/page-header',
 			'title'      => __( 'Page header', 'pivora' ),
 			'categories' => array( 'pivora-sections', 'pivora-content', 'pivora-editorial' ),

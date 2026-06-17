@@ -12,6 +12,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Lighthouse performance and accessibility gates on representative pages
 - WordPress.org / public release after stability is confirmed
 
+## [0.5.0] - 2026-06-17
+
+Pivora Core plugin only (theme remains 0.1.0).
+
+### Added
+
+**Phase 2 blocks**
+
+- **Stats grid** (`pivora/stats-grid`) — impact metrics with labels, values, and copy; premium/light variants
+- **Process steps** (`pivora/process-steps`) — numbered workflow with vertical or horizontal layout
+- **Comparison tabs** (`pivora/comparison-tabs`) — accessible tabbed feature comparison tables
+- **Product grid** (`pivora/product-grid`) — curated WooCommerce product cards with graceful empty state
+
+### Changed
+
+- `pivora/metrics-band`, `pivora/comparison-table`, and `pivora/product-spotlight` patterns use Core blocks when the plugin is active
+- New `pivora/process-steps` theme pattern with list fallback when Core is inactive
+
 ## [0.4.0] - 2026-06-17
 
 Pivora Core plugin only.

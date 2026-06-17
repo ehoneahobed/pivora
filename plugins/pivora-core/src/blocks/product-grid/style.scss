@@ -1,0 +1,70 @@
+.wp-block-pivora-product-grid.pivora-product-grid {
+	display: block;
+}
+
+.pivora-product-grid__list {
+	display: grid;
+	gap: var(--wp--style--block-gap, var(--wp--preset--spacing--50, 1rem));
+	grid-template-columns: repeat(var(--pivora-product-columns, 3), minmax(0, 1fr));
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pivora-product-grid__item {
+	background: var(--wp--preset--color--white, #fff);
+	border: 1px solid var(--wp--preset--color--line, #e2e8f0);
+	border-radius: var(--wp--custom--border-radius--medium, 8px);
+	display: grid;
+	gap: var(--wp--preset--spacing--40, 0.75rem);
+	overflow: clip;
+	padding: var(--wp--preset--spacing--50, 1rem);
+}
+
+.pivora-product-card__media {
+	display: block;
+}
+
+.pivora-product-card__image {
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+.pivora-product-card__title {
+	font-size: var(--wp--preset--font-size--medium, 1.125rem);
+	margin: 0;
+}
+
+.pivora-product-card__title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pivora-product-card__price {
+	color: var(--wp--preset--color--slate, #334155);
+	margin: 0;
+}
+
+.pivora-product-card__button {
+	border: 1px solid var(--wp--preset--color--line, #e2e8f0);
+	border-radius: 999px;
+	color: inherit;
+	display: inline-flex;
+	justify-self: start;
+	padding: 0.45rem 0.9rem;
+	text-decoration: none;
+}
+
+.pivora-product-grid__empty,
+.pivora-product-grid--empty p {
+	color: var(--wp--preset--color--slate, #64748b);
+	margin: 0;
+}
+
+@media (max-width: 781px) {
+
+	.pivora-product-grid__list {
+		grid-template-columns: 1fr;
+	}
+}

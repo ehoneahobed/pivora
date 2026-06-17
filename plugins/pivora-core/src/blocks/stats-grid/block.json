@@ -1,0 +1,64 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pivora/stats-grid",
+	"version": "1.0.0",
+	"title": "Stats Grid",
+	"category": "pivora",
+	"icon": "chart-bar",
+	"description": "Impact metrics with values, labels, and supporting copy.",
+	"keywords": [ "stats", "metrics", "numbers", "counter" ],
+	"textdomain": "pivora-core",
+	"attributes": {
+		"stats": {
+			"type": "array",
+			"default": [
+				{
+					"value": "90+",
+					"label": "Performance target",
+					"description": "Lean assets and stable layouts support fast representative pages."
+				},
+				{
+					"value": "0",
+					"label": "Plugin territory",
+					"description": "No SEO panels, forms, analytics, or business data trapped in the theme."
+				},
+				{
+					"value": "100%",
+					"label": "Editor-native",
+					"description": "Built around native templates, template parts, style variations, and patterns."
+				}
+			]
+		},
+		"columns": {
+			"type": "number",
+			"default": 3
+		},
+		"variant": {
+			"type": "string",
+			"default": "premium"
+		},
+		"surfaceStyle": {
+			"type": "string",
+			"default": "card"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "left", "center", "right", "wide", "full" ],
+		"color": { "text": true, "background": true, "link": true },
+		"typography": {
+			"fontSize": true,
+			"fontFamily": true,
+			"fontWeight": true,
+			"lineHeight": true,
+			"letterSpacing": true,
+			"textTransform": true
+		},
+		"spacing": { "margin": true, "padding": true, "blockGap": true },
+		"border": { "radius": true, "color": true, "width": true, "style": true }
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php",
+	"style": "file:./style-index.css"
+}

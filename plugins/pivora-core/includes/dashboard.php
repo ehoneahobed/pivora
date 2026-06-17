@@ -120,6 +120,10 @@ function pivora_core_render_blocks_help_page(): void {
 	$blocks = array(
 		'icon-box'               => __( 'Icon box — feature cards with icon, title, and copy.', 'pivora-core' ),
 		'logo-grid'              => __( 'Logo grid — trust bar with text or image logos.', 'pivora-core' ),
+		'stats-grid'             => __( 'Stats grid — impact metrics with labels and copy.', 'pivora-core' ),
+		'process-steps'          => __( 'Process steps — numbered workflow or timeline.', 'pivora-core' ),
+		'comparison-tabs'        => __( 'Comparison tabs — tabbed feature comparison tables.', 'pivora-core' ),
+		'product-grid'           => __( 'Product grid — curated WooCommerce product cards.', 'pivora-core' ),
 		'testimonial-card'       => __( 'Testimonial card — quote, avatar, and role.', 'pivora-core' ),
 		'pricing-card'           => __( 'Pricing card — plan name, price, features, and CTA.', 'pivora-core' ),
 		'pricing-billing-toggle' => __( 'Pricing billing toggle — switch monthly/yearly pricing.', 'pivora-core' ),

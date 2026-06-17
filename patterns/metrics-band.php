@@ -8,6 +8,24 @@
  * @package Pivora
  */
 
+if ( defined( 'PIVORA_CORE_VERSION' ) ) :
+	?>
+<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide">
+	<?php
+	pivora_block(
+		'pivora/stats-grid',
+		array(
+			'variant' => 'premium',
+			'columns' => 3,
+		)
+	);
+	?>
+</div>
+<!-- /wp:group -->
+	<?php
+	return;
+endif;
 ?>
 <!-- wp:group {"align":"wide","className":"pivora-metrics pivora-metrics--premium","layout":{"type":"grid","columnCount":3,"minimumColumnWidth":null}} -->
 <div class="wp-block-group alignwide pivora-metrics pivora-metrics--premium">

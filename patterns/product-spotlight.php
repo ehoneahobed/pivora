@@ -26,6 +26,17 @@ $shop_url = esc_url( home_url( '/shop/' ) );
 		</div>
 		<!-- /wp:group -->
 
+		<?php if ( defined( 'PIVORA_CORE_VERSION' ) && class_exists( 'WooCommerce' ) ) : ?>
+			<?php
+			pivora_block(
+				'pivora/product-grid',
+				array(
+					'postsToShow' => 3,
+					'columns'     => 3,
+				)
+			);
+			?>
+		<?php else : ?>
 		<!-- wp:query {"queryId":11,"query":{"perPage":3,"pages":0,"offset":0,"postType":"product","order":"desc","orderBy":"date","inherit":false},"className":"pivora-product-spotlight__query"} -->
 		<div class="wp-block-query pivora-product-spotlight__query">
 			<!-- wp:post-template {"className":"pivora-product-spotlight__grid","layout":{"type":"grid","columnCount":3}} -->
@@ -47,6 +58,7 @@ $shop_url = esc_url( home_url( '/shop/' ) );
 			<!-- /wp:query-no-results -->
 		</div>
 		<!-- /wp:query -->
+		<?php endif; ?>
 
 		<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 		<div class="wp-block-buttons">

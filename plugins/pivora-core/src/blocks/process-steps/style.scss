@@ -1,0 +1,50 @@
+@use '../shared/surface';
+@use '../shared/card-surfaces';
+
+.wp-block-pivora-process-steps.pivora-process-steps {
+	@include card-surfaces.pivora-core-card-surfaces('pivora-process-steps');
+	counter-reset: pivora-process-step;
+	display: grid;
+	gap: var(--wp--style--block-gap, var(--wp--preset--spacing--50, 1rem));
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pivora-process-steps--layout-horizontal {
+	grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+}
+
+.pivora-process-steps__item {
+	@include surface.pivora-core-card;
+	display: grid;
+	gap: var(--wp--preset--spacing--40, 0.75rem);
+}
+
+.pivora-process-steps--layout-horizontal .pivora-process-steps__item {
+	height: 100%;
+}
+
+.pivora-process-steps--surface-minimal .pivora-process-steps__item {
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+	padding: 0;
+}
+
+.pivora-process-steps__number {
+	@include surface.pivora-core-accent;
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	font-weight: 800;
+	letter-spacing: 0.08em;
+}
+
+.pivora-process-steps__title {
+	font-size: var(--wp--preset--font-size--medium, 1.125rem);
+	margin: 0;
+}
+
+.pivora-process-steps__description {
+	@include surface.pivora-core-muted-copy;
+	margin: 0;
+}

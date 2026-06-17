@@ -1,0 +1,73 @@
+@use '../shared/surface';
+@use '../shared/card-surfaces';
+
+.wp-block-pivora-stats-grid.pivora-stats-grid {
+	@include card-surfaces.pivora-core-card-surfaces('pivora-stats-grid');
+}
+
+.pivora-stats-grid.pivora-metrics--premium {
+	margin-block: calc(clamp(3rem, 5vw, 4.5rem) * -1);
+	position: relative;
+	z-index: 2;
+}
+
+.pivora-stats-grid.pivora-metrics--light {
+	background: var(--wp--preset--color--mist, #f8fafc);
+	border-radius: var(--wp--custom--border-radius--medium, 8px);
+	padding: var(--wp--preset--spacing--60, 1.5rem);
+}
+
+.pivora-stats-grid__list {
+	display: grid;
+	gap: var(--wp--style--block-gap, var(--wp--preset--spacing--50, 1rem));
+	grid-template-columns: repeat(var(--pivora-stats-columns, 3), minmax(0, 1fr));
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pivora-stats-grid__item {
+	@include surface.pivora-core-card;
+	display: grid;
+	gap: var(--wp--preset--spacing--30, 0.5rem);
+}
+
+.pivora-stats-grid--surface-minimal .pivora-stats-grid__item,
+.pivora-stats-grid.pivora-metrics--light .pivora-stats-grid__item {
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+	padding: 0;
+}
+
+.pivora-stats-grid__value {
+	font-size: var(--wp--preset--font-size--x-large, 1.75rem);
+	font-weight: 800;
+	line-height: 1.1;
+	margin: 0;
+}
+
+.pivora-metric__label {
+	color: var(--wp--preset--color--slate, #64748b);
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+.pivora-metric__copy {
+	@include surface.pivora-core-muted-copy;
+	margin: 0;
+}
+
+@media (max-width: 781px) {
+
+	.pivora-stats-grid__list {
+		grid-template-columns: 1fr;
+	}
+
+	.pivora-stats-grid.pivora-metrics--premium {
+		margin-block: 0;
+	}
+}

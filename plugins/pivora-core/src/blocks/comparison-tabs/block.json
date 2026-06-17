@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pivora/comparison-tabs",
+	"version": "1.0.0",
+	"title": "Comparison Tabs",
+	"category": "pivora",
+	"icon": "table-row-after",
+	"description": "Tabbed feature comparison tables for pricing pages.",
+	"keywords": [ "comparison", "table", "pricing", "tabs" ],
+	"textdomain": "pivora-core",
+	"attributes": {
+		"tabs": {
+			"type": "array",
+			"default": [
+				{
+					"label": "All plans",
+					"columns": [ "Starter", "Growth", "Scale" ],
+					"rows": [
+						{
+							"feature": "Core pages",
+							"values": [ "Yes", "Yes", "Yes" ]
+						},
+						{
+							"feature": "Pattern library",
+							"values": [ "Essential", "Full", "Full" ]
+						},
+						{
+							"feature": "Priority support",
+							"values": [ "—", "Email", "Email + onboarding" ]
+						}
+					]
+				}
+			]
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "left", "center", "right", "wide", "full" ],
+		"color": { "text": true, "background": true, "link": true },
+		"typography": {
+			"fontSize": true,
+			"fontFamily": true,
+			"fontWeight": true,
+			"lineHeight": true,
+			"letterSpacing": true,
+			"textTransform": true
+		},
+		"spacing": { "margin": true, "padding": true, "blockGap": true },
+		"border": { "radius": true, "color": true, "width": true, "style": true }
+	},
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php",
+	"style": "file:./style-index.css"
+}

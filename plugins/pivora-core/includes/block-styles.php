@@ -23,6 +23,8 @@ function pivora_core_register_block_styles(): void {
 		'pivora/team-member',
 		'pivora/faq-item',
 		'pivora/logo-grid',
+		'pivora/stats-grid',
+		'pivora/process-steps',
 	);
 
 	$card_styles = array(

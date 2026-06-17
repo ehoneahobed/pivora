@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pivora/product-grid",
+  "version": "1.0.0",
+  "title": "Product Grid",
+  "category": "pivora",
+  "icon": "cart",
+  "description": "Curated WooCommerce product cards.",
+  "keywords": [
+    "woocommerce",
+    "products",
+    "shop",
+    "grid"
+  ],
+  "textdomain": "pivora-core",
+  "attributes": {
+    "productIds": {
+      "type": "array",
+      "default": []
+    },
+    "postsToShow": {
+      "type": "number",
+      "default": 3
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    },
+    "orderBy": {
+      "type": "string",
+      "default": "date"
+    },
+    "order": {
+      "type": "string",
+      "default": "desc"
+    },
+    "showPrice": {
+      "type": "boolean",
+      "default": true
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "View product"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "left",
+      "center",
+      "right",
+      "wide",
+      "full"
+    ],
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "typography": {
+      "fontSize": true,
+      "fontFamily": true,
+      "fontWeight": true,
+      "lineHeight": true,
+      "letterSpacing": true,
+      "textTransform": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true
+    },
+    "border": {
+      "radius": true,
+      "color": true,
+      "width": true,
+      "style": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "style": "file:./style-index.css"
+}

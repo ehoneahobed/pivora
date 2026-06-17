@@ -1,0 +1,67 @@
+.wp-block-pivora-comparison-tabs.pivora-comparison-tabs {
+	display: grid;
+	gap: var(--wp--style--block-gap, var(--wp--preset--spacing--50, 1rem));
+}
+
+.pivora-comparison-tabs__tablist {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--wp--preset--spacing--30, 0.5rem);
+}
+
+.pivora-comparison-tabs__tab {
+	background: var(--wp--preset--color--white, #fff);
+	border: 1px solid var(--wp--preset--color--line, #e2e8f0);
+	border-radius: 999px;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+	padding: 0.45rem 0.95rem;
+}
+
+.pivora-comparison-tabs__tab.is-active {
+	background: var(--wp--preset--color--teal, #0f766e);
+	border-color: transparent;
+	color: var(--wp--preset--color--white, #fff);
+}
+
+.pivora-comparison-tabs__panel {
+	display: none;
+}
+
+.pivora-comparison-tabs__panel.is-active {
+	display: block;
+}
+
+.pivora-comparison-tabs__table-wrap {
+	overflow-x: auto;
+}
+
+.pivora-comparison-tabs__table {
+	border-collapse: collapse;
+	min-width: 32rem;
+	width: 100%;
+}
+
+.pivora-comparison-tabs__table th,
+.pivora-comparison-tabs__table td {
+	border-bottom: 1px solid var(--wp--preset--color--line, #e2e8f0);
+	padding: 0.75rem 1rem;
+	text-align: left;
+	vertical-align: top;
+}
+
+.pivora-comparison-tabs__table thead th {
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.pivora-comparison-tabs__table tbody th {
+	font-weight: 600;
+}
+
+.pivora-comparison-tabs__table tbody tr:nth-child(even) td,
+.pivora-comparison-tabs__table tbody tr:nth-child(even) th {
+	background: color-mix(in srgb, var(--wp--preset--color--mist, #f8fafc) 70%, transparent);
+}

@@ -29,9 +29,13 @@
 		</div>
 		<!-- /wp:group -->
 
+		<?php if ( defined( 'PIVORA_CORE_VERSION' ) ) : ?>
+			<?php pivora_block( 'pivora/comparison-tabs' ); ?>
+		<?php else : ?>
 		<!-- wp:table {"className":"pivora-comparison-table is-style-stripes"} -->
 		<figure class="wp-block-table pivora-comparison-table is-style-stripes"><table><thead><tr><th><?php esc_html_e( 'Feature', 'pivora' ); ?></th><th><?php esc_html_e( 'Starter', 'pivora' ); ?></th><th><?php esc_html_e( 'Growth', 'pivora' ); ?></th><th><?php esc_html_e( 'Scale', 'pivora' ); ?></th></tr></thead><tbody><tr><td><?php esc_html_e( 'Core pages', 'pivora' ); ?></td><td><?php esc_html_e( 'Yes', 'pivora' ); ?></td><td><?php esc_html_e( 'Yes', 'pivora' ); ?></td><td><?php esc_html_e( 'Yes', 'pivora' ); ?></td></tr><tr><td><?php esc_html_e( 'Pattern library', 'pivora' ); ?></td><td><?php esc_html_e( 'Essential', 'pivora' ); ?></td><td><?php esc_html_e( 'Full', 'pivora' ); ?></td><td><?php esc_html_e( 'Full', 'pivora' ); ?></td></tr><tr><td><?php esc_html_e( 'Blog layouts', 'pivora' ); ?></td><td><?php esc_html_e( '1 layout', 'pivora' ); ?></td><td><?php esc_html_e( 'All layouts', 'pivora' ); ?></td><td><?php esc_html_e( 'All layouts', 'pivora' ); ?></td></tr><tr><td><?php esc_html_e( 'WooCommerce templates', 'pivora' ); ?></td><td><?php esc_html_e( '—', 'pivora' ); ?></td><td><?php esc_html_e( 'Yes', 'pivora' ); ?></td><td><?php esc_html_e( 'Yes', 'pivora' ); ?></td></tr><tr><td><?php esc_html_e( 'Priority support', 'pivora' ); ?></td><td><?php esc_html_e( '—', 'pivora' ); ?></td><td><?php esc_html_e( 'Email', 'pivora' ); ?></td><td><?php esc_html_e( 'Email + onboarding', 'pivora' ); ?></td></tr></tbody></table></figure>
 		<!-- /wp:table -->
+		<?php endif; ?>
 	</div>
 	<!-- /wp:group -->
 </div>

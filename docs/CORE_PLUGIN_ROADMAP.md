@@ -123,10 +123,10 @@ plugins/pivora-core/
 | # | Block | Why | Status | Pattern to wire |
 |---|-------|-----|--------|-----------------|
 | P2.1 | **Logo grid / marquee** | Trust sections on every SaaS/agency site | done | `pivora/logo-grid` block + `logo-cloud` pattern upgrade |
-| P2.2 | **Stats counter** | Pairs with metrics bands | pending | New `pivora/metrics-band-stats` or extend metrics patterns |
-| P2.3 | **Process steps / timeline** | Missing from pattern library §6 | pending | New `patterns/process-steps.php` (theme) |
-| P2.4 | **Comparison tabs** | SaaS pricing/feature compare | pending | Extend `pivora/comparison-table` |
-| P2.5 | **Woo product grid** (curated) | Store starter becomes dynamic | pending | `pivora/product-spotlight` |
+| P2.2 | **Stats counter** | Pairs with metrics bands | done | `pivora/stats-grid` + `metrics-band` pattern |
+| P2.3 | **Process steps / timeline** | Missing from pattern library §6 | done | `pivora/process-steps` + `patterns/process-steps.php` |
+| P2.4 | **Comparison tabs** | SaaS pricing/feature compare | done | `pivora/comparison-tabs` + `comparison-table` pattern |
+| P2.5 | **Woo product grid** (curated) | Store starter becomes dynamic | done | `pivora/product-grid` + `product-spotlight` pattern |
 
 **Per-block checklist**
 
@@ -246,11 +246,11 @@ Update this table when adding blocks.
 | Social links bar | `pivora/social-links-bar` | No | Plugin pattern | — |
 | Curated post grid | `pivora/curated-post-grid` | No | `latest-posts` | Core query loop |
 | Team member | `pivora/team-member` | No | `team-grid` | Core image + text |
-| Logo grid | `pivora/logo-grid` | TBD | `logo-cloud` | Static paragraphs |
-| Stats counter | `pivora/stats-counter` | TBD | metrics bands | Static numbers |
-| Process steps | `pivora/process-steps` | No | `process-steps` (new) | Core list |
-| Comparison tabs | `pivora/comparison-tabs` | TBD | `comparison-table` | Core table |
-| Woo product grid | `pivora/product-grid` | No | `product-spotlight` | Core product collection |
+| Logo grid | `pivora/logo-grid` | No | `logo-cloud` | Static paragraphs |
+| Stats grid | `pivora/stats-grid` | No | `metrics-band` | Static metric groups |
+| Process steps | `pivora/process-steps` | No | `process-steps` | Core ordered list |
+| Comparison tabs | `pivora/comparison-tabs` | Yes (`view.js`) | `comparison-table` | Core table |
+| Woo product grid | `pivora/product-grid` | No | `product-spotlight` | Core query loop |
 | Lead capture | `pivora/lead-capture` | No | `lead-capture-band` | Paragraph placeholder |
 
 ---
