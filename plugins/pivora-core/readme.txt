@@ -3,7 +3,7 @@ Contributors: ehoneahobed
 Requires at least: 6.5
 Tested up to: 6.8
 Requires PHP: 8.0
-Stable tag: 0.8.0
+Stable tag: 0.9.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Conversion-focused blocks, starter kits, and patterns for block themes — with 
 
 Pivora Core is the **content and conversion layer** for WordPress block sites:
 
-* **Twenty-two custom blocks** — mini cart, shipping progress, product collection, and more
+* **Twenty-three custom blocks** — SEO breadcrumb, mini cart, product collection, and more
 * **Three content libraries** — client logos, case studies, and team members (theme-independent CPTs)
 * **Starter Site Studio** — eight demo kits, partial import, rollback, and JSON kit export/import for agencies
 * **Bonus patterns** — lead capture, integrations strip, agency landing, and more
@@ -67,6 +67,12 @@ Yes. Blocks ship their own surface styles with `theme.json` preset fallbacks. Se
 Demo import never silently activates plugins. Install and activate WooCommerce first, then run the store kit import.
 
 == Changelog ==
+
+= 0.9.0 =
+* SEO breadcrumb block with Rank Math, Yoast, and fallback support
+* Display conditions for announcement bar and slide-in CTA blocks
+* Documented hooks in docs/CORE_PLUGIN_HOOKS.md
+* Kit export CLI and PHPUnit snapshot tests
 
 = 0.8.0 =
 * Mini cart, shipping progress, and product collection WooCommerce blocks

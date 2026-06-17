@@ -42,6 +42,14 @@
     "delaySeconds": {
       "type": "number",
       "default": 4
+    },
+    "displayCondition": {
+      "type": "string",
+      "default": "always"
+    },
+    "displayConditionValue": {
+      "type": "string",
+      "default": ""
     }
   },
   "supports": {

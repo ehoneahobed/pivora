@@ -12,6 +12,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Lighthouse performance and accessibility gates on representative pages
 - WordPress.org / public release after stability is confirmed
 
+## [0.9.0] - 2026-06-17
+
+Pivora Core plugin only (theme remains 0.1.0).
+
+### Added
+
+**Phase 6 — Integrations and developer ergonomics**
+
+- **SEO breadcrumb** (`pivora/seo-breadcrumb`) — Rank Math, Yoast SEO, or The SEO Framework output with fallback trail
+- **Display conditions** — server-side rules for logged-in state, URL match, and first visit on conversion blocks
+- Hooks reference: [docs/CORE_PLUGIN_HOOKS.md](docs/CORE_PLUGIN_HOOKS.md)
+- Kit export CLI: `npm run kit:export -- --slug=agency`
+- PHPUnit snapshot tests for Starter Site Studio rollback
+
+### Changed
+
+- `page-header` pattern uses the SEO breadcrumb block when Pivora Core is active
+- Announcement bar and slide-in CTA blocks support display condition attributes
+
 ## [0.8.0] - 2026-06-17
 
 Pivora Core plugin only (theme remains 0.1.0).
@@ -186,7 +205,8 @@ Pre-release preview. Feature-complete for testing; stability and full QA are pen
 - Editor grid and full-width breakout rules for split hero and CTA layouts
 - Blog toolbar no longer uses shortcodes (Theme Check compliant)
 
-[Unreleased]: https://github.com/ehoneahobed/pivora/compare/0.8.0...HEAD
+[Unreleased]: https://github.com/ehoneahobed/pivora/compare/0.9.0...HEAD
+[0.9.0]: https://github.com/ehoneahobed/pivora/releases/tag/0.9.0
 [0.8.0]: https://github.com/ehoneahobed/pivora/releases/tag/0.8.0
 [0.7.0]: https://github.com/ehoneahobed/pivora/releases/tag/0.7.0
 [0.4.0]: https://github.com/ehoneahobed/pivora/releases/tag/0.4.0

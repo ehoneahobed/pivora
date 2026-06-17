@@ -127,6 +127,7 @@ function pivora_core_render_blocks_help_page(): void {
 		'product-collection'     => __( 'Product collection — hand-pick products or filter by category.', 'pivora-core' ),
 		'mini-cart'              => __( 'Mini cart — dropdown cart with WooCommerce fragments.', 'pivora-core' ),
 		'shipping-progress'      => __( 'Shipping progress — free shipping goal progress bar.', 'pivora-core' ),
+		'seo-breadcrumb'         => __( 'SEO breadcrumb — Rank Math, Yoast, or fallback trail for page headers.', 'pivora-core' ),
 		'lead-capture'           => __( 'Lead capture — name, email, and message form via wp_mail or webhook.', 'pivora-core' ),
 		'form-embed'             => __( 'Form embed — WPForms, CF7, Forminator, or custom shortcode wrapper.', 'pivora-core' ),
 		'team-grid'              => __( 'Team grid — query team members from the CPT library.', 'pivora-core' ),

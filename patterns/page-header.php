@@ -13,9 +13,13 @@
 <div class="wp-block-group alignfull pivora-page-header-section">
 	<!-- wp:group {"align":"wide","className":"pivora-page-header","layout":{"type":"default"}} -->
 	<div class="wp-block-group alignwide pivora-page-header">
+		<?php if ( defined( 'PIVORA_CORE_VERSION' ) ) : ?>
+			<?php pivora_block( 'pivora/seo-breadcrumb' ); ?>
+		<?php else : ?>
 		<!-- wp:paragraph {"className":"pivora-page-header__breadcrumb"} -->
 		<p class="pivora-page-header__breadcrumb"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'pivora' ); ?></a> <span aria-hidden="true">/</span> <?php esc_html_e( 'About', 'pivora' ); ?></p>
 		<!-- /wp:paragraph -->
+		<?php endif; ?>
 
 		<!-- wp:heading {"level":1} -->
 		<h1 class="wp-block-heading"><?php esc_html_e( 'About the studio', 'pivora' ); ?></h1>

@@ -212,11 +212,11 @@ plugins/pivora-core/
 
 | # | Item | Status | Notes |
 |---|------|--------|-------|
-| P6.1 | SEO breadcrumb bridge — render Rank Math / Yoast breadcrumb in page-header pattern slot | pending | Mirror theme `seo-plugins.php` approach |
-| P6.2 | **Display conditions** (light) — show block if: user logged in, first visit, URL contains | pending | Block attribute + server render |
-| P6.3 | `pivora_core_*` filters/actions doc | pending | `docs/CORE_PLUGIN_HOOKS.md` |
-| P6.4 | Kit CLI — `npm run kit:export -- --slug=agency` | pending | `scripts/kit-export.sh` |
-| P6.5 | PHPUnit tests for import snapshot + rollback | pending | `plugins/pivora-core/tests/` |
+| P6.1 | SEO breadcrumb bridge — render Rank Math / Yoast breadcrumb in page-header pattern slot | done | `pivora/seo-breadcrumb` + `integrations/seo.php` |
+| P6.2 | **Display conditions** (light) — show block if: user logged in, first visit, URL contains | done | `display-conditions.php` + block attributes |
+| P6.3 | `pivora_core_*` filters/actions doc | done | `docs/CORE_PLUGIN_HOOKS.md` |
+| P6.4 | Kit CLI — `npm run kit:export -- --slug=agency` | done | `scripts/export-kit.sh` |
+| P6.5 | PHPUnit tests for import snapshot + rollback | done | `plugins/pivora-core/tests/` |
 
 ---
 
@@ -259,6 +259,7 @@ Update this table when adding blocks.
 | Lead capture | `pivora/lead-capture` | No | `lead-capture-band`, contact, newsletter | Paragraph placeholder |
 | Form embed | `pivora/form-embed` | No | contact (when form plugin active) | Plugin form blocks |
 | Slide-in CTA | `pivora/slide-in-cta` | Yes (`view.js`) | — | — |
+| SEO breadcrumb | `pivora/seo-breadcrumb` | No | `page-header` | Static paragraph |
 
 ---
 

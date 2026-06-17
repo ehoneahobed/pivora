@@ -59,6 +59,7 @@
     "package:theme": "bash scripts/package-theme.sh",
     "package:plugin": "bash scripts/package-plugin.sh",
     "package": "npm run build && npm run package:theme && npm run package:plugin",
+    "test:plugin": "composer test:plugin",
     "templates:reset": "wp-env run cli bash /var/www/html/wp-content/themes/pivora/scripts/reset-template-customizations.sh"
   }
 }

@@ -3,8 +3,25 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-KIT_SLUG="${1:-business}"
+KIT_SLUG="business"
 OUT_DIR="${ROOT}/dist/kits"
+OUT_FILE=""
+
+for arg in "$@"; do
+	case "${arg}" in
+		--slug=*)
+			KIT_SLUG="${arg#*=}"
+			;;
+		--help|-h)
+			echo "Usage: npm run kit:export -- [--slug=agency]"
+			exit 0
+			;;
+		*)
+			KIT_SLUG="${arg}"
+			;;
+	esac
+done
+
 OUT_FILE="${OUT_DIR}/${KIT_SLUG}.pivora-kit.json"
 
 mkdir -p "${OUT_DIR}"

@@ -45,6 +45,14 @@
 		"scheduleEnd": {
 			"type": "string",
 			"default": ""
+		},
+		"displayCondition": {
+			"type": "string",
+			"default": "always"
+		},
+		"displayConditionValue": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"supports": {

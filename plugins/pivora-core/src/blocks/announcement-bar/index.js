@@ -8,6 +8,7 @@ import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import metadata from './block.json';
 import { BarStylePanel, getModifierClassName } from '../shared/style-panel';
+import { DisplayConditionPanel } from '../shared/display-condition-panel';
 import './style.scss';
 
 function Edit( { attributes, setAttributes } ) {
@@ -93,6 +94,10 @@ function Edit( { attributes, setAttributes } ) {
 						}
 					/>
 				</PanelBody>
+				<DisplayConditionPanel
+					attributes={ attributes }
+					setAttributes={ setAttributes }
+				/>
 			</InspectorControls>
 			<div
 				{ ...blockProps }

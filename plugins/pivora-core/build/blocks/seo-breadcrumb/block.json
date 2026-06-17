@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pivora/seo-breadcrumb",
+  "version": "1.0.0",
+  "title": "SEO Breadcrumb",
+  "category": "pivora",
+  "icon": "arrow-right-alt",
+  "description": "Renders breadcrumbs from Rank Math, Yoast SEO, or The SEO Framework with a fallback trail.",
+  "keywords": [
+    "breadcrumb",
+    "seo",
+    "navigation"
+  ],
+  "textdomain": "pivora-core",
+  "attributes": {},
+  "supports": {
+    "html": false,
+    "align": false,
+    "multiple": false
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "style": "file:./style-index.css"
+}
