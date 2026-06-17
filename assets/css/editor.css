@@ -21,6 +21,103 @@ body {
 	padding-top: var(--wp--preset--spacing--90);
 }
 
+.editor-styles-wrapper .pivora-hero--image {
+	background:
+		linear-gradient(90deg, rgba(6, 10, 24, 0.96) 0%, rgba(6, 10, 24, 0.86) 36%, rgba(6, 10, 24, 0.36) 72%, rgba(6, 10, 24, 0.18) 100%),
+		linear-gradient(180deg, rgba(6, 10, 24, 0.12), rgba(6, 10, 24, 0.64)),
+		url(../images/pivora-hero-bg.png);
+	background-position: center;
+	background-size: cover;
+	border-bottom: 0;
+	color: var(--wp--preset--color--white);
+	min-height: min(560px, 80vh);
+	padding-bottom: clamp(4rem, 8vw, 6rem);
+	padding-top: clamp(4rem, 8vw, 6rem);
+}
+
+.editor-styles-wrapper .pivora-hero--image .pivora-hero__lede {
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.editor-styles-wrapper .pivora-hero--image .pivora-hero__badge {
+	align-items: center;
+	background: rgba(245, 158, 11, 0.12);
+	border: 1px solid rgba(245, 158, 11, 0.58);
+	border-radius: 999px;
+	color: #f8c95d;
+	display: inline-flex;
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 800;
+	gap: var(--wp--preset--spacing--30);
+	letter-spacing: 0.07em;
+	margin-block-start: 0;
+	padding: var(--wp--preset--spacing--30) var(--wp--preset--spacing--50);
+	text-transform: uppercase;
+}
+
+.editor-styles-wrapper .pivora-hero--image .pivora-hero__badge::before {
+	background: #f8c95d;
+	border-radius: 999px;
+	content: "";
+	height: 0.55rem;
+	width: 0.55rem;
+}
+
+.editor-styles-wrapper .pivora-hero--image h1 {
+	color: inherit;
+	font-size: clamp(3.6rem, 5.8vw, 6.4rem);
+	letter-spacing: 0;
+	line-height: 0.94;
+	margin-block-end: var(--wp--preset--spacing--60);
+	max-width: 980px;
+}
+
+.editor-styles-wrapper .pivora-hero--image .pivora-hero__meta {
+	color: rgba(255, 255, 255, 0.72);
+	gap: var(--wp--preset--spacing--50);
+	margin-block-start: var(--wp--preset--spacing--70);
+}
+
+.editor-styles-wrapper .pivora-hero--image .pivora-hero__meta p {
+	align-items: center;
+	display: inline-flex;
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	gap: var(--wp--preset--spacing--30);
+	margin: 0;
+}
+
+.editor-styles-wrapper .pivora-hero--image .pivora-hero__meta p::before {
+	color: #f8c95d;
+	content: "•";
+	font-size: 1.35em;
+	line-height: 1;
+}
+
+.editor-styles-wrapper .pivora-hero--image .pivora-hero__actions {
+	margin-block-start: var(--wp--preset--spacing--70);
+}
+
+.editor-styles-wrapper .pivora-hero--left .pivora-hero__content {
+	text-align: left;
+}
+
+.editor-styles-wrapper .pivora-hero--centered .pivora-hero__content {
+	text-align: center;
+}
+
+.editor-styles-wrapper .pivora-hero--centered :where(.pivora-hero__actions, .pivora-hero__meta) {
+	justify-content: center;
+}
+
+.editor-styles-wrapper .pivora-hero--centered .pivora-hero__badge {
+	margin-inline: auto;
+}
+
+.editor-styles-wrapper .pivora-hero:not(.pivora-hero--image) .pivora-hero__lede {
+	color: var(--wp--preset--color--slate);
+}
+
 .editor-styles-wrapper .pivora-eyebrow {
 	color: var(--wp--preset--color--teal);
 	font-size: var(--wp--preset--font-size--small);

@@ -75,9 +75,37 @@ function pivora_register_patterns(): void {
 	$patterns = array(
 		array(
 			'name'       => 'pivora/hero-business',
-			'title'      => __( 'Business hero', 'pivora' ),
+			'title'      => __( 'Business hero (left aligned)', 'pivora' ),
 			'categories' => array( 'pivora-business' ),
 			'file'       => 'patterns/hero-business.php',
+			'viewport'   => 1440,
+		),
+		array(
+			'name'       => 'pivora/hero-centered',
+			'title'      => __( 'Centered hero (image background)', 'pivora' ),
+			'categories' => array( 'pivora-business', 'pivora-saas' ),
+			'file'       => 'patterns/hero-centered.php',
+			'viewport'   => 1440,
+		),
+		array(
+			'name'       => 'pivora/hero-agency',
+			'title'      => __( 'Agency hero (centered + logos)', 'pivora' ),
+			'categories' => array( 'pivora-saas', 'pivora-portfolio' ),
+			'file'       => 'patterns/hero-agency.php',
+			'viewport'   => 1440,
+		),
+		array(
+			'name'       => 'pivora/hero-saas-signup',
+			'title'      => __( 'SaaS hero (email signup)', 'pivora' ),
+			'categories' => array( 'pivora-saas' ),
+			'file'       => 'patterns/hero-saas-signup.php',
+			'viewport'   => 1440,
+		),
+		array(
+			'name'       => 'pivora/hero-saas-split',
+			'title'      => __( 'SaaS hero (split preview)', 'pivora' ),
+			'categories' => array( 'pivora-saas' ),
+			'file'       => 'patterns/hero-saas-split.php',
 			'viewport'   => 1440,
 		),
 		array(
@@ -106,6 +134,34 @@ function pivora_register_patterns(): void {
 			'title'      => __( 'Pricing table', 'pivora' ),
 			'categories' => array( 'pivora-business', 'pivora-sections' ),
 			'file'       => 'patterns/pricing-table.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/pricing-table-spotlight',
+			'title'      => __( 'Pricing table (spotlight)', 'pivora' ),
+			'categories' => array( 'pivora-business', 'pivora-sections', 'pivora-saas' ),
+			'file'       => 'patterns/pricing-table-spotlight.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/pricing-table-soft-purple',
+			'title'      => __( 'Pricing table (soft purple)', 'pivora' ),
+			'categories' => array( 'pivora-business', 'pivora-sections', 'pivora-saas' ),
+			'file'       => 'patterns/pricing-table-soft-purple.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/pricing-table-green-band',
+			'title'      => __( 'Pricing table (green band)', 'pivora' ),
+			'categories' => array( 'pivora-business', 'pivora-sections', 'pivora-saas' ),
+			'file'       => 'patterns/pricing-table-green-band.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/pricing-table-monochrome',
+			'title'      => __( 'Pricing table (monochrome scale)', 'pivora' ),
+			'categories' => array( 'pivora-business', 'pivora-sections', 'pivora-saas' ),
+			'file'       => 'patterns/pricing-table-monochrome.php',
 			'viewport'   => 1200,
 		),
 		array(

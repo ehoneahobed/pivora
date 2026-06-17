@@ -1,0 +1,31 @@
+.wp-block-pivora-pricing-billing-toggle.pivora-pricing-toggle {
+	align-items: center;
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	justify-content: center;
+	margin-inline: auto;
+}
+
+.pivora-pricing-toggle__option {
+	appearance: none;
+	background: transparent;
+	border: 0;
+	border-radius: 999px;
+	color: inherit;
+	cursor: pointer;
+	font: inherit;
+	font-size: 0.95rem;
+	font-weight: 700;
+	padding: 0.65rem 1.15rem;
+}
+
+.pivora-pricing-toggle__option--active {
+	box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.pivora-pricing-toggle__save {
+	font-size: 0.95rem;
+	font-weight: 800;
+	padding-inline: 0.35rem 0.75rem;
+}

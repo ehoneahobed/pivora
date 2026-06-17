@@ -337,6 +337,54 @@ a:hover {
 	margin-inline: auto;
 }
 
+.pivora-hero--left .pivora-hero__content {
+	text-align: left;
+}
+
+.pivora-hero--left .pivora-hero__content > :where(
+	:not(.alignleft):not(.alignright):not(.alignfull)
+) {
+	margin-left: 0 !important;
+	margin-right: auto !important;
+}
+
+.pivora-hero--left :where(h1, .pivora-hero__lede) {
+	margin-inline: 0;
+	margin-right: auto;
+}
+
+.pivora-hero--left :where(.pivora-hero__actions, .pivora-hero__meta) {
+	justify-content: flex-start;
+}
+
+.pivora-hero--centered .pivora-hero__content {
+	text-align: center;
+}
+
+.pivora-hero--centered :where(h1, .pivora-hero__lede) {
+	margin-inline: auto;
+}
+
+.pivora-hero--centered :where(.pivora-hero__actions, .pivora-hero__meta) {
+	justify-content: center;
+}
+
+.pivora-hero--centered .pivora-hero__badge {
+	margin-inline: auto;
+}
+
+.pivora-page__content .wp-block-post-content > .alignfull,
+.pivora-single__content .wp-block-post-content > .alignfull {
+	margin-inline: calc(50% - 50vw) !important;
+	max-width: 100vw !important;
+	width: 100vw !important;
+}
+
+.pivora-page__content .wp-block-post-content > .alignfull.pivora-hero,
+.pivora-single__content .wp-block-post-content > .alignfull.pivora-hero {
+	padding-inline: var(--pivora-site-shell-gutter, clamp(1.75rem, 4.5vw, 4rem));
+}
+
 .pivora-front-page :where(
 	.site-header__inner,
 	.pivora-hero__content,
@@ -669,29 +717,6 @@ a:hover {
 
 .pivora-hero__actions {
 	margin-block-start: var(--wp--preset--spacing--70);
-}
-
-.pivora-hero__actions .wp-block-button__link {
-	background: #f8c95d;
-	border: 2px solid #f8c95d;
-	border-radius: 999px;
-	color: #08111f;
-	font-weight: 900;
-	letter-spacing: 0.02em;
-	padding: 1rem 1.55rem;
-	text-transform: uppercase;
-}
-
-.pivora-hero__actions .is-style-outline .wp-block-button__link {
-	background: transparent;
-	border-color: #f8c95d;
-	color: #f8c95d;
-}
-
-.pivora-hero__actions .wp-block-button__link:hover {
-	background: var(--wp--preset--color--white);
-	border-color: var(--wp--preset--color--white);
-	color: #08111f;
 }
 
 .pivora-hero__meta {
@@ -1530,7 +1555,7 @@ a:hover {
 	align-items: stretch !important;
 	display: grid !important;
 	gap: clamp(1rem, 1.5vw, 1.35rem);
-	grid-template-columns: repeat(3, minmax(0, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
 	margin-block-start: 0;
 	width: 100%;
 }
@@ -1539,6 +1564,7 @@ a:hover {
 	display: flex;
 	flex-basis: auto !important;
 	margin: 0 !important;
+	min-width: 0;
 	width: auto !important;
 }
 
@@ -1620,8 +1646,23 @@ a:hover {
 	padding-inline-start: 1.15rem;
 }
 
+.pivora-price-card .wp-block-button,
 .pivora-price-card .wp-block-buttons {
 	margin-block-start: auto;
+	max-width: 100%;
+	width: 100%;
+}
+
+.pivora-price-card .wp-block-button__link {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1.25;
+	max-width: 100%;
+	text-align: center;
+	white-space: normal;
+	width: 100%;
 }
 
 .pivora-price-card--featured {
@@ -1648,6 +1689,498 @@ a:hover {
 
 .pivora-price-card--featured .pivora-price-card__tier {
 	color: #f8c95d;
+}
+
+.pivora-pricing-section--spotlight {
+	background: var(--wp--preset--color--white);
+	padding-bottom: clamp(5rem, 8vw, 7rem);
+	padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+.pivora-pricing-section--spotlight .pivora-pricing-spotlight__heading {
+	margin-block-end: clamp(2.5rem, 4vw, 3.5rem);
+}
+
+.pivora-pricing-section--spotlight h2 {
+	font-size: clamp(2.35rem, 4vw, 3.5rem);
+	letter-spacing: -0.03em;
+	line-height: 1.08;
+	margin-block-end: var(--wp--preset--spacing--50);
+	margin-block-start: 0;
+}
+
+.pivora-pricing-section--spotlight .pivora-section__lede {
+	color: var(--wp--preset--color--slate);
+	font-size: clamp(1.05rem, 1.2vw, 1.125rem);
+	line-height: 1.7;
+	margin-block-end: var(--wp--preset--spacing--70);
+	margin-block-start: 0;
+}
+
+.pivora-pricing-toggle {
+	align-items: center;
+	background: #f1f5f9;
+	border-radius: 999px;
+	display: inline-flex;
+	gap: 0.35rem;
+	margin-inline: auto;
+	padding: 0.35rem;
+}
+
+.pivora-pricing-toggle__option {
+	background: transparent;
+	border: 0;
+	border-radius: 999px;
+	color: var(--wp--preset--color--slate);
+	cursor: pointer;
+	font-size: 0.95rem;
+	font-weight: 700;
+	margin: 0;
+	padding: 0.65rem 1.15rem;
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing-soft-purple__heading {
+	margin-block-end: clamp(2.5rem, 4vw, 3.5rem);
+	text-align: center;
+}
+
+.pivora-pricing-section--soft-purple h2 {
+	font-size: clamp(2rem, 3.5vw, 3rem);
+	margin-block-end: var(--wp--preset--spacing--70);
+}
+
+.pivora-pricing-section:not([data-billing-cycle="yearly"]) .pivora-pricing-card__price-value--yearly,
+.pivora-pricing-section:not([data-billing-cycle="yearly"]) .pivora-price-card__term--yearly {
+	display: none;
+}
+
+.pivora-pricing-section[data-billing-cycle="yearly"] .pivora-pricing-card__price-value--monthly,
+.pivora-pricing-section[data-billing-cycle="yearly"] .pivora-price-card__term--monthly {
+	display: none;
+}
+
+.pivora-pricing-section .pivora-section__heading .wp-block-pivora-pricing-billing-toggle {
+	display: flex;
+	justify-content: center;
+	margin-block-end: var(--wp--preset--spacing--70);
+	width: 100%;
+}
+
+.pivora-pricing-toggle__option--active {
+	background: var(--wp--preset--color--white);
+	box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+	color: var(--wp--preset--color--ink);
+}
+
+.pivora-pricing-toggle__save {
+	color: var(--wp--preset--color--blue);
+	font-size: 0.95rem;
+	font-weight: 800;
+	margin: 0;
+	padding-inline: 0.35rem 0.75rem;
+}
+
+.pivora-pricing--spotlight {
+	align-items: stretch;
+	gap: clamp(1rem, 1.5vw, 1.35rem);
+}
+
+.pivora-price-card--spotlight {
+	background: var(--wp--preset--color--white);
+	border: 1px solid #e2e8f0;
+	border-radius: 20px;
+	box-shadow: none;
+	gap: 0;
+	padding: clamp(1.75rem, 2.4vw, 2.35rem);
+}
+
+.pivora-price-card--spotlight:hover {
+	border-color: #cbd5e1;
+	box-shadow: 0 18px 48px rgba(15, 23, 42, 0.06);
+	transform: none;
+}
+
+.pivora-price-card--spotlight .pivora-price-card__tier {
+	color: var(--wp--preset--color--ink);
+	font-size: 1.35rem;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	margin-block-end: var(--wp--preset--spacing--40);
+	text-transform: none;
+}
+
+.pivora-price-card--spotlight .pivora-price-card__copy {
+	color: var(--wp--preset--color--slate);
+	font-size: 0.98rem;
+	line-height: 1.65;
+	margin-block-end: var(--wp--preset--spacing--60);
+	min-height: 3.25rem;
+}
+
+.pivora-price-card--spotlight .pivora-pricing-card__price {
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin-block-end: var(--wp--preset--spacing--60);
+	max-width: 100%;
+	min-width: 0;
+}
+
+.pivora-price-card--spotlight h3.pivora-pricing-card__price {
+	display: flex;
+	line-height: 1.05;
+}
+
+.pivora-price-card--spotlight .pivora-pricing-card__price-value {
+	flex: 0 0 auto;
+	white-space: nowrap;
+}
+
+.pivora-price-card--spotlight .pivora-pricing-card__price > span:first-child,
+.pivora-price-card--spotlight .pivora-pricing-card__price-value {
+	font-size: clamp(2rem, 3vw, 2.75rem);
+	font-weight: 800;
+	letter-spacing: -0.04em;
+	line-height: 1;
+}
+
+.pivora-price-card--spotlight .pivora-price-card__term {
+	flex: 1 1 5rem;
+	font-size: 0.92rem;
+	line-height: 1.35;
+	min-width: 0;
+	white-space: normal;
+}
+
+.pivora-price-card--spotlight .wp-block-button {
+	margin-block-end: var(--wp--preset--spacing--70);
+	margin-block-start: 0;
+	max-width: 100%;
+	width: 100%;
+}
+
+.pivora-price-card--spotlight .wp-block-button__link {
+	border-radius: 0.75rem;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: clamp(0.82rem, 0.85vw, 0.95rem);
+	font-weight: 800;
+	line-height: 1.25;
+	max-width: 100%;
+	min-height: 3.1rem;
+	padding: 0.8rem 1rem;
+	text-align: center;
+	text-wrap: balance;
+	white-space: normal;
+	width: 100%;
+}
+
+@media (min-width: 1100px) {
+
+	.pivora-price-card--spotlight .wp-block-button__link {
+		border-radius: 999px;
+	}
+}
+
+.pivora-price-card--spotlight .is-style-outline .wp-block-button__link,
+.pivora-price-card--spotlight .wp-block-button.is-style-outline .wp-block-button__link {
+	background: transparent;
+	border: 2px solid var(--wp--preset--color--blue);
+	color: var(--wp--preset--color--blue);
+}
+
+.pivora-price-card--spotlight .pivora-price-card__feature-list {
+	display: grid;
+	gap: 0.95rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pivora-price-card--spotlight .pivora-price-card__feature {
+	align-items: flex-start;
+	color: var(--wp--preset--color--ink);
+	display: flex;
+	font-size: 0.95rem;
+	gap: 0.75rem;
+	line-height: 1.45;
+	margin: 0;
+}
+
+.pivora-price-card--spotlight .pivora-price-card__feature::before {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 0.75rem;
+	border-radius: 999px;
+	content: "";
+	flex: 0 0 1.35rem;
+	height: 1.35rem;
+	margin-block-start: 0.1rem;
+	width: 1.35rem;
+}
+
+.pivora-price-card--spotlight .pivora-price-card__feature--included::before {
+	background-color: rgba(37, 99, 235, 0.12);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3.5 8.25 6.5 11.25 12.5 4.75' stroke='%232563eb' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.pivora-price-card--spotlight .pivora-price-card__feature--excluded {
+	color: #94a3b8;
+}
+
+.pivora-price-card--spotlight .pivora-price-card__feature--excluded::before {
+	background-color: #f1f5f9;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='m4.75 4.75 6.5 6.5M11.25 4.75l-6.5 6.5' stroke='%2394a3b8' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.pivora-price-card--spotlight.pivora-price-card--featured {
+	background: var(--wp--preset--color--blue);
+	border-color: var(--wp--preset--color--blue);
+	box-shadow: 0 28px 72px rgba(37, 99, 235, 0.28);
+	color: var(--wp--preset--color--white);
+}
+
+@media (min-width: 1100px) {
+
+	.pivora-price-card--spotlight.pivora-price-card--featured {
+		transform: translateY(-6px);
+	}
+}
+
+.pivora-price-card--spotlight.pivora-price-card--featured:hover {
+	border-color: var(--wp--preset--color--blue);
+	box-shadow: 0 32px 80px rgba(37, 99, 235, 0.34);
+}
+
+@media (min-width: 1100px) {
+
+	.pivora-price-card--spotlight.pivora-price-card--featured:hover {
+		transform: translateY(-8px);
+	}
+}
+
+.pivora-price-card--spotlight.pivora-price-card--featured :where(
+	.pivora-price-card__tier,
+	.pivora-price-card__copy,
+	.pivora-pricing-card__price > span:first-child,
+	.pivora-price-card__feature
+) {
+	color: inherit;
+}
+
+.pivora-price-card--spotlight.pivora-price-card--featured .pivora-price-card__term {
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.pivora-price-card--spotlight.pivora-price-card--featured .wp-block-button__link {
+	background: var(--wp--preset--color--white);
+	border-color: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--blue);
+}
+
+.pivora-price-card--spotlight.pivora-price-card--featured .pivora-price-card__feature--included::before {
+	background-color: rgba(255, 255, 255, 0.18);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M3.5 8.25 6.5 11.25 12.5 4.75' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing-toggle--purple {
+	background: #f3f0ff;
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing-toggle--purple .pivora-pricing-toggle__option--active {
+	background: #8b5cf6;
+	color: #fff;
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing-toggle__save {
+	color: #8b5cf6;
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight {
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	min-width: 0;
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple {
+	align-items: stretch;
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple > .wp-block-column {
+	display: flex;
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight .pivora-price-card__feature-list {
+	border-top: 1px solid #e2e8f0;
+	margin-block-start: auto;
+	padding-block-start: var(--wp--preset--spacing--60);
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight.pivora-price-card--featured .pivora-price-card__feature-list {
+	border-top-color: rgba(255, 255, 255, 0.22);
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight .is-style-outline .wp-block-button__link,
+.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight .wp-block-button.is-style-outline .wp-block-button__link {
+	border-color: #8b5cf6;
+	color: #8b5cf6;
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight.pivora-price-card--featured {
+	transform: none;
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight.pivora-price-card--featured .pivora-price-card__term {
+	color: rgba(255, 255, 255, 0.82);
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight.pivora-price-card--featured {
+	background: #8b5cf6;
+	border-color: #8b5cf6;
+	box-shadow: 0 24px 60px rgba(139, 92, 246, 0.35);
+}
+
+.pivora-pricing-section--soft-purple .pivora-pricing--soft-purple .pivora-price-card--spotlight.pivora-price-card--featured .wp-block-button__link {
+	color: #8b5cf6;
+}
+
+.pivora-pricing-section--green-band {
+	background: linear-gradient(90deg, #2ea44f 0 8%, #ffffff 8% 92%, #2ea44f 92% 100%);
+}
+
+.pivora-pricing-section--green-band .pivora-pricing-toggle--green {
+	background: #ecfdf3;
+}
+
+.pivora-pricing-section--green-band .pivora-pricing-toggle--green .pivora-pricing-toggle__option--active {
+	background: #16a34a;
+	color: #fff;
+}
+
+.pivora-pricing-section--green-band .pivora-pricing-toggle__save {
+	color: #15803d;
+	text-transform: uppercase;
+}
+
+.pivora-pricing-section--green-band .pivora-pricing--green-band {
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.pivora-pricing-section--green-band .pivora-pricing--green-band .pivora-price-card--spotlight {
+	border-radius: 0;
+	padding-top: clamp(1.5rem, 2vw, 1.9rem);
+}
+
+.pivora-pricing-section--green-band .pivora-pricing--green-band .pivora-price-card--spotlight .pivora-price-card__feature-list {
+	display: none;
+}
+
+.pivora-pricing-section--green-band .pivora-pricing--green-band .pivora-price-card--spotlight.pivora-price-card--featured {
+	background: #e8f8ee;
+	border-color: #22c55e;
+	box-shadow: none;
+	color: var(--wp--preset--color--ink);
+	transform: none;
+}
+
+.pivora-pricing-section--green-band .pivora-pricing--green-band .pivora-price-card--spotlight.pivora-price-card--featured .pivora-price-card__tier::before {
+	background: #16a34a;
+	border-radius: 4px 4px 0 0;
+	color: #fff;
+	content: "Recommended";
+	display: block;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	margin: calc(var(--wp--preset--spacing--60) * -1) calc(var(--wp--preset--spacing--60) * -1) var(--wp--preset--spacing--50);
+	padding: 0.55rem 0.75rem;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.pivora-pricing-section--green-band .pivora-pricing--green-band .pivora-price-card--spotlight.pivora-price-card--featured .wp-block-button__link {
+	background: #22c55e;
+	border-color: #22c55e;
+	color: #fff;
+}
+
+.pivora-pricing-section--monochrome {
+	background: #fff;
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing-toggle--mono {
+	background: #f3f4f6;
+	border: 1px solid #d1d5db;
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing-toggle--mono .pivora-pricing-toggle__option {
+	color: #111827;
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing-toggle--mono .pivora-pricing-toggle__option--active {
+	background: #111827;
+	color: #fff;
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing--monochrome {
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing--monochrome .pivora-price-card {
+	border-radius: 8px;
+	box-shadow: none;
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing--monochrome .pivora-price-card .pivora-price-card__tier {
+	color: #111827;
+	font-size: 1.55rem;
+	text-transform: none;
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing--monochrome .pivora-price-card .pivora-pricing-card__price {
+	flex-direction: column;
+	gap: 0.2rem;
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing--monochrome .pivora-price-card .pivora-price-card__term {
+	font-size: 0.72rem;
+	margin-inline-start: 0;
+	text-transform: lowercase;
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing--monochrome .pivora-price-card .wp-block-button__link {
+	border-radius: 4px;
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing--monochrome .pivora-price-card--featured {
+	background: #0b0b0d;
+	border-color: #0b0b0d;
+	box-shadow: none;
+	color: #fff;
+	transform: none;
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing--monochrome .pivora-price-card--featured :where(
+	.pivora-price-card__tier,
+	.pivora-price-card__copy,
+	.pivora-price-card__features,
+	.pivora-pricing-card__price > span:first-child
+) {
+	color: #fff;
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing--monochrome .pivora-price-card--featured .pivora-price-card__term {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.pivora-pricing-section--monochrome .pivora-pricing--monochrome .pivora-price-card--featured .wp-block-button__link {
+	background: #fff;
+	border-color: #fff;
+	color: #111827;
 }
 
 .pivora-portfolio-section {
@@ -3592,6 +4125,10 @@ a:hover {
 	.site-main--blog .pivora-blog-query--magazine .wp-block-post-template {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
+
+	.pivora-price-card--spotlight .pivora-price-card__copy {
+		min-height: 0;
+	}
 }
 
 @media (max-width: 781px) {
@@ -3605,8 +4142,12 @@ a:hover {
 		max-width: none;
 	}
 
-	.pivora-pricing {
-		grid-template-columns: 1fr;
+	.pivora-pricing,
+	.pivora-pricing--spotlight,
+	.pivora-pricing--soft-purple,
+	.pivora-pricing--green-band,
+	.pivora-pricing--monochrome {
+		grid-template-columns: minmax(0, 1fr);
 	}
 
 	.pivora-portfolio-section .pivora-section__header-row {
@@ -3693,32 +4234,8 @@ a:hover {
 
 /* -------------------------------------------------------------------------
  * Block style variations (inc/block-styles.php)
+ * Button styles live in assets/css/button-block-styles.css
  * ------------------------------------------------------------------------- */
-
-.wp-block-button.is-style-pivora-outline .wp-block-button__link {
-	background: transparent;
-	border: 1px solid currentColor;
-	color: var(--wp--preset--color--ink);
-}
-
-.wp-block-button.is-style-pivora-outline .wp-block-button__link:hover {
-	background: var(--wp--preset--color--cloud);
-}
-
-.wp-block-button.is-style-pivora-pill .wp-block-button__link {
-	border-radius: 999px;
-}
-
-.wp-block-button.is-style-pivora-ghost .wp-block-button__link {
-	background: transparent;
-	color: var(--wp--preset--color--ink);
-	padding-inline: 0;
-}
-
-.wp-block-button.is-style-pivora-ghost .wp-block-button__link:hover {
-	background: transparent;
-	color: var(--wp--preset--color--teal);
-}
 
 .wp-block-group.is-style-pivora-card {
 	background: var(--wp--preset--color--white);

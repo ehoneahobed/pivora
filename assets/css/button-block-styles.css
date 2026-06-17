@@ -1,0 +1,131 @@
+/* Pivora button block styles — frontend and block editor. */
+
+.wp-block-button.is-style-pivora-outline .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-outline .wp-block-button__link.wp-element-button {
+	background: transparent;
+	border: 1px solid currentColor;
+	color: var(--wp--preset--color--ink);
+}
+
+.wp-block-button.is-style-pivora-outline .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-outline .wp-block-button__link.wp-element-button:hover {
+	background: var(--wp--preset--color--cloud);
+}
+
+.wp-block-button.is-style-pivora-pill .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-pill .wp-block-button__link.wp-element-button {
+	border-radius: 999px;
+}
+
+.wp-block-button.is-style-pivora-hero-gold .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-gold .wp-block-button__link.wp-element-button {
+	background: #f8c95d;
+	border: 2px solid #f8c95d;
+	border-radius: 999px;
+	color: #08111f;
+	font-weight: 900;
+	letter-spacing: 0.02em;
+	padding: 1rem 1.55rem;
+	text-transform: uppercase;
+}
+
+.wp-block-button.is-style-pivora-hero-gold .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-gold .wp-block-button__link.wp-element-button:hover {
+	background: var(--wp--preset--color--white);
+	border-color: var(--wp--preset--color--white);
+	color: #08111f;
+}
+
+.wp-block-button.is-style-pivora-hero-gold-outline .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-gold-outline .wp-block-button__link.wp-element-button {
+	background: transparent;
+	border: 2px solid #f8c95d;
+	border-radius: 999px;
+	color: #f8c95d;
+	font-weight: 900;
+	letter-spacing: 0.02em;
+	padding: 1rem 1.55rem;
+	text-transform: uppercase;
+}
+
+.wp-block-button.is-style-pivora-hero-gold-outline .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-gold-outline .wp-block-button__link.wp-element-button:hover {
+	background: rgba(248, 201, 93, 0.12);
+	border-color: #f8c95d;
+	color: #f8c95d;
+}
+
+.wp-block-button.is-style-pivora-hero-teal .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-teal .wp-block-button__link.wp-element-button {
+	background: var(--wp--preset--color--teal);
+	border: 2px solid var(--wp--preset--color--teal);
+	border-radius: 999px;
+	color: var(--wp--preset--color--white);
+	font-weight: 800;
+	padding: 0.9rem 1.35rem;
+}
+
+.wp-block-button.is-style-pivora-hero-teal .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-teal .wp-block-button__link.wp-element-button:hover {
+	background: #0d655e;
+	border-color: #0d655e;
+	color: var(--wp--preset--color--white);
+}
+
+.wp-block-button.is-style-pivora-hero-teal-outline .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-teal-outline .wp-block-button__link.wp-element-button {
+	background: transparent;
+	border: 2px solid var(--wp--preset--color--teal);
+	border-radius: 999px;
+	color: var(--wp--preset--color--teal);
+	font-weight: 800;
+	padding: 0.9rem 1.35rem;
+}
+
+.wp-block-button.is-style-pivora-hero-green .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-green .wp-block-button__link.wp-element-button {
+	background: #16a34a;
+	border: 2px solid #16a34a;
+	border-radius: 999px;
+	color: var(--wp--preset--color--white);
+	font-weight: 800;
+	padding: 0.85rem 1.25rem;
+	white-space: nowrap;
+}
+
+.wp-block-button.is-style-pivora-hero-green .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-green .wp-block-button__link.wp-element-button:hover {
+	background: #15803d;
+	border-color: #15803d;
+	color: var(--wp--preset--color--white);
+}
+
+.wp-block-button.is-style-pivora-hero-ink-outline .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-ink-outline .wp-block-button__link.wp-element-button {
+	background: var(--wp--preset--color--white);
+	border: 2px solid var(--wp--preset--color--ink);
+	border-radius: 999px;
+	color: var(--wp--preset--color--ink);
+	font-weight: 800;
+	padding: 0.9rem 1.35rem;
+}
+
+.wp-block-button.is-style-pivora-hero-ink-outline .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-hero-ink-outline .wp-block-button__link.wp-element-button:hover {
+	background: var(--wp--preset--color--cloud);
+	border-color: var(--wp--preset--color--ink);
+	color: var(--wp--preset--color--ink);
+}
+
+.wp-block-button.is-style-pivora-ghost .wp-block-button__link.wp-element-button,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-ghost .wp-block-button__link.wp-element-button {
+	background: transparent;
+	color: var(--wp--preset--color--ink);
+	padding-inline: 0;
+}
+
+.wp-block-button.is-style-pivora-ghost .wp-block-button__link.wp-element-button:hover,
+.editor-styles-wrapper .wp-block-button.is-style-pivora-ghost .wp-block-button__link.wp-element-button:hover {
+	background: transparent;
+	color: var(--wp--preset--color--teal);
+}

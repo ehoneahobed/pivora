@@ -9,7 +9,7 @@
  */
 
 ?>
-<!-- wp:pattern {"slug":"pivora/hero-business"} /-->
+<!-- wp:pattern {"slug":"pivora/hero-centered"} /-->
 <!-- wp:pattern {"slug":"pivora/logo-cloud"} /-->
 <!-- wp:pattern {"slug":"pivora/metrics-band-split"} /-->
 <!-- wp:pattern {"slug":"pivora/feature-grid"} /-->

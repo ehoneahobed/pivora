@@ -38,6 +38,20 @@ function pivora_enqueue_assets(): void {
 		pivora_asset_version( 'assets/css/base.css' )
 	);
 
+	wp_enqueue_style(
+		'pivora-hero-variants',
+		PIVORA_URI . 'assets/css/hero-variants.css',
+		array( 'pivora-base' ),
+		pivora_asset_version( 'assets/css/hero-variants.css' )
+	);
+
+	wp_enqueue_style(
+		'pivora-button-block-styles',
+		PIVORA_URI . 'assets/css/button-block-styles.css',
+		array( 'pivora-base' ),
+		pivora_asset_version( 'assets/css/button-block-styles.css' )
+	);
+
 	if ( function_exists( 'pivora_is_woocommerce_active' ) && pivora_is_woocommerce_active() ) {
 		wp_enqueue_style(
 			'pivora-woocommerce',

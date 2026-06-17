@@ -22,6 +22,14 @@
 			"type": "string",
 			"default": "/mo"
 		},
+		"priceYearly": {
+			"type": "string",
+			"default": ""
+		},
+		"termYearly": {
+			"type": "string",
+			"default": ""
+		},
 		"description": {
 			"type": "string",
 			"default": "For lean launches and brochure sites."
@@ -49,6 +57,18 @@
 		"ctaOutline": {
 			"type": "boolean",
 			"default": false
+		},
+		"variant": {
+			"type": "string",
+			"default": "classic"
+		},
+		"includedFeatures": {
+			"type": "string",
+			"default": ""
+		},
+		"excludedFeatures": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"supports": {

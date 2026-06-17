@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pivora/pricing-billing-toggle",
+  "version": "1.0.0",
+  "title": "Pricing Billing Toggle",
+  "category": "pivora",
+  "icon": "controls-repeat",
+  "description": "Switch pricing tables between monthly and yearly billing.",
+  "keywords": [
+    "pricing",
+    "billing",
+    "toggle"
+  ],
+  "textdomain": "pivora-core",
+  "attributes": {
+    "monthlyLabel": {
+      "type": "string",
+      "default": "Billed Monthly"
+    },
+    "yearlyLabel": {
+      "type": "string",
+      "default": "Billed Yearly"
+    },
+    "saveLabel": {
+      "type": "string",
+      "default": "(save 15%)"
+    },
+    "defaultCycle": {
+      "type": "string",
+      "default": "monthly"
+    },
+    "styleVariant": {
+      "type": "string",
+      "default": "default"
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": false
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php",
+  "style": "file:./style-index.css"
+}

@@ -38,6 +38,7 @@ final class Pivora_Core {
 	private function __construct() {
 		add_action( 'init', array( $this, 'load_textdomain' ) );
 		add_action( 'init', array( $this, 'register_blocks' ), 9 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_pricing_toggle_script' ) );
 	}
 
 	/**
@@ -70,5 +71,26 @@ final class Pivora_Core {
 
 			register_block_type( $block_path );
 		}
+	}
+
+	/**
+	 * Enqueues pricing toggle interactions for legacy and block-based toggles.
+	 */
+	public function enqueue_pricing_toggle_script(): void {
+		$asset_file = PIVORA_CORE_PATH . 'build/blocks/pricing-billing-toggle/view.asset.php';
+
+		if ( ! file_exists( $asset_file ) ) {
+			return;
+		}
+
+		$asset = include $asset_file;
+
+		wp_enqueue_script(
+			'pivora-pricing-billing-toggle',
+			plugins_url( 'build/blocks/pricing-billing-toggle/view.js', PIVORA_CORE_PATH . 'pivora-core.php' ),
+			$asset['dependencies'],
+			$asset['version'],
+			true
+		);
 	}
 }

@@ -27,6 +27,12 @@ function pivora_setup(): void {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'wp-block-styles' );
 
-	add_editor_style( 'assets/css/editor.css' );
+	add_editor_style(
+		array(
+			'assets/css/editor.css',
+			'assets/css/hero-variants.css',
+			'assets/css/button-block-styles.css',
+		)
+	);
 }
 add_action( 'after_setup_theme', 'pivora_setup' );
