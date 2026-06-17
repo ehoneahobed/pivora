@@ -158,8 +158,9 @@ function pivora_render_blog_query_template_part( string $block_content, array $b
 	$layout   = pivora_get_blog_archive_layout();
 	$part     = pivora_render_theme_template_part( 'blog-query-' . $layout );
 	$fallback = pivora_render_theme_template_part( 'blog-query-grid' );
+	$markup   = '' !== $part ? $part : $fallback;
 
-	return '' !== $part ? $part : $fallback;
+	return pivora_prepend_blog_toolbar_to_archive( $markup );
 }
 add_filter( 'render_block', 'pivora_render_blog_query_template_part', 10, 2 );
 

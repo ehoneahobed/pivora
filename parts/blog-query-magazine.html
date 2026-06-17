@@ -3,12 +3,17 @@
 	<!-- wp:query {"queryId":12,"query":{"perPage":7,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"className":"pivora-blog-query pivora-blog-query--magazine"} -->
 	<div class="wp-block-query pivora-blog-query pivora-blog-query--magazine">
 		<!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
-			<!-- wp:group {"tagName":"article","className":"pivora-card pivora-post-card pivora-post-card--magazine","layout":{"type":"constrained"}} -->
+			<!-- wp:group {"tagName":"article","className":"pivora-card pivora-post-card pivora-post-card--magazine","layout":{"type":"default"}} -->
 			<article class="wp-block-group pivora-card pivora-post-card pivora-post-card--magazine">
-				<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/10"} /-->
-				<!-- wp:post-date {"fontSize":"small","className":"pivora-post-card__date"} /-->
-				<!-- wp:post-title {"isLink":true,"fontSize":"x-large"} /-->
-				<!-- wp:post-excerpt {"moreText":"Read article","excerptLength":26} /-->
+				<!-- wp:post-featured-image {"isLink":true,"className":"pivora-post-card__media"} /-->
+
+				<!-- wp:group {"className":"pivora-post-card__body","layout":{"type":"default"}} -->
+				<div class="wp-block-group pivora-post-card__body">
+					<!-- wp:post-date {"fontSize":"small","className":"pivora-post-card__date"} /-->
+					<!-- wp:post-title {"isLink":true,"fontSize":"large"} /-->
+					<!-- wp:post-excerpt {"moreText":"Read article","excerptLength":20} /-->
+				</div>
+				<!-- /wp:group -->
 			</article>
 			<!-- /wp:group -->
 		<!-- /wp:post-template -->

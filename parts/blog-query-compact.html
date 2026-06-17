@@ -1,13 +1,27 @@
 <!-- wp:group {"align":"wide","className":"pivora-blog-archive","layout":{"type":"default"}} -->
 <div class="wp-block-group alignwide pivora-blog-archive">
-	<!-- wp:query {"queryId":13,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"className":"pivora-blog-query pivora-blog-query--compact"} -->
+	<!-- wp:query {"queryId":13,"query":{"perPage":12,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":true},"className":"pivora-blog-query pivora-blog-query--compact"} -->
 	<div class="wp-block-query pivora-blog-query pivora-blog-query--compact">
-		<!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
-			<!-- wp:group {"tagName":"article","className":"pivora-card pivora-post-card pivora-post-card--compact","layout":{"type":"constrained"}} -->
-			<article class="wp-block-group pivora-card pivora-post-card pivora-post-card--compact">
-				<!-- wp:post-date {"fontSize":"small","className":"pivora-post-card__date"} /-->
-				<!-- wp:post-title {"isLink":true,"fontSize":"medium"} /-->
-				<!-- wp:post-excerpt {"moreText":"Read","excerptLength":16} /-->
+		<!-- wp:post-template -->
+			<!-- wp:group {"tagName":"article","className":"pivora-post-row pivora-post-row--compact","layout":{"type":"default"}} -->
+			<article class="wp-block-group pivora-post-row pivora-post-row--compact">
+				<!-- wp:group {"className":"pivora-post-row__content","layout":{"type":"default"}} -->
+				<div class="wp-block-group pivora-post-row__content">
+					<!-- wp:group {"className":"pivora-post-row__main","layout":{"type":"default"}} -->
+					<div class="wp-block-group pivora-post-row__main">
+						<!-- wp:post-title {"isLink":true} /-->
+						<!-- wp:post-excerpt {"moreText":"Read article","excerptLength":22,"showMoreOnNewLine":true} /-->
+					</div>
+					<!-- /wp:group -->
+
+					<!-- wp:group {"className":"pivora-post-row__aside","layout":{"type":"default"}} -->
+					<div class="wp-block-group pivora-post-row__aside">
+						<!-- wp:post-date {"fontSize":"small","className":"pivora-post-row__date"} /-->
+						<!-- wp:post-terms {"term":"category","fontSize":"small","className":"pivora-post-row__category"} /-->
+					</div>
+					<!-- /wp:group -->
+				</div>
+				<!-- /wp:group -->
 			</article>
 			<!-- /wp:group -->
 		<!-- /wp:post-template -->

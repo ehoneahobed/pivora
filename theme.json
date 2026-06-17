@@ -273,6 +273,11 @@
       "area": "blog",
       "name": "blog-query-compact",
       "title": "Blog Query: Compact Cards"
+    },
+    {
+      "area": "blog",
+      "name": "blog-toolbar",
+      "title": "Blog Toolbar"
     }
   ],
   "customTemplates": [
