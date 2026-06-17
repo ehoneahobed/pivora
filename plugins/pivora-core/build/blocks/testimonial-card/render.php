@@ -20,9 +20,11 @@ $initials = isset( $attributes['initials'] ) ? (string) $attributes['initials'] 
 $name     = isset( $attributes['name'] ) ? (string) $attributes['name'] : '';
 $role     = isset( $attributes['role'] ) ? (string) $attributes['role'] : '';
 
-$wrapper_attributes = get_block_wrapper_attributes(
+$wrapper_attributes = pivora_core_get_block_wrapper_attributes(
+	$attributes,
+	'pivora-testimonial-card',
 	array(
-		'class' => 'pivora-testimonial-card',
+		'surfaceStyle' => 'surface',
 	)
 );
 ?>

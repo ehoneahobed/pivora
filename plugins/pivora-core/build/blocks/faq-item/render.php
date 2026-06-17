@@ -19,9 +19,11 @@ $question        = isset( $attributes['question'] ) ? (string) $attributes['ques
 $answer          = isset( $attributes['answer'] ) ? (string) $attributes['answer'] : '';
 $open_by_default = ! empty( $attributes['openByDefault'] );
 
-$wrapper_attributes = get_block_wrapper_attributes(
+$wrapper_attributes = pivora_core_get_block_wrapper_attributes(
+	$attributes,
+	'pivora-faq-item',
 	array(
-		'class' => 'pivora-faq-item',
+		'surfaceStyle' => 'surface',
 	)
 );
 ?>

@@ -1,37 +1,118 @@
+@use '../shared/style-modifiers';
+
 .wp-block-pivora-social-links-bar.pivora-social-links-bar {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--wp--preset--spacing--50);
+	gap: var(--wp--style--block-gap, var(--wp--preset--spacing--50, 1rem));
+}
+
+.pivora-social-links-bar--layout-stacked,
+.pivora-social-links-bar--layout-label-above {
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.pivora-social-links-bar--align-center {
+	justify-content: center;
+	text-align: center;
+}
+
+.pivora-social-links-bar--align-center .pivora-social-links-bar__list {
+	justify-content: center;
+}
+
+.pivora-social-links-bar--align-right {
+	justify-content: flex-end;
+	text-align: right;
+}
+
+.pivora-social-links-bar--align-right .pivora-social-links-bar__list {
+	justify-content: flex-end;
 }
 
 .pivora-social-links-bar__label {
-	color: var(--wp--preset--color--slate);
-	font-size: var(--wp--preset--font-size--small);
+	color: var(--wp--preset--color--slate, #334155);
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
 	font-weight: 800;
 	letter-spacing: 0.08em;
+	margin: 0;
 	text-transform: uppercase;
+}
+
+.pivora-social-links-bar--label-normal .pivora-social-links-bar__label {
+	letter-spacing: normal;
+	text-transform: none;
+}
+
+.pivora-social-links-bar--label-muted .pivora-social-links-bar__label {
+	color: var(--wp--preset--color--slate, #64748b);
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.pivora-social-links-bar--no-label .pivora-social-links-bar__label {
+	display: none;
 }
 
 .pivora-social-links-bar__list {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--wp--preset--spacing--40);
+	gap: var(--wp--preset--spacing--40, 0.75rem);
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
 .pivora-social-links-bar__list a {
-	border: 1px solid var(--wp--preset--color--line);
-	border-radius: 999px;
 	color: inherit;
 	display: inline-flex;
-	padding: 0.45rem 0.9rem;
-	text-decoration: none;
 }
 
-.pivora-social-links-bar__list a:hover {
-	border-color: var(--wp--preset--color--teal);
-	color: var(--wp--preset--color--teal);
+.pivora-social-links-bar--link-style-pill .pivora-social-links-bar__list a {
+	@include style-modifiers.pivora-core-link-pill;
+}
+
+.pivora-social-links-bar--link-style-solid .pivora-social-links-bar__list a {
+	@include style-modifiers.pivora-core-link-solid;
+}
+
+.pivora-social-links-bar--link-style-ghost .pivora-social-links-bar__list a {
+	@include style-modifiers.pivora-core-link-ghost;
+}
+
+.pivora-social-links-bar--link-style-plain .pivora-social-links-bar__list a {
+	@include style-modifiers.pivora-core-link-plain;
+}
+
+.pivora-social-links-bar--link-style-pill .pivora-social-links-bar__list a:hover,
+.pivora-social-links-bar--link-style-ghost .pivora-social-links-bar__list a:hover {
+	border-color: var(--wp--preset--color--teal, #0f766e);
+	color: var(--wp--preset--color--teal, #0f766e);
+}
+
+.pivora-social-links-bar--link-style-solid .pivora-social-links-bar__list a:hover {
+	filter: brightness(1.05);
+}
+
+.pivora-social-links-bar.is-style-centered {
+	justify-content: center;
+	text-align: center;
+}
+
+.pivora-social-links-bar.is-style-centered .pivora-social-links-bar__list {
+	justify-content: center;
+}
+
+.pivora-social-links-bar.is-style-compact {
+	gap: var(--wp--preset--spacing--30, 0.5rem);
+}
+
+.pivora-social-links-bar.is-style-compact .pivora-social-links-bar__list a {
+	padding: 0.3rem 0.7rem;
+}
+
+.pivora-social-links-bar.is-style-minimal .pivora-social-links-bar__list a {
+	@include style-modifiers.pivora-core-link-plain;
 }

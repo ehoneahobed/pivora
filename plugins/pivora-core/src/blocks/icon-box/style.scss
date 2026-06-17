@@ -1,9 +1,11 @@
 @use '../shared/surface';
+@use '../shared/card-surfaces';
 
 .wp-block-pivora-icon-box.pivora-icon-box {
 	@include surface.pivora-core-card;
+	@include card-surfaces.pivora-core-card-surfaces('pivora-icon-box');
 	display: grid;
-	gap: var(--wp--preset--spacing--40);
+	gap: var(--wp--style--block-gap, var(--wp--preset--spacing--40, 0.75rem));
 	height: 100%;
 }
 

@@ -8,6 +8,27 @@
  * @package Pivora
  */
 
+if ( defined( 'PIVORA_CORE_VERSION' ) ) :
+	?>
+<!-- wp:group {"align":"full","className":"pivora-section pivora-logo-cloud-section","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull pivora-section pivora-logo-cloud-section">
+	<!-- wp:group {"align":"wide","className":"pivora-logo-cloud-section__inner","layout":{"type":"default"}} -->
+	<div class="wp-block-group alignwide pivora-logo-cloud-section__inner">
+		<?php
+		pivora_block(
+			'pivora/logo-grid',
+			array(
+				'heading' => __( 'Trusted by product teams, studios, and publishers', 'pivora' ),
+			)
+		);
+		?>
+	</div>
+	<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+	<?php
+	return;
+endif;
 ?>
 <!-- wp:group {"align":"full","className":"pivora-section pivora-logo-cloud-section","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull pivora-section pivora-logo-cloud-section">

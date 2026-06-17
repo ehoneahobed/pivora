@@ -98,3 +98,106 @@
 .pivora-demo-import__after {
 	max-width: 68rem;
 }
+
+.pivora-demo-import__scopes {
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	margin-block: 0 1rem;
+	max-width: 72rem;
+	padding: 1rem 1.1rem;
+}
+
+.pivora-demo-import__scopes legend {
+	font-weight: 600;
+	padding-inline: 0.25rem;
+}
+
+.pivora-demo-import__scope {
+	display: block;
+	margin-block: 0.45rem;
+}
+
+.pivora-demo-import__scope.is-disabled {
+	color: #a7aaad;
+}
+
+.pivora-demo-import__scope.is-disabled input {
+	pointer-events: none;
+}
+
+.pivora-demo-import__rollback {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	margin-block: 0 1.25rem;
+	max-width: 72rem;
+	padding: 1rem 1.1rem;
+}
+
+.pivora-demo-import__rollback-title {
+	font-size: 1rem;
+	margin-block: 0 0.5rem;
+}
+
+.pivora-demo-import__progress {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 8px;
+	list-style: none;
+	margin-block: 0 1.25rem;
+	max-width: 72rem;
+	padding: 0.75rem 1rem;
+}
+
+.pivora-demo-import__progress-step {
+	color: #50575e;
+	padding: 0.35rem 0 0.35rem 1.5rem;
+	position: relative;
+}
+
+.pivora-demo-import__progress-step::before {
+	color: #00a32a;
+	content: "✓";
+	font-weight: 700;
+	left: 0;
+	position: absolute;
+}
+
+.pivora-demo-import__progress-step.is-done {
+	color: #1d2327;
+}
+
+.pivora-demo-import__kit-file {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	margin-block: 0 1.25rem;
+	max-width: 72rem;
+	padding: 1rem 1.1rem;
+}
+
+.pivora-demo-import__kit-file-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-block: 0.75rem 0;
+}
+
+.pivora-demo-import__scopes--inline {
+	border: 0;
+	margin-block: 0.75rem 0;
+	padding: 0;
+}
+
+.pivora-demo-import__woo-notice {
+	background: #fcf9e8;
+	border: 1px solid #dba617;
+	border-radius: 8px;
+	margin-block: 0 1rem;
+	max-width: 72rem;
+	padding: 0.75rem 1rem;
+}
+
+.pivora-demo-kit-card__note--warning a {
+	font-weight: 600;
+}

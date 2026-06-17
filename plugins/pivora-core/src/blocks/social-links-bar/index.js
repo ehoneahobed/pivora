@@ -7,12 +7,27 @@ import {
 import { PanelBody, TextControl, Button } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import metadata from './block.json';
+import {
+	SocialLinksStylePanel,
+	getModifierClassName,
+} from '../shared/style-panel';
 import './style.scss';
 
 function Edit( { attributes, setAttributes } ) {
-	const { label, links } = attributes;
+	const { label, links, showLabel } = attributes;
+
 	const blockProps = useBlockProps( {
-		className: 'pivora-social-links-bar',
+		className: getModifierClassName(
+			'pivora-social-links-bar',
+			attributes,
+			{
+				layout: 'layout',
+				contentAlign: 'align',
+				linkStyle: 'link-style',
+				labelTransform: 'label',
+				surfaceStyle: 'surface',
+			}
+		),
 	} );
 
 	const updateLink = ( index, field, value ) => {
@@ -50,6 +65,10 @@ function Edit( { attributes, setAttributes } ) {
 
 	return (
 		<>
+			<SocialLinksStylePanel
+				attributes={ attributes }
+				setAttributes={ setAttributes }
+			/>
 			<InspectorControls>
 				<PanelBody title={ __( 'Social links', 'pivora-core' ) }>
 					{ links.map( ( link, index ) => (
@@ -86,13 +105,17 @@ function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 			<div { ...blockProps }>
-				<RichText
-					tagName="span"
-					className="pivora-social-links-bar__label"
-					value={ label }
-					onChange={ ( value ) => setAttributes( { label: value } ) }
-					placeholder={ __( 'Follow', 'pivora-core' ) }
-				/>
+				{ showLabel !== false && (
+					<RichText
+						tagName="span"
+						className="pivora-social-links-bar__label"
+						value={ label }
+						onChange={ ( value ) =>
+							setAttributes( { label: value } )
+						}
+						placeholder={ __( 'Follow', 'pivora-core' ) }
+					/>
+				) }
 				<ul className="pivora-social-links-bar__list">
 					{ links.map( ( link, index ) => (
 						<li key={ `social-link-preview-${ index }` }>

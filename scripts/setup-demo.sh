@@ -102,7 +102,7 @@ fi
 echo ""
 echo "WordPress admin (test like a site owner)"
 echo "  Dashboard   $(site_url)/wp-admin/"
-echo "  Demo Import $(site_url)/wp-admin/admin.php?page=pivora-demo-import"
+echo "  Starter Kits $(site_url)/wp-admin/admin.php?page=pivora-dashboard"
 echo "  Site Editor $(site_url)/wp-admin/site-editor.php"
 echo "  Username    ${ADMIN_USER}"
 echo "  Password    ${ADMIN_PASS}"

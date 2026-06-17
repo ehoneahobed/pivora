@@ -21,9 +21,13 @@ $link_text       = isset( $attributes['linkText'] ) ? (string) $attributes['link
 $link_url        = isset( $attributes['linkUrl'] ) ? (string) $attributes['linkUrl'] : '';
 $dismissible     = ! isset( $attributes['dismissible'] ) || (bool) $attributes['dismissible'];
 
-$wrapper_attributes = get_block_wrapper_attributes(
+$wrapper_attributes = pivora_core_get_block_wrapper_attributes(
+	$attributes,
+	'pivora-announcement-bar',
 	array(
-		'class'                => 'pivora-announcement-bar',
+		'barStyle' => 'bar',
+	),
+	array(
 		'data-announcement-id' => $announcement_id,
 		'data-dismissible'     => $dismissible ? 'true' : 'false',
 	)

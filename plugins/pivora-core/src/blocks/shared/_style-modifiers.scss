@@ -1,0 +1,54 @@
+/**
+ * Shared surface and link style modifiers for Pivora Core blocks.
+ */
+
+@mixin pivora-core-surface-soft {
+	background: color-mix(in srgb, var(--wp--preset--color--white, #fff) 88%, var(--wp--preset--color--mist, #f1f5f9));
+	border-color: transparent;
+}
+
+@mixin pivora-core-surface-outline {
+	background: transparent;
+	border-style: solid;
+	border-width: 1px;
+}
+
+@mixin pivora-core-surface-minimal {
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+	padding: 0;
+}
+
+@mixin pivora-core-link-pill {
+	border: 1px solid var(--wp--preset--color--line, #e2e8f0);
+	border-radius: 999px;
+	padding: 0.45rem 0.9rem;
+	text-decoration: none;
+}
+
+@mixin pivora-core-link-solid {
+	background: var(--wp--preset--color--teal, #0f766e);
+	border: 1px solid transparent;
+	border-radius: 999px;
+	color: var(--wp--preset--color--white, #fff);
+	padding: 0.45rem 0.9rem;
+	text-decoration: none;
+}
+
+@mixin pivora-core-link-ghost {
+	background: transparent;
+	border: 1px solid currentcolor;
+	border-radius: 999px;
+	padding: 0.45rem 0.9rem;
+	text-decoration: none;
+}
+
+@mixin pivora-core-link-plain {
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}

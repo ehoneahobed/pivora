@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function pivora_get_demo_kits(): array {
 	$kits = array(
-		'business'  => array(
+		'business'       => array(
 			'label'       => __( 'Business landing', 'pivora-core' ),
 			'description' => __( 'Hero, metrics, features, testimonials, FAQ, pricing, and CTA.', 'pivora-core' ),
 			'pattern'     => 'pivora/starter-business-landing',
@@ -27,7 +27,7 @@ function pivora_get_demo_kits(): array {
 			'seed_posts'  => true,
 			'woocommerce' => false,
 		),
-		'saas'      => array(
+		'saas'           => array(
 			'label'       => __( 'SaaS landing', 'pivora-core' ),
 			'description' => __( 'Logo cloud, split metrics, comparison table, FAQ, and newsletter.', 'pivora-core' ),
 			'pattern'     => 'pivora/starter-saas-landing',
@@ -36,7 +36,7 @@ function pivora_get_demo_kits(): array {
 			'seed_posts'  => true,
 			'woocommerce' => false,
 		),
-		'blog'      => array(
+		'blog'           => array(
 			'label'       => __( 'Editorial blog', 'pivora-core' ),
 			'description' => __( 'Editorial feature, latest posts, newsletter, and CTA.', 'pivora-core' ),
 			'pattern'     => 'pivora/starter-blog-landing',
@@ -45,7 +45,7 @@ function pivora_get_demo_kits(): array {
 			'seed_posts'  => true,
 			'woocommerce' => false,
 		),
-		'portfolio' => array(
+		'portfolio'      => array(
 			'label'       => __( 'Portfolio studio', 'pivora-core' ),
 			'description' => __( 'Portfolio grid, team, testimonials, and CTA.', 'pivora-core' ),
 			'pattern'     => 'pivora/starter-portfolio-landing',
@@ -54,7 +54,7 @@ function pivora_get_demo_kits(): array {
 			'seed_posts'  => false,
 			'woocommerce' => false,
 		),
-		'store'     => array(
+		'store'          => array(
 			'label'       => __( 'Storefront', 'pivora-core' ),
 			'description' => __( 'Store hero, product spotlight, categories, benefits, and CTA.', 'pivora-core' ),
 			'pattern'     => 'pivora/starter-store-landing',
@@ -63,7 +63,7 @@ function pivora_get_demo_kits(): array {
 			'seed_posts'  => true,
 			'woocommerce' => true,
 		),
-		'agency'    => array(
+		'agency'         => array(
 			'label'       => __( 'Agency landing', 'pivora-core' ),
 			'description' => __( 'Plugin starter with services, integrations, lead capture, and team.', 'pivora-core' ),
 			'pattern'     => 'pivora-core/starter-agency-landing',
@@ -72,7 +72,27 @@ function pivora_get_demo_kits(): array {
 			'seed_posts'  => true,
 			'woocommerce' => false,
 		),
+		'local-business' => array(
+			'label'       => __( 'Local business', 'pivora-core' ),
+			'description' => __( 'Services, testimonials, FAQ, contact, and a clear call to action.', 'pivora-core' ),
+			'pattern'     => 'pivora/starter-local-business-landing',
+			'header'      => 'header',
+			'footer'      => 'footer',
+			'seed_posts'  => true,
+			'woocommerce' => false,
+		),
+		'nonprofit'      => array(
+			'label'       => __( 'Nonprofit', 'pivora-core' ),
+			'description' => __( 'Mission hero, impact metrics, programs, stories, and donation CTA.', 'pivora-core' ),
+			'pattern'     => 'pivora/starter-nonprofit-landing',
+			'header'      => 'header-centered',
+			'footer'      => 'footer-columns',
+			'seed_posts'  => true,
+			'woocommerce' => false,
+		),
 	);
+
+	$kits = array_merge( $kits, pivora_core_get_custom_kits() );
 
 	/**
 	 * Filters demo kits registered by Pivora Core.
@@ -96,8 +116,14 @@ function pivora_get_demo_kit_markup( string $kit_slug ): string {
 		return '';
 	}
 
+	$kit = $kits[ $kit_slug ];
+
+	if ( ! empty( $kit['homepage_markup'] ) ) {
+		return (string) $kit['homepage_markup'];
+	}
+
 	return pivora_expand_pattern_content(
-		pivora_load_pattern_markup( (string) $kits[ $kit_slug ]['pattern'] )
+		pivora_load_pattern_markup( (string) $kit['pattern'] )
 	);
 }
 
@@ -313,134 +339,84 @@ function pivora_core_prepare_woocommerce_demo() {
 /**
  * Imports a demo kit into the current site.
  *
- * @param string $kit_slug Kit identifier.
+ * @param string               $kit_slug Kit identifier.
+ * @param array<string, mixed> $args Import options.
  * @return true|WP_Error
  */
-function pivora_import_demo_kit( string $kit_slug ) {
+function pivora_import_demo_kit( string $kit_slug, array $args = array() ) {
 	$kits = pivora_get_demo_kits();
 
 	if ( ! isset( $kits[ $kit_slug ] ) ) {
 		return new WP_Error( 'pivora_invalid_kit', __( 'Unknown demo kit.', 'pivora-core' ) );
 	}
 
-	$kit = $kits[ $kit_slug ];
-
-	$home_id      = pivora_ensure_page( 'home', 'Home' );
-	$blog_id      = pivora_ensure_page( 'blog', 'Blog' );
-	$contact_id   = pivora_ensure_page( 'contact', 'Contact' );
-	$portfolio_id = pivora_ensure_page( 'portfolio', 'Portfolio' );
-
-	if ( 0 === $home_id ) {
-		return new WP_Error( 'pivora_home_page', __( 'Could not create the home page.', 'pivora-core' ) );
-	}
-
-	$pattern_markup = pivora_get_demo_kit_markup( $kit_slug );
-
-	if ( '' === $pattern_markup ) {
-		return new WP_Error( 'pivora_pattern_missing', __( 'Starter pattern markup could not be loaded.', 'pivora-core' ) );
-	}
-
-	wp_update_post(
-		array(
-			'ID'           => $home_id,
-			'post_content' => $pattern_markup,
-		)
+	$kit    = $kits[ $kit_slug ];
+	$scopes = wp_parse_args(
+		isset( $args['scopes'] ) && is_array( $args['scopes'] ) ? $args['scopes'] : array(),
+		pivora_core_default_import_scopes()
 	);
 
-	update_option( 'show_on_front', 'page' );
-	update_option( 'page_on_front', $home_id );
-	update_option( 'page_for_posts', $blog_id );
+	$has_scope = false;
 
-	update_option( 'pivora_header_variant', (string) $kit['header'] );
-	update_option( 'pivora_footer_variant', (string) $kit['footer'] );
-	update_option( 'pivora_active_demo_kit', $kit_slug );
+	foreach ( $scopes as $enabled ) {
+		if ( $enabled ) {
+			$has_scope = true;
+			break;
+		}
+	}
 
-	if ( $contact_id ) {
-		$contact_markup = pivora_load_pattern_markup( 'pivora/contact-section' );
-		if ( ! $contact_markup ) {
-			$contact_markup = '<!-- wp:paragraph --><p>Reach out to discuss your next project.</p><!-- /wp:paragraph -->';
+	if ( ! $has_scope ) {
+		return new WP_Error(
+			'pivora_core_no_scopes',
+			__( 'Select at least one import section before importing.', 'pivora-core' )
+		);
+	}
+
+	$save_snapshot = ! isset( $args['save_snapshot'] ) || (bool) $args['save_snapshot'];
+	$steps_done    = array();
+
+	if ( $save_snapshot ) {
+		pivora_core_save_import_snapshot();
+		$steps_done[] = 'snapshot';
+	}
+
+	if ( ! empty( $scopes['homepage'] ) ) {
+		$result = pivora_core_import_kit_homepage_scope( $kit_slug, $kit );
+
+		if ( is_wp_error( $result ) ) {
+			return $result;
 		}
 
-		wp_update_post(
-			array(
-				'ID'           => $contact_id,
-				'post_content' => $contact_markup,
-			)
-		);
-		delete_post_meta( $contact_id, '_wp_page_template' );
+		$steps_done[] = 'homepage';
 	}
 
-	if ( $portfolio_id ) {
-		wp_update_post(
-			array(
-				'ID'           => $portfolio_id,
-				'post_content' => pivora_load_pattern_markup( 'pivora/starter-portfolio-landing' ),
-			)
-		);
-		update_post_meta( $portfolio_id, '_wp_page_template', 'page-landing' );
+	if ( ! empty( $scopes['pages'] ) ) {
+		$pages = isset( $kit['pages'] ) && is_array( $kit['pages'] ) ? $kit['pages'] : null;
+		pivora_core_import_kit_pages_scope( $pages );
+		$steps_done[] = 'pages';
 	}
 
-	if ( ! empty( $kit['seed_posts'] ) ) {
+	if ( ! empty( $scopes['blog_seed'] ) && ! empty( $kit['seed_posts'] ) ) {
 		pivora_seed_demo_posts();
+		$steps_done[] = 'blog_seed';
 	}
 
-	if ( ! empty( $kit['woocommerce'] ) ) {
+	if ( ! empty( $scopes['woocommerce'] ) && ! empty( $kit['woocommerce'] ) ) {
 		$woo_result = pivora_core_prepare_woocommerce_demo();
 
 		if ( is_wp_error( $woo_result ) ) {
 			return $woo_result;
 		}
+
+		$steps_done[] = 'woocommerce';
 	}
 
 	flush_rewrite_rules( false );
 
+	set_transient( 'pivora_core_last_import_steps', $steps_done, MINUTE_IN_SECONDS );
+
 	return true;
 }
-
-
-/**
- * Registers the demo import admin screen under the Pivora Core menu.
- */
-function pivora_core_register_demo_import_page(): void {
-	add_menu_page(
-		__( 'Pivora Demo Import', 'pivora-core' ),
-		__( 'Pivora', 'pivora-core' ),
-		'edit_theme_options',
-		'pivora-demo-import',
-		'pivora_core_render_demo_import_page',
-		'dashicons-layout',
-		58
-	);
-}
-add_action( 'admin_menu', 'pivora_core_register_demo_import_page' );
-
-
-/**
- * Enqueues styles and scripts for the demo import screen.
- *
- * @param string $hook_suffix Current admin page hook.
- */
-function pivora_core_enqueue_demo_import_assets( string $hook_suffix ): void {
-	if ( 'toplevel_page_pivora-demo-import' !== $hook_suffix ) {
-		return;
-	}
-
-	wp_enqueue_style(
-		'pivora-demo-import-admin',
-		PIVORA_CORE_URL . 'assets/demo-import-admin.css',
-		array(),
-		PIVORA_CORE_VERSION
-	);
-
-	wp_enqueue_script(
-		'pivora-demo-import-admin',
-		PIVORA_CORE_URL . 'assets/demo-import-admin.js',
-		array(),
-		PIVORA_CORE_VERSION,
-		true
-	);
-}
-add_action( 'admin_enqueue_scripts', 'pivora_core_enqueue_demo_import_assets' );
 
 
 /**
@@ -450,7 +426,7 @@ add_action( 'admin_enqueue_scripts', 'pivora_core_enqueue_demo_import_assets' );
  * @param string               $kit_slug Kit identifier.
  */
 function pivora_core_render_demo_preview_banner( array $kit, string $kit_slug ): void {
-	$import_url = admin_url( 'admin.php?page=pivora-demo-import' );
+	$import_url = admin_url( 'admin.php?page=pivora-dashboard' );
 	?>
 	<div class="pivora-demo-kit-preview-banner" role="status">
 		<p>
@@ -469,7 +445,7 @@ function pivora_core_render_demo_preview_banner( array $kit, string $kit_slug ):
 			</a>
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin.php' ) ); ?>">
 				<?php wp_nonce_field( 'pivora_import_demo_kit' ); ?>
-				<input type="hidden" name="page" value="pivora-demo-import" />
+				<input type="hidden" name="page" value="pivora-dashboard" />
 				<input type="hidden" name="demo_kit" value="<?php echo esc_attr( $kit_slug ); ?>" />
 				<button type="submit" class="pivora-demo-kit-preview-banner__button" name="pivora_import_demo_kit" value="1">
 					<?php esc_html_e( 'Import this kit', 'pivora-core' ); ?>
@@ -663,10 +639,30 @@ add_action( 'template_redirect', 'pivora_core_handle_demo_kit_preview', 0 );
 
 
 /**
- * Handles demo import form submissions.
+ * Handles demo import and rollback form submissions.
  */
 function pivora_core_handle_demo_import_form(): void {
-	if ( ! isset( $_POST['pivora_import_demo_kit'] ) ) {
+	if ( isset( $_POST['pivora_import_rollback'] ) ) {
+		if ( ! current_user_can( 'edit_theme_options' ) ) {
+			return;
+		}
+
+		check_admin_referer( 'pivora_import_rollback' );
+
+		$result = pivora_core_restore_import_snapshot();
+		$query  = array( 'page' => 'pivora-dashboard' );
+
+		if ( is_wp_error( $result ) ) {
+			$query['pivora_rollback_error'] = rawurlencode( $result->get_error_message() );
+		} else {
+			$query['pivora_rollback_done'] = '1';
+		}
+
+		wp_safe_redirect( add_query_arg( $query, admin_url( 'admin.php' ) ) );
+		exit;
+	}
+
+	if ( ! isset( $_POST['pivora_import_demo_kit'] ) && ! isset( $_POST['pivora_import_kit_file'] ) && ! isset( $_POST['pivora_save_kit_file'] ) ) {
 		return;
 	}
 
@@ -674,19 +670,105 @@ function pivora_core_handle_demo_import_form(): void {
 		return;
 	}
 
+	if ( isset( $_POST['pivora_import_kit_file'] ) || isset( $_POST['pivora_save_kit_file'] ) ) {
+		check_admin_referer( 'pivora_import_kit_file' );
+
+		if ( empty( $_FILES['pivora_kit_file'] ) || ! is_array( $_FILES['pivora_kit_file'] ) ) {
+			wp_safe_redirect(
+				add_query_arg(
+					array(
+						'page'              => 'pivora-dashboard',
+						'pivora_demo_error' => rawurlencode( __( 'No kit file was uploaded.', 'pivora-core' ) ),
+					),
+					admin_url( 'admin.php' )
+				)
+			);
+			exit;
+		}
+
+		$manifest = pivora_core_parse_kit_upload( wp_unslash( $_FILES['pivora_kit_file'] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+
+		if ( is_wp_error( $manifest ) ) {
+			wp_safe_redirect(
+				add_query_arg(
+					array(
+						'page'              => 'pivora-dashboard',
+						'pivora_demo_error' => rawurlencode( $manifest->get_error_message() ),
+					),
+					admin_url( 'admin.php' )
+				)
+			);
+			exit;
+		}
+
+		$kit_slug = sanitize_key( (string) $manifest['slug'] );
+		$kit      = pivora_core_manifest_to_kit_config( $manifest );
+
+		if ( isset( $_POST['pivora_save_kit_file'] ) ) {
+			pivora_core_save_custom_kit( $kit_slug, $kit );
+
+			wp_safe_redirect(
+				add_query_arg(
+					array(
+						'page'             => 'pivora-dashboard',
+						'pivora_kit_saved' => $kit_slug,
+					),
+					admin_url( 'admin.php' )
+				)
+			);
+			exit;
+		}
+
+		$scopes = pivora_core_sanitize_import_scopes( wp_unslash( $_POST ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$result = pivora_core_import_kit_manifest(
+			$manifest,
+			array(
+				'scopes'        => $scopes,
+				'save_snapshot' => true,
+			)
+		);
+
+		if ( is_wp_error( $result ) ) {
+			$query = array(
+				'page'              => 'pivora-dashboard',
+				'pivora_demo_error' => rawurlencode( $result->get_error_message() ),
+			);
+		} else {
+			pivora_core_save_custom_kit( $kit_slug, $kit );
+			$query = array(
+				'page'             => 'pivora-dashboard',
+				'pivora_demo_done' => $kit_slug,
+			);
+		}
+
+		wp_safe_redirect( add_query_arg( $query, admin_url( 'admin.php' ) ) );
+		exit;
+	}
+
+	if ( ! isset( $_POST['pivora_import_demo_kit'] ) ) {
+		return;
+	}
+
 	check_admin_referer( 'pivora_import_demo_kit' );
 
 	$kit_slug = isset( $_POST['demo_kit'] ) ? sanitize_key( wp_unslash( (string) $_POST['demo_kit'] ) ) : '';
-	$result   = pivora_import_demo_kit( $kit_slug );
+	$scopes   = pivora_core_sanitize_import_scopes( wp_unslash( $_POST ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+	$result   = pivora_import_demo_kit(
+		$kit_slug,
+		array(
+			'scopes'        => $scopes,
+			'save_snapshot' => true,
+		)
+	);
 
 	if ( is_wp_error( $result ) ) {
 		$query = array(
-			'page'              => 'pivora-demo-import',
+			'page'              => 'pivora-dashboard',
 			'pivora_demo_error' => rawurlencode( $result->get_error_message() ),
 		);
 	} else {
 		$query = array(
-			'page'             => 'pivora-demo-import',
+			'page'             => 'pivora-dashboard',
 			'pivora_demo_done' => $kit_slug,
 		);
 	}
@@ -698,6 +780,22 @@ add_action( 'admin_init', 'pivora_core_handle_demo_import_form' );
 
 
 /**
+ * Returns labels for import progress steps.
+ *
+ * @return array<string, string>
+ */
+function pivora_core_import_step_labels(): array {
+	return array(
+		'snapshot'    => __( 'Saved site snapshot', 'pivora-core' ),
+		'homepage'    => __( 'Updated homepage and site settings', 'pivora-core' ),
+		'pages'       => __( 'Updated starter pages', 'pivora-core' ),
+		'blog_seed'   => __( 'Seeded sample blog posts', 'pivora-core' ),
+		'woocommerce' => __( 'Prepared WooCommerce store pages', 'pivora-core' ),
+	);
+}
+
+
+/**
  * Renders the demo import admin screen.
  */
 function pivora_core_render_demo_import_page(): void {
@@ -705,18 +803,30 @@ function pivora_core_render_demo_import_page(): void {
 		return;
 	}
 
-	$kits       = pivora_get_demo_kits();
-	$active_kit = get_option( 'pivora_active_demo_kit', '' );
-	$done_kit   = isset( $_GET['pivora_demo_done'] ) ? sanitize_key( wp_unslash( (string) $_GET['pivora_demo_done'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-	$error      = '';
+	$kits          = pivora_get_demo_kits();
+	$active_kit    = get_option( 'pivora_active_demo_kit', '' );
+	$done_kit      = isset( $_GET['pivora_demo_done'] ) ? sanitize_key( wp_unslash( (string) $_GET['pivora_demo_done'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	$rollback_done = isset( $_GET['pivora_rollback_done'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+	$error         = '';
 	if ( isset( $_GET['pivora_demo_error'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		$raw_error = wp_unslash( $_GET['pivora_demo_error'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 		$error     = sanitize_text_field( rawurldecode( (string) $raw_error ) );
 	}
+	$rollback_error = '';
+	if ( isset( $_GET['pivora_rollback_error'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		$raw_rollback_error = wp_unslash( $_GET['pivora_rollback_error'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$rollback_error     = sanitize_text_field( rawurldecode( (string) $raw_rollback_error ) );
+	}
+	$import_steps          = get_transient( 'pivora_core_last_import_steps' );
+	$step_labels           = pivora_core_import_step_labels();
+	$scope_labels          = pivora_core_import_scope_labels();
+	$has_snapshot          = pivora_core_has_import_snapshot();
 	$front_page            = (int) get_option( 'page_on_front' );
 	$front_url             = $front_page ? get_permalink( $front_page ) : home_url( '/' );
 	$site_editor           = admin_url( 'site-editor.php' );
-	$default_kit           = $active_kit ? $active_kit : 'business';
+	$default_kit           = ( $active_kit && isset( $kits[ $active_kit ] ) ) ? $active_kit : 'business';
+	$woo_plugins_url       = admin_url( 'plugin-install.php?s=woocommerce&tab=search&type=term' );
+	$kit_saved             = isset( $_GET['pivora_kit_saved'] ) ? sanitize_key( wp_unslash( (string) $_GET['pivora_kit_saved'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 	$default_preview_label = sprintf(
 		/* translators: %s: demo kit label */
 		__( '%s preview', 'pivora-core' ),
@@ -724,7 +834,7 @@ function pivora_core_render_demo_import_page(): void {
 	);
 	?>
 	<div class="wrap">
-		<h1><?php esc_html_e( 'Import a Pivora demo kit', 'pivora-core' ); ?></h1>
+		<h1><?php esc_html_e( 'Starter Site Studio', 'pivora-core' ); ?></h1>
 
 		<?php if ( $done_kit && isset( $kits[ $done_kit ] ) ) : ?>
 			<div class="notice notice-success is-dismissible">
@@ -732,17 +842,67 @@ function pivora_core_render_demo_import_page(): void {
 					<?php
 					printf(
 						/* translators: %s: demo kit label */
-						esc_html__( 'Imported the %s kit. Your home page, header/footer variants, and starter pages are ready to review.', 'pivora-core' ),
+						esc_html__( 'Imported the %s kit. Review the steps below, then open your site to confirm everything looks right.', 'pivora-core' ),
 						esc_html( (string) $kits[ $done_kit ]['label'] )
+					);
+					?>
+				</p>
+			</div>
+			<?php if ( is_array( $import_steps ) && ! empty( $import_steps ) ) : ?>
+				<ol class="pivora-demo-import__progress">
+					<?php foreach ( $import_steps as $step ) : ?>
+						<?php if ( isset( $step_labels[ $step ] ) ) : ?>
+							<li class="pivora-demo-import__progress-step is-done"><?php echo esc_html( $step_labels[ $step ] ); ?></li>
+						<?php endif; ?>
+					<?php endforeach; ?>
+					<li class="pivora-demo-import__progress-step is-done"><?php esc_html_e( 'Import complete', 'pivora-core' ); ?></li>
+				</ol>
+				<?php delete_transient( 'pivora_core_last_import_steps' ); ?>
+			<?php endif; ?>
+		<?php endif; ?>
+
+		<?php if ( $kit_saved && isset( $kits[ $kit_saved ] ) ) : ?>
+			<div class="notice notice-success is-dismissible">
+				<p>
+					<?php
+					printf(
+						/* translators: %s: demo kit label */
+						esc_html__( 'Saved the %s kit for future imports.', 'pivora-core' ),
+						esc_html( (string) $kits[ $kit_saved ]['label'] )
 					);
 					?>
 				</p>
 			</div>
 		<?php endif; ?>
 
+		<?php if ( $rollback_done ) : ?>
+			<div class="notice notice-success is-dismissible">
+				<p><?php esc_html_e( 'Restored your site from the last import snapshot.', 'pivora-core' ); ?></p>
+			</div>
+		<?php endif; ?>
+
 		<?php if ( $error ) : ?>
 			<div class="notice notice-error is-dismissible">
 				<p><?php echo esc_html( $error ); ?></p>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( $rollback_error ) : ?>
+			<div class="notice notice-error is-dismissible">
+				<p><?php echo esc_html( $rollback_error ); ?></p>
+			</div>
+		<?php endif; ?>
+
+		<?php if ( $has_snapshot ) : ?>
+			<div class="pivora-demo-import__rollback">
+				<h2 class="pivora-demo-import__rollback-title"><?php esc_html_e( 'Rollback', 'pivora-core' ); ?></h2>
+				<p><?php esc_html_e( 'Restore homepage content, reading settings, header/footer variants, and starter pages from before your last import.', 'pivora-core' ); ?></p>
+				<form method="post">
+					<?php wp_nonce_field( 'pivora_import_rollback' ); ?>
+					<button type="submit" class="button button-secondary" name="pivora_import_rollback" value="1" onclick="return confirm('<?php echo esc_js( __( 'Restore the previous site state? This cannot be undone after another import.', 'pivora-core' ) ); ?>');">
+						<?php esc_html_e( 'Restore previous state', 'pivora-core' ); ?>
+					</button>
+				</form>
 			</div>
 		<?php endif; ?>
 
@@ -757,7 +917,33 @@ function pivora_core_render_demo_import_page(): void {
 			</p>
 		<?php endif; ?>
 
-		<form method="post" class="pivora-demo-import-form">
+		<div class="pivora-demo-import__kit-file">
+			<h2><?php esc_html_e( 'Import a kit file', 'pivora-core' ); ?></h2>
+			<p><?php esc_html_e( 'Upload a .pivora-kit.json file exported from another site or agency handoff.', 'pivora-core' ); ?></p>
+			<form method="post" enctype="multipart/form-data" class="pivora-demo-import-kit-file-form">
+				<?php wp_nonce_field( 'pivora_import_kit_file' ); ?>
+				<input type="file" name="pivora_kit_file" accept=".json,application/json" required />
+				<fieldset class="pivora-demo-import__scopes pivora-demo-import__scopes--inline">
+					<legend><?php esc_html_e( 'Import sections', 'pivora-core' ); ?></legend>
+					<?php foreach ( $scope_labels as $scope_key => $scope_label ) : ?>
+						<label class="pivora-demo-import__scope">
+							<input type="checkbox" name="import_scope_<?php echo esc_attr( $scope_key ); ?>" value="1" checked="checked" />
+							<?php echo esc_html( $scope_label ); ?>
+						</label>
+					<?php endforeach; ?>
+				</fieldset>
+				<p class="pivora-demo-import__kit-file-actions">
+					<button type="submit" class="button button-secondary" name="pivora_save_kit_file" value="1">
+						<?php esc_html_e( 'Save kit only', 'pivora-core' ); ?>
+					</button>
+					<button type="submit" class="button button-primary" name="pivora_import_kit_file" value="1">
+						<?php esc_html_e( 'Import kit file', 'pivora-core' ); ?>
+					</button>
+				</p>
+			</form>
+		</div>
+
+		<form method="post" class="pivora-demo-import-form" data-woo-active="<?php echo class_exists( 'WooCommerce' ) ? '1' : '0'; ?>">
 			<?php wp_nonce_field( 'pivora_import_demo_kit' ); ?>
 
 			<div class="pivora-demo-import__grid" role="radiogroup" aria-label="<?php esc_attr_e( 'Demo kits', 'pivora-core' ); ?>">
@@ -771,7 +957,7 @@ function pivora_core_render_demo_import_page(): void {
 					);
 					$is_selected = $slug === $default_kit;
 					?>
-					<div class="pivora-demo-kit-card<?php echo $is_selected ? ' is-selected' : ''; ?>" data-kit="<?php echo esc_attr( $slug ); ?>">
+					<div class="pivora-demo-kit-card<?php echo $is_selected ? ' is-selected' : ''; ?>" data-kit="<?php echo esc_attr( $slug ); ?>" data-seed-posts="<?php echo ! empty( $kit['seed_posts'] ) ? '1' : '0'; ?>" data-woocommerce="<?php echo ! empty( $kit['woocommerce'] ) ? '1' : '0'; ?>">
 						<div class="pivora-demo-kit-card__header">
 							<input
 								type="radio"
@@ -787,8 +973,18 @@ function pivora_core_render_demo_import_page(): void {
 									<strong><?php echo esc_html( (string) $kit['label'] ); ?></strong>
 								</label>
 								<p class="pivora-demo-kit-card__description"><?php echo esc_html( (string) $kit['description'] ); ?></p>
-								<?php if ( ! empty( $kit['woocommerce'] ) && ! class_exists( 'WooCommerce' ) ) : ?>
-									<p class="pivora-demo-kit-card__note"><?php esc_html_e( 'Requires WooCommerce to be installed and active.', 'pivora-core' ); ?></p>
+								<?php if ( ! empty( $kit['custom'] ) ) : ?>
+									<p class="pivora-demo-kit-card__note"><?php esc_html_e( 'Imported kit', 'pivora-core' ); ?></p>
+								<?php elseif ( ! empty( $kit['woocommerce'] ) && ! class_exists( 'WooCommerce' ) ) : ?>
+									<p class="pivora-demo-kit-card__note pivora-demo-kit-card__note--warning">
+										<?php
+										printf(
+											/* translators: %s: plugins admin URL */
+											wp_kses_post( __( 'Requires <a href="%s">WooCommerce</a> to be installed and active before import.', 'pivora-core' ) ),
+											esc_url( $woo_plugins_url )
+										);
+										?>
+									</p>
 								<?php elseif ( str_starts_with( (string) $kit['pattern'], 'pivora-core/' ) ) : ?>
 									<p class="pivora-demo-kit-card__note"><?php esc_html_e( 'Pivora Core pattern', 'pivora-core' ); ?></p>
 								<?php endif; ?>
@@ -798,10 +994,29 @@ function pivora_core_render_demo_import_page(): void {
 							<a class="button button-secondary" href="<?php echo esc_url( $preview_url ); ?>" target="_blank" rel="noopener noreferrer">
 								<?php esc_html_e( 'Open full preview', 'pivora-core' ); ?>
 							</a>
+							<a class="button button-link" href="<?php echo esc_url( pivora_core_get_kit_export_url( $slug ) ); ?>">
+								<?php esc_html_e( 'Export JSON', 'pivora-core' ); ?>
+							</a>
 						</div>
 					</div>
 				<?php endforeach; ?>
 			</div>
+
+			<fieldset class="pivora-demo-import__scopes">
+				<legend><?php esc_html_e( 'Import sections', 'pivora-core' ); ?></legend>
+				<p class="description"><?php esc_html_e( 'Choose what to update. A snapshot is saved automatically before each import so you can roll back.', 'pivora-core' ); ?></p>
+				<?php foreach ( $scope_labels as $scope_key => $scope_label ) : ?>
+					<label class="pivora-demo-import__scope" data-scope="<?php echo esc_attr( $scope_key ); ?>">
+						<input
+							type="checkbox"
+							name="import_scope_<?php echo esc_attr( $scope_key ); ?>"
+							value="1"
+							checked="checked"
+						/>
+						<?php echo esc_html( $scope_label ); ?>
+					</label>
+				<?php endforeach; ?>
+			</fieldset>
 
 			<div class="pivora-demo-import__preview">
 				<div class="pivora-demo-import__preview-header">
@@ -824,8 +1039,21 @@ function pivora_core_render_demo_import_page(): void {
 				></iframe>
 			</div>
 
+			<div class="pivora-demo-import__woo-notice" hidden>
+				<p>
+					<strong><?php esc_html_e( 'WooCommerce required', 'pivora-core' ); ?></strong>
+					<?php
+					printf(
+						/* translators: %s: plugin install URL */
+						wp_kses_post( __( 'Install and activate <a href="%s">WooCommerce</a> before importing the store kit.', 'pivora-core' ) ),
+						esc_url( $woo_plugins_url )
+					);
+					?>
+				</p>
+			</div>
+
 			<p class="submit">
-				<button type="submit" class="button button-primary" name="pivora_import_demo_kit" value="1">
+				<button type="submit" class="button button-primary pivora-demo-import__submit" name="pivora_import_demo_kit" value="1">
 					<?php esc_html_e( 'Import selected kit', 'pivora-core' ); ?>
 				</button>
 			</p>
@@ -839,7 +1067,7 @@ function pivora_core_render_demo_import_page(): void {
 		</ul>
 
 		<p class="description">
-			<?php esc_html_e( 'CLI: PIVORA_DEMO_KIT=agency npm run setup:demo', 'pivora-core' ); ?>
+			<?php esc_html_e( 'CLI: PIVORA_DEMO_KIT=agency npm run setup:demo · npm run kit:export -- business', 'pivora-core' ); ?>
 		</p>
 	</div>
 	<?php

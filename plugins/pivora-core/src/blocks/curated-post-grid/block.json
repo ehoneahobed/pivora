@@ -7,7 +7,12 @@
 	"category": "pivora",
 	"icon": "grid-view",
 	"description": "Query-driven post cards with Pivora styling.",
-	"keywords": [ "posts", "blog", "grid", "query" ],
+	"keywords": [
+		"posts",
+		"blog",
+		"grid",
+		"query"
+	],
 	"textdomain": "pivora-core",
 	"attributes": {
 		"postsToShow": {
@@ -41,7 +46,37 @@
 	},
 	"supports": {
 		"html": false,
-		"align": [ "wide", "full" ]
+		"align": [
+			"left",
+			"center",
+			"right",
+			"wide",
+			"full"
+		],
+		"color": {
+			"text": true,
+			"background": true,
+			"link": true
+		},
+		"typography": {
+			"fontSize": true,
+			"fontFamily": true,
+			"fontWeight": true,
+			"lineHeight": true,
+			"letterSpacing": true,
+			"textTransform": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		},
+		"border": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true
+		}
 	},
 	"editorScript": "file:./index.js",
 	"render": "file:./render.php",

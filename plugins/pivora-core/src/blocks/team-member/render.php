@@ -20,9 +20,11 @@ $name     = isset( $attributes['name'] ) ? (string) $attributes['name'] : '';
 $role     = isset( $attributes['role'] ) ? (string) $attributes['role'] : '';
 $bio      = isset( $attributes['bio'] ) ? (string) $attributes['bio'] : '';
 
-$wrapper_attributes = get_block_wrapper_attributes(
+$wrapper_attributes = pivora_core_get_block_wrapper_attributes(
+	$attributes,
+	'pivora-team-member',
 	array(
-		'class' => 'pivora-team-member',
+		'surfaceStyle' => 'surface',
 	)
 );
 ?>

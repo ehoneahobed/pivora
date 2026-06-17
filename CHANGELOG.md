@@ -12,6 +12,58 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Lighthouse performance and accessibility gates on representative pages
 - WordPress.org / public release after stability is confirmed
 
+## [0.4.0] - 2026-06-17
+
+Pivora Core plugin only.
+
+### Added
+
+**Block styling**
+
+- Native block supports on all Pivora blocks: typography, colors, spacing, borders, and alignment
+- **Social Links Bar** style panel: layout, content alignment, link styles (pill, solid, ghost, plain), label visibility and label text style
+- **Card blocks** surface styles: card, soft, outline, minimal (icon box, testimonial, team member, FAQ item, logo grid)
+- **Announcement bar** density styles: default, compact, bold
+- Block style presets registered in the editor (e.g. social links: centered, compact, minimal)
+
+## [0.3.0] - 2026-06-17
+
+Pivora Core plugin only (theme remains 0.1.0).
+
+### Added
+
+**Pivora Core**
+
+- Kit export to `.pivora-kit.json` (admin download + `npm run kit:export`)
+- Kit import from uploaded JSON with save-only or import actions
+- Two new starter kits: **local business** and **nonprofit**
+- **Logo grid** block (`pivora/logo-grid`) with image upload support
+- WooCommerce guard UX: blocks store import and links to install when WC is missing
+
+### Changed
+
+- `pivora/logo-cloud` pattern uses the logo grid block when Core is active (paragraph fallback otherwise)
+- Starter kit registry now merges saved custom kits from imports
+
+## [0.2.0] - 2026-06-17
+
+Pivora Core plugin only (theme remains 0.1.0).
+
+### Added
+
+**Pivora Core**
+
+- Starter Site Studio: partial import scopes (homepage, starter pages, blog seed, WooCommerce)
+- Pre-import snapshot and one-click rollback (`pivora_core_import_snapshot`)
+- Pivora admin dashboard with Starter Kits, Blocks, and Help subpages
+- Import progress steps after successful kit import
+- `docs/CORE_PLUGIN_COMPAT.md` — block theme compatibility matrix
+
+### Changed
+
+- Admin menu **Pivora → Demo Import** renamed to **Pivora → Starter Kits** under the dashboard
+- Legacy `?page=pivora-demo-import` URLs redirect to `?page=pivora-dashboard`
+
 ## [0.1.0] - 2026-06-17
 
 Pre-release preview. Feature-complete for testing; stability and full QA are pending before **1.0.0**.
@@ -60,5 +112,8 @@ Pre-release preview. Feature-complete for testing; stability and full QA are pen
 - Editor grid and full-width breakout rules for split hero and CTA layouts
 - Blog toolbar no longer uses shortcodes (Theme Check compliant)
 
-[Unreleased]: https://github.com/ehoneahobed/pivora/compare/0.1.0...HEAD
+[Unreleased]: https://github.com/ehoneahobed/pivora/compare/0.4.0...HEAD
+[0.4.0]: https://github.com/ehoneahobed/pivora/releases/tag/0.4.0
+[0.3.0]: https://github.com/ehoneahobed/pivora/compare/0.2.0...0.3.0
+[0.2.0]: https://github.com/ehoneahobed/pivora/compare/0.1.0...0.2.0
 [0.1.0]: https://github.com/ehoneahobed/pivora/releases/tag/0.1.0

@@ -7,7 +7,11 @@
 	"category": "pivora",
 	"icon": "money-alt",
 	"description": "Single pricing tier with features and call to action.",
-	"keywords": [ "pricing", "plan", "subscription" ],
+	"keywords": [
+		"pricing",
+		"plan",
+		"subscription"
+	],
 	"textdomain": "pivora-core",
 	"attributes": {
 		"tier": {
@@ -72,7 +76,38 @@
 		}
 	},
 	"supports": {
-		"html": false
+		"html": false,
+		"align": [
+			"left",
+			"center",
+			"right",
+			"wide",
+			"full"
+		],
+		"color": {
+			"text": true,
+			"background": true,
+			"link": true
+		},
+		"typography": {
+			"fontSize": true,
+			"fontFamily": true,
+			"fontWeight": true,
+			"lineHeight": true,
+			"letterSpacing": true,
+			"textTransform": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		},
+		"border": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true
+		}
 	},
 	"editorScript": "file:./index.js",
 	"render": "file:./render.php",

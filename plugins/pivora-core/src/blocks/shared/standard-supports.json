@@ -1,0 +1,28 @@
+{
+	"html": false,
+	"align": [ "left", "center", "right", "wide", "full" ],
+	"color": {
+		"text": true,
+		"background": true,
+		"link": true
+	},
+	"typography": {
+		"fontSize": true,
+		"fontFamily": true,
+		"fontWeight": true,
+		"lineHeight": true,
+		"letterSpacing": true,
+		"textTransform": true
+	},
+	"spacing": {
+		"margin": true,
+		"padding": true,
+		"blockGap": true
+	},
+	"border": {
+		"radius": true,
+		"color": true,
+		"width": true,
+		"style": true
+	}
+}

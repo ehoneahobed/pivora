@@ -43,6 +43,8 @@ Install [Pivora Core](https://github.com/ehoneahobed/pivora) for custom blocks, 
 
 See `docs/SETUP.md` for the full CLI bootstrap guide.
 
+For the companion plugin roadmap, see `docs/CORE_PLUGIN_ROADMAP.md`.
+
 == Frequently Asked Questions ==
 
 = Does Pivora work without the Pivora Core plugin? =

@@ -381,6 +381,20 @@ function pivora_register_patterns(): void {
 			'file'       => 'patterns/starter-portfolio-landing.php',
 			'viewport'   => 1200,
 		),
+		array(
+			'name'       => 'pivora/starter-local-business-landing',
+			'title'      => __( 'Local business landing starter', 'pivora' ),
+			'categories' => array( 'pivora-starters', 'pivora-business' ),
+			'file'       => 'patterns/starter-local-business-landing.php',
+			'viewport'   => 1440,
+		),
+		array(
+			'name'       => 'pivora/starter-nonprofit-landing',
+			'title'      => __( 'Nonprofit landing starter', 'pivora' ),
+			'categories' => array( 'pivora-starters' ),
+			'file'       => 'patterns/starter-nonprofit-landing.php',
+			'viewport'   => 1440,
+		),
 	);
 
 	$registry = WP_Block_Patterns_Registry::get_instance();

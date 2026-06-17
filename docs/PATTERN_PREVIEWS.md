@@ -19,7 +19,7 @@ All values are defined in `inc/patterns.php` on each pattern row.
 
 ## Recommended QA flow
 
-1. Run **Appearance → Demo Import** or `npm run setup:demo` so the home page and sample posts exist.
+1. Run **Pivora → Starter Kits** or `npm run setup:demo` so the home page and sample posts exist.
 2. Insert the pattern on a **Landing Page** template (or the home page).
 3. Compare editor canvas and frontend at desktop and mobile widths.
 4. For store patterns, run `npm run setup:demo:store` with WooCommerce enabled.

@@ -18,7 +18,7 @@ This document is the build queue for making Pivora competitive with top block th
 - **44 theme patterns** — 8 heroes, 5 CTAs, sections, pricing variants, starters, WooCommerce pack (`patterns/`, `inc/patterns.php`)
 - **9 custom blocks** — in `plugins/pivora-core/` (theme shows install notice when plugin is inactive)
 - **5 plugin-only patterns** — lead capture, integrations strip, agency starter, announcement bar, social links footer (`plugins/pivora-core/patterns/`)
-- **6 demo kits** — includes agency kit via **Pivora → Demo Import**
+- **6 demo kits** — includes agency kit via **Pivora → Starter Kits**
 - **3 header + 2 footer variants** — `parts/header-centered.html`, `header-minimal.html`, `footer-columns.html`
 - **4 style variations** — `styles/*.json`
 - **Hero + CTA layout CSS** — `assets/css/hero-variants.css`, `cta-variants.css`, `button-block-styles.css` (frontend + editor)
@@ -155,6 +155,7 @@ Hero and CTA button styles live in `assets/css/button-block-styles.css`.
 - [STARTER_SITES.md](./STARTER_SITES.md) — starter compositions
 - [ADMIN_TESTING.md](./ADMIN_TESTING.md) — QA checklist
 - [DEVELOPMENT.md](./DEVELOPMENT.md) — local environment
+- [CORE_PLUGIN_ROADMAP.md](./CORE_PLUGIN_ROADMAP.md) — Pivora Core plugin phases and build queue
 - [V1_RELEASE_PLAN.md](./V1_RELEASE_PLAN.md) — release checklist
 
 ## Roadmap complete — pre-1.0 block integration

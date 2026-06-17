@@ -47,6 +47,24 @@
 	color: var(--wp--preset--color--amber);
 }
 
+.pivora-announcement-bar--bar-compact {
+	padding: 0.45rem var(--wp--preset--spacing--50, 1rem);
+}
+
+.pivora-announcement-bar--bar-compact .pivora-announcement-bar__message {
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+}
+
+.pivora-announcement-bar--bar-bold {
+	font-weight: 600;
+	padding-block: 1rem;
+}
+
+.pivora-announcement-bar--bar-bold .pivora-announcement-bar__link {
+	font-weight: 800;
+	text-decoration-thickness: 2px;
+}
+
 @media (max-width: 781px) {
 
 	.pivora-announcement-bar__dismiss {

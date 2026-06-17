@@ -7,17 +7,28 @@ import {
 import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import metadata from './block.json';
+import { BarStylePanel, getModifierClassName } from '../shared/style-panel';
 import './style.scss';
 
 function Edit( { attributes, setAttributes } ) {
 	const { announcementId, message, linkText, linkUrl, dismissible } =
 		attributes;
 	const blockProps = useBlockProps( {
-		className: 'pivora-announcement-bar',
+		className: getModifierClassName(
+			'pivora-announcement-bar',
+			attributes,
+			{
+				barStyle: 'bar',
+			}
+		),
 	} );
 
 	return (
 		<>
+			<BarStylePanel
+				attributes={ attributes }
+				setAttributes={ setAttributes }
+			/>
 			<InspectorControls>
 				<PanelBody
 					title={ __( 'Announcement settings', 'pivora-core' ) }

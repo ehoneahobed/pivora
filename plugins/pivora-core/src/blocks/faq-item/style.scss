@@ -1,8 +1,10 @@
 @use '../shared/surface';
+@use '../shared/card-surfaces';
 
 .wp-block-pivora-faq-item.pivora-faq-item {
 	@include surface.pivora-core-card;
-	padding: var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);
+	@include card-surfaces.pivora-core-card-surfaces('pivora-faq-item');
+	padding: var(--wp--preset--spacing--50, 1.25rem) var(--wp--preset--spacing--60, 1.5rem);
 }
 
 .pivora-faq-item summary {

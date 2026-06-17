@@ -1,0 +1,15 @@
+@use 'style-modifiers';
+
+@mixin pivora-core-card-surfaces($base-class) {
+	.#{$base-class}--surface-soft {
+		@include style-modifiers.pivora-core-surface-soft;
+	}
+
+	.#{$base-class}--surface-outline {
+		@include style-modifiers.pivora-core-surface-outline;
+	}
+
+	.#{$base-class}--surface-minimal {
+		@include style-modifiers.pivora-core-surface-minimal;
+	}
+}

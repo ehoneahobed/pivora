@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "pivora/social-links-bar",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"title": "Social Links Bar",
 	"category": "pivora",
 	"icon": "share",
@@ -21,11 +21,55 @@
 				{ "label": "LinkedIn", "url": "https://linkedin.com/" },
 				{ "label": "GitHub", "url": "https://github.com/" }
 			]
+		},
+		"layout": {
+			"type": "string",
+			"default": "inline"
+		},
+		"contentAlign": {
+			"type": "string",
+			"default": "left"
+		},
+		"linkStyle": {
+			"type": "string",
+			"default": "pill"
+		},
+		"showLabel": {
+			"type": "boolean",
+			"default": true
+		},
+		"labelTransform": {
+			"type": "string",
+			"default": "uppercase"
 		}
 	},
 	"supports": {
 		"html": false,
-		"align": [ "wide", "full" ]
+		"align": [ "left", "center", "right", "wide", "full" ],
+		"color": {
+			"text": true,
+			"background": true,
+			"link": true
+		},
+		"typography": {
+			"fontSize": true,
+			"fontFamily": true,
+			"fontWeight": true,
+			"lineHeight": true,
+			"letterSpacing": true,
+			"textTransform": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		},
+		"border": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true
+		}
 	},
 	"editorScript": "file:./index.js",
 	"render": "file:./render.php",

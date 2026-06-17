@@ -7,16 +7,27 @@ import {
 import { PanelBody, TextControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 import metadata from './block.json';
+import { SurfaceStylePanel, getModifierClassName } from '../shared/style-panel';
 import './style.scss';
 
 function Edit( { attributes, setAttributes } ) {
 	const { quote, initials, name, role } = attributes;
 	const blockProps = useBlockProps( {
-		className: 'pivora-testimonial-card',
+		className: getModifierClassName(
+			'pivora-testimonial-card',
+			attributes,
+			{
+				surfaceStyle: 'surface',
+			}
+		),
 	} );
 
 	return (
 		<>
+			<SurfaceStylePanel
+				attributes={ attributes }
+				setAttributes={ setAttributes }
+			/>
 			<InspectorControls>
 				<PanelBody title={ __( 'Author', 'pivora-core' ) }>
 					<TextControl

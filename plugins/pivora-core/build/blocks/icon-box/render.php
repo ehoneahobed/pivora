@@ -19,9 +19,11 @@ $icon    = isset( $attributes['icon'] ) ? (string) $attributes['icon'] : '';
 $title   = isset( $attributes['title'] ) ? (string) $attributes['title'] : '';
 $content = isset( $attributes['content'] ) ? (string) $attributes['content'] : '';
 
-$wrapper_attributes = get_block_wrapper_attributes(
+$wrapper_attributes = pivora_core_get_block_wrapper_attributes(
+	$attributes,
+	'pivora-icon-box',
 	array(
-		'class' => 'pivora-icon-box',
+		'surfaceStyle' => 'surface',
 	)
 );
 ?>

@@ -7,7 +7,11 @@
 	"category": "pivora",
 	"icon": "megaphone",
 	"description": "Dismissible top banner for promos and alerts.",
-	"keywords": [ "announcement", "banner", "notice" ],
+	"keywords": [
+		"announcement",
+		"banner",
+		"notice"
+	],
 	"textdomain": "pivora-core",
 	"attributes": {
 		"announcementId": {
@@ -29,11 +33,45 @@
 		"dismissible": {
 			"type": "boolean",
 			"default": true
+		},
+		"barStyle": {
+			"type": "string",
+			"default": "default"
 		}
 	},
 	"supports": {
 		"html": false,
-		"align": [ "wide", "full" ]
+		"align": [
+			"left",
+			"center",
+			"right",
+			"wide",
+			"full"
+		],
+		"color": {
+			"text": true,
+			"background": true,
+			"link": true
+		},
+		"typography": {
+			"fontSize": true,
+			"fontFamily": true,
+			"fontWeight": true,
+			"lineHeight": true,
+			"letterSpacing": true,
+			"textTransform": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		},
+		"border": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true
+		}
 	},
 	"editorScript": "file:./index.js",
 	"viewScript": "file:./view.js",
