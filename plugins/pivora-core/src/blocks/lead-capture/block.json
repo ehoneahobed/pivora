@@ -1,0 +1,74 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pivora/lead-capture",
+	"version": "1.0.0",
+	"title": "Lead Capture",
+	"category": "pivora",
+	"icon": "email",
+	"description": "Simple name, email, and message form that sends via wp_mail or webhook.",
+	"keywords": [ "lead", "form", "email", "newsletter", "contact" ],
+	"textdomain": "pivora-core",
+	"attributes": {
+		"blockInstanceId": {
+			"type": "string",
+			"default": ""
+		},
+		"showName": {
+			"type": "boolean",
+			"default": true
+		},
+		"showMessage": {
+			"type": "boolean",
+			"default": true
+		},
+		"layout": {
+			"type": "string",
+			"default": "stacked"
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Send message"
+		},
+		"successMessage": {
+			"type": "string",
+			"default": "Thanks — we received your message."
+		},
+		"nameLabel": {
+			"type": "string",
+			"default": "Full name"
+		},
+		"emailLabel": {
+			"type": "string",
+			"default": "Email address"
+		},
+		"messageLabel": {
+			"type": "string",
+			"default": "Message"
+		},
+		"recipientEmail": {
+			"type": "string",
+			"default": ""
+		},
+		"webhookUrl": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "left", "center", "right", "wide", "full" ],
+		"color": { "text": true, "background": true, "link": true },
+		"typography": {
+			"fontSize": true,
+			"fontFamily": true,
+			"fontWeight": true,
+			"lineHeight": true
+		},
+		"spacing": { "margin": true, "padding": true, "blockGap": true },
+		"border": { "radius": true, "color": true, "width": true, "style": true }
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php",
+	"style": "file:./style-index.css"
+}

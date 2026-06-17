@@ -11,8 +11,15 @@ import { BarStylePanel, getModifierClassName } from '../shared/style-panel';
 import './style.scss';
 
 function Edit( { attributes, setAttributes } ) {
-	const { announcementId, message, linkText, linkUrl, dismissible } =
-		attributes;
+	const {
+		announcementId,
+		message,
+		linkText,
+		linkUrl,
+		dismissible,
+		scheduleStart,
+		scheduleEnd,
+	} = attributes;
 	const blockProps = useBlockProps( {
 		className: getModifierClassName(
 			'pivora-announcement-bar',
@@ -56,6 +63,33 @@ function Edit( { attributes, setAttributes } ) {
 						checked={ dismissible }
 						onChange={ ( value ) =>
 							setAttributes( { dismissible: value } )
+						}
+					/>
+				</PanelBody>
+				<PanelBody
+					title={ __( 'Schedule', 'pivora-core' ) }
+					initialOpen={ false }
+				>
+					<TextControl
+						label={ __( 'Start date', 'pivora-core' ) }
+						help={ __(
+							'Optional. Use YYYY-MM-DD or YYYY-MM-DD HH:MM. Site timezone applies.',
+							'pivora-core'
+						) }
+						value={ scheduleStart }
+						onChange={ ( value ) =>
+							setAttributes( { scheduleStart: value } )
+						}
+					/>
+					<TextControl
+						label={ __( 'End date', 'pivora-core' ) }
+						help={ __(
+							'Optional. Hide the bar after this date.',
+							'pivora-core'
+						) }
+						value={ scheduleEnd }
+						onChange={ ( value ) =>
+							setAttributes( { scheduleEnd: value } )
 						}
 					/>
 				</PanelBody>

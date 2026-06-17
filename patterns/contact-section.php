@@ -59,8 +59,19 @@
 					<h3 class="wp-block-heading"><?php esc_html_e( 'Project inquiry', 'pivora' ); ?></h3>
 					<!-- /wp:heading -->
 
+					<?php if ( defined( 'PIVORA_CORE_VERSION' ) && pivora_core_has_form_plugin() ) : ?>
+						<!-- wp:paragraph {"className":"pivora-contact-form-card__hint"} -->
+						<p class="pivora-contact-form-card__hint"><?php esc_html_e( 'Swap the Form Embed block below for your WPForms, Contact Form 7, or Forminator form ID.', 'pivora' ); ?></p>
+						<!-- /wp:paragraph -->
+						<!-- wp:pivora/form-embed /-->
+					<?php elseif ( defined( 'PIVORA_CORE_VERSION' ) ) : ?>
+						<!-- wp:paragraph {"className":"pivora-contact-form-card__hint"} -->
+						<p class="pivora-contact-form-card__hint"><?php esc_html_e( 'Built-in lead capture sends to your admin email. Replace with the Form Embed block when you install a forms plugin.', 'pivora' ); ?></p>
+						<!-- /wp:paragraph -->
+						<?php pivora_block( 'pivora/lead-capture' ); ?>
+					<?php else : ?>
 					<!-- wp:paragraph {"className":"pivora-contact-form-card__hint"} -->
-					<p class="pivora-contact-form-card__hint"><?php esc_html_e( 'Insert a form block from WPForms, Gravity Forms, or Contact Form 7 in this card. The layout below is a visual placeholder.', 'pivora' ); ?></p>
+					<p class="pivora-contact-form-card__hint"><?php esc_html_e( 'Install Pivora Core for a built-in lead form, or insert a form block from WPForms, Gravity Forms, or Contact Form 7. The layout below is a visual placeholder.', 'pivora' ); ?></p>
 					<!-- /wp:paragraph -->
 
 					<!-- wp:group {"className":"pivora-contact-form-placeholder","layout":{"type":"default"}} -->
@@ -86,6 +97,7 @@
 						<!-- /wp:button -->
 					</div>
 					<!-- /wp:buttons -->
+					<?php endif; ?>
 				</div>
 				<!-- /wp:group -->
 			</div>

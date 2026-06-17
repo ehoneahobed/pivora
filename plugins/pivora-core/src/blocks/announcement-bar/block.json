@@ -37,6 +37,14 @@
 		"barStyle": {
 			"type": "string",
 			"default": "default"
+		},
+		"scheduleStart": {
+			"type": "string",
+			"default": ""
+		},
+		"scheduleEnd": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"supports": {

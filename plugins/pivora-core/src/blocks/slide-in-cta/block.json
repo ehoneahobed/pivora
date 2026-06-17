@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pivora/slide-in-cta",
+	"version": "1.0.0",
+	"title": "Slide-in CTA",
+	"category": "pivora",
+	"icon": "slides",
+	"description": "Accessible slide-in call-to-action shown once per session.",
+	"keywords": [ "cta", "popup", "slide", "conversion" ],
+	"textdomain": "pivora-core",
+	"attributes": {
+		"ctaId": {
+			"type": "string",
+			"default": "default"
+		},
+		"title": {
+			"type": "string",
+			"default": "Ready to launch faster?"
+		},
+		"message": {
+			"type": "string",
+			"default": "Use Pivora patterns and blocks to ship a polished site without a page builder."
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Get started"
+		},
+		"buttonUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"position": {
+			"type": "string",
+			"default": "bottom-right"
+		},
+		"delaySeconds": {
+			"type": "number",
+			"default": 4
+		}
+	},
+	"supports": {
+		"html": false,
+		"color": { "text": true, "background": true, "link": true },
+		"typography": {
+			"fontSize": true,
+			"fontFamily": true,
+			"fontWeight": true,
+			"lineHeight": true
+		},
+		"spacing": { "margin": true, "padding": true }
+	},
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php",
+	"style": "file:./style-index.css"
+}

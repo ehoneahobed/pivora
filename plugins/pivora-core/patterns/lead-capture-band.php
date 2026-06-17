@@ -26,20 +26,14 @@
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph -->
-				<p><?php esc_html_e( 'Replace this band with your forms plugin or link the button to a lead magnet PDF.', 'pivora-core' ); ?></p>
+				<p><?php esc_html_e( 'Collect leads with the built-in form, or swap in the Form Embed block for WPForms, CF7, or Forminator.', 'pivora-core' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:column -->
 
 			<!-- wp:column {"verticalAlignment":"center","width":"42%"} -->
 			<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:42%">
-				<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"right"}} -->
-				<div class="wp-block-buttons">
-					<!-- wp:button -->
-					<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Download checklist', 'pivora-core' ); ?></a></div>
-					<!-- /wp:button -->
-				</div>
-				<!-- /wp:buttons -->
+				<!-- wp:pivora/lead-capture {"showMessage":false,"buttonText":"Download checklist","layout":"stacked"} /-->
 			</div>
 			<!-- /wp:column -->
 		</div>

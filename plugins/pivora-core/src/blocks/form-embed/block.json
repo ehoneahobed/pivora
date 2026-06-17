@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pivora/form-embed",
+	"version": "1.0.0",
+	"title": "Form Embed",
+	"category": "pivora",
+	"icon": "feedback",
+	"description": "Embed WPForms, Contact Form 7, Forminator, or a custom shortcode with Pivora styling.",
+	"keywords": [ "form", "wpforms", "contact", "cf7", "forminator" ],
+	"textdomain": "pivora-core",
+	"attributes": {
+		"provider": {
+			"type": "string",
+			"default": "auto"
+		},
+		"formId": {
+			"type": "string",
+			"default": ""
+		},
+		"shortcode": {
+			"type": "string",
+			"default": ""
+		},
+		"placeholderText": {
+			"type": "string",
+			"default": "Select a form provider and ID in the block settings, or paste a shortcode."
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "left", "center", "right", "wide", "full" ],
+		"spacing": { "margin": true, "padding": true }
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php",
+	"style": "file:./style-index.css"
+}

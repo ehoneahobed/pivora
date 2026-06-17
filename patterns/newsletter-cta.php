@@ -26,11 +26,24 @@
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"className":"pivora-newsletter__lede"} -->
-				<p class="pivora-newsletter__lede"><?php esc_html_e( 'Replace this band with your email platform embed or plugin block. The layout keeps signup visible without leaving the page.', 'pivora' ); ?></p>
+				<p class="pivora-newsletter__lede"><?php esc_html_e( 'Built-in email capture works without a plugin. Swap in the Form Embed block for Mailchimp, WPForms, or your ESP embed.', 'pivora' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
 
+			<?php if ( defined( 'PIVORA_CORE_VERSION' ) ) : ?>
+				<?php
+				pivora_block(
+					'pivora/lead-capture',
+					array(
+						'showName'    => false,
+						'showMessage' => false,
+						'layout'      => 'inline',
+						'buttonText'  => __( 'Subscribe', 'pivora' ),
+					)
+				);
+				?>
+			<?php else : ?>
 			<!-- wp:group {"className":"pivora-newsletter__form","layout":{"type":"flex","flexWrap":"wrap"}} -->
 			<div class="wp-block-group pivora-newsletter__form">
 				<!-- wp:paragraph {"className":"pivora-newsletter__input"} -->
@@ -46,6 +59,7 @@
 				<!-- /wp:buttons -->
 			</div>
 			<!-- /wp:group -->
+			<?php endif; ?>
 		</div>
 		<!-- /wp:group -->
 	</div>

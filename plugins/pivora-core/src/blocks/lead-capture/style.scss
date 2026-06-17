@@ -1,0 +1,79 @@
+.pivora-lead-capture__form {
+	display: grid;
+	gap: var(--wp--preset--spacing--40, 1rem);
+}
+
+.pivora-lead-capture--inline .pivora-lead-capture__form {
+	align-items: end;
+	grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.pivora-lead-capture--inline .pivora-lead-capture__field:not(:first-child) {
+	grid-column: 1;
+}
+
+.pivora-lead-capture--inline .pivora-lead-capture__submit {
+	grid-column: 2;
+	grid-row: 1;
+	white-space: nowrap;
+}
+
+.pivora-lead-capture__field {
+	display: grid;
+	gap: 0.35rem;
+}
+
+.pivora-lead-capture__label {
+	font-size: var(--wp--preset--font-size--small, 0.875rem);
+	font-weight: 600;
+}
+
+.pivora-lead-capture__input,
+.pivora-lead-capture__textarea {
+	background: var(--wp--preset--color--white, #fff);
+	border: 1px solid var(--wp--preset--color--line, #d8dee8);
+	border-radius: var(--wp--custom--border-radius--medium, 0.5rem);
+	font: inherit;
+	padding: 0.65rem 0.85rem;
+	width: 100%;
+}
+
+.pivora-lead-capture__textarea {
+	min-height: 6rem;
+	resize: vertical;
+}
+
+.pivora-lead-capture__submit {
+	justify-self: start;
+}
+
+.pivora-lead-capture__hp {
+	height: 0;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+}
+
+.pivora-lead-capture__notice {
+	margin: 0;
+}
+
+.pivora-lead-capture__notice--success {
+	background: color-mix(in srgb, var(--wp--preset--color--teal, #0f766e) 12%, transparent);
+	border-radius: var(--wp--custom--border-radius--medium, 0.5rem);
+	font-weight: 600;
+	padding: 0.85rem 1rem;
+}
+
+@media (max-width: 781px) {
+
+	.pivora-lead-capture--inline .pivora-lead-capture__form {
+		grid-template-columns: 1fr;
+	}
+
+	.pivora-lead-capture--inline .pivora-lead-capture__submit {
+		grid-column: 1;
+		grid-row: auto;
+		width: 100%;
+	}
+}

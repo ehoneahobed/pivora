@@ -12,6 +12,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Lighthouse performance and accessibility gates on representative pages
 - WordPress.org / public release after stability is confirmed
 
+## [0.6.0] - 2026-06-17
+
+Pivora Core plugin only (theme remains 0.1.0).
+
+### Added
+
+**Phase 3 — capture & conversion**
+
+- **Lead capture** (`pivora/lead-capture`) — native form with `wp_mail`, optional webhook, honeypot, and inline/stacked layouts
+- **Form embed** (`pivora/form-embed`) — WPForms, Contact Form 7, Forminator, or custom shortcode with style-preserving wrapper
+- **Slide-in CTA** (`pivora/slide-in-cta`) — accessible once-per-session panel with reduced-motion support
+
+### Changed
+
+- **Announcement bar** supports optional start/end schedule dates (server-side visibility)
+- `lead-capture-band` pattern uses the lead capture block
+- `contact-section` and `newsletter-cta` theme patterns use Core forms with plugin swap guidance
+
 ## [0.5.0] - 2026-06-17
 
 Pivora Core plugin only (theme remains 0.1.0).

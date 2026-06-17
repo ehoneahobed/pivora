@@ -151,11 +151,11 @@ plugins/pivora-core/
 
 | # | Item | Status | Files / notes |
 |---|------|--------|----------------|
-| P3.1 | **Lead capture block** — name, email, message → `wp_mail` or webhook URL | pending | `src/blocks/lead-capture/` |
-| P3.2 | **Form plugin bridge** — detect WPForms / CF7 / Forminator; style-preserving embed wrapper | pending | `includes/integrations/forms.php` |
-| P3.3 | Upgrade `lead-capture-band` pattern to use lead block | pending | `patterns/lead-capture-band.php` |
-| P3.4 | **Announcement bar** — schedule (start/end date), dismiss with `localStorage` | pending | Extend `announcement-bar` block |
-| P3.5 | **Optional slide-in CTA** — single variant, accessible, one per session | pending | `src/blocks/slide-in-cta/` |
+| P3.1 | **Lead capture block** — name, email, message → `wp_mail` or webhook URL | done | `src/blocks/lead-capture/` |
+| P3.2 | **Form plugin bridge** — detect WPForms / CF7 / Forminator; style-preserving embed wrapper | done | `includes/integrations/forms.php` |
+| P3.3 | Upgrade `lead-capture-band` pattern to use lead block | done | `patterns/lead-capture-band.php` |
+| P3.4 | **Announcement bar** — schedule (start/end date), dismiss with `localStorage` | done | Extend `announcement-bar` block |
+| P3.5 | **Optional slide-in CTA** — single variant, accessible, one per session | done | `src/blocks/slide-in-cta/` |
 
 **Acceptance criteria**
 
@@ -251,7 +251,9 @@ Update this table when adding blocks.
 | Process steps | `pivora/process-steps` | No | `process-steps` | Core ordered list |
 | Comparison tabs | `pivora/comparison-tabs` | Yes (`view.js`) | `comparison-table` | Core table |
 | Woo product grid | `pivora/product-grid` | No | `product-spotlight` | Core query loop |
-| Lead capture | `pivora/lead-capture` | No | `lead-capture-band` | Paragraph placeholder |
+| Lead capture | `pivora/lead-capture` | No | `lead-capture-band`, contact, newsletter | Paragraph placeholder |
+| Form embed | `pivora/form-embed` | No | contact (when form plugin active) | Plugin form blocks |
+| Slide-in CTA | `pivora/slide-in-cta` | Yes (`view.js`) | — | — |
 
 ---
 

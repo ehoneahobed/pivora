@@ -1,48 +1,62 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "pivora/announcement-bar",
+  "name": "pivora/lead-capture",
   "version": "1.0.0",
-  "title": "Announcement Bar",
+  "title": "Lead Capture",
   "category": "pivora",
-  "icon": "megaphone",
-  "description": "Dismissible top banner for promos and alerts.",
+  "icon": "email",
+  "description": "Simple name, email, and message form that sends via wp_mail or webhook.",
   "keywords": [
-    "announcement",
-    "banner",
-    "notice"
+    "lead",
+    "form",
+    "email",
+    "newsletter",
+    "contact"
   ],
   "textdomain": "pivora-core",
   "attributes": {
-    "announcementId": {
-      "type": "string",
-      "default": "default"
-    },
-    "message": {
-      "type": "string",
-      "default": "Pivora 1.0 is live — explore the new pattern library."
-    },
-    "linkText": {
-      "type": "string",
-      "default": "Learn more"
-    },
-    "linkUrl": {
+    "blockInstanceId": {
       "type": "string",
       "default": ""
     },
-    "dismissible": {
+    "showName": {
       "type": "boolean",
       "default": true
     },
-    "barStyle": {
-      "type": "string",
-      "default": "default"
+    "showMessage": {
+      "type": "boolean",
+      "default": true
     },
-    "scheduleStart": {
+    "layout": {
+      "type": "string",
+      "default": "stacked"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Send message"
+    },
+    "successMessage": {
+      "type": "string",
+      "default": "Thanks — we received your message."
+    },
+    "nameLabel": {
+      "type": "string",
+      "default": "Full name"
+    },
+    "emailLabel": {
+      "type": "string",
+      "default": "Email address"
+    },
+    "messageLabel": {
+      "type": "string",
+      "default": "Message"
+    },
+    "recipientEmail": {
       "type": "string",
       "default": ""
     },
-    "scheduleEnd": {
+    "webhookUrl": {
       "type": "string",
       "default": ""
     }
@@ -65,9 +79,7 @@
       "fontSize": true,
       "fontFamily": true,
       "fontWeight": true,
-      "lineHeight": true,
-      "letterSpacing": true,
-      "textTransform": true
+      "lineHeight": true
     },
     "spacing": {
       "margin": true,
@@ -82,7 +94,6 @@
     }
   },
   "editorScript": "file:./index.js",
-  "viewScript": "file:./view.js",
   "render": "file:./render.php",
   "style": "file:./style-index.css"
 }

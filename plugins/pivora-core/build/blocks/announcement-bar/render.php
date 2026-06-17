@@ -15,6 +15,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+$schedule_start = isset( $attributes['scheduleStart'] ) ? (string) $attributes['scheduleStart'] : '';
+$schedule_end   = isset( $attributes['scheduleEnd'] ) ? (string) $attributes['scheduleEnd'] : '';
+
+if ( ! pivora_core_announcement_is_scheduled_visible( $schedule_start, $schedule_end ) ) {
+	return;
+}
+
 $announcement_id = isset( $attributes['announcementId'] ) ? (string) $attributes['announcementId'] : 'default';
 $message         = isset( $attributes['message'] ) ? (string) $attributes['message'] : '';
 $link_text       = isset( $attributes['linkText'] ) ? (string) $attributes['linkText'] : '';
