@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pivora/social-links-bar",
+  "version": "1.0.0",
+  "title": "Social Links Bar",
+  "category": "pivora",
+  "icon": "share",
+  "description": "Horizontal row of social profile links.",
+  "keywords": [
+    "social",
+    "links",
+    "icons"
+  ],
+  "textdomain": "pivora-core",
+  "attributes": {
+    "label": {
+      "type": "string",
+      "default": "Follow"
+    },
+    "links": {
+      "type": "array",
+      "default": [
+        {
+          "label": "Twitter",
+          "url": "https://twitter.com/"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://linkedin.com/"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/"
+        }
+      ]
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "style": "file:./style-index.css"
+}

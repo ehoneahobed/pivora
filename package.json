@@ -1,6 +1,6 @@
 {
   "name": "pivora",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "description": "A modern, block-first, multi-purpose WordPress theme built for fast, accessible, SEO-ready websites.",
   "author": "ehoneahobed",
@@ -26,10 +26,11 @@
     "postcss": "^8.4.0"
   },
   "scripts": {
-    "build": "wp-scripts build",
-    "start": "wp-scripts start",
+    "build": "wp-scripts build --source-path=plugins/pivora-core/src/blocks --output-path=plugins/pivora-core/build/blocks --webpack-copy-php",
+    "start": "wp-scripts start --source-path=plugins/pivora-core/src/blocks --output-path=plugins/pivora-core/build/blocks --webpack-copy-php",
     "env": "wp-env",
     "env:start": "wp-env start --auto-port",
+    "env:update": "wp-env start --update",
     "env:stop": "wp-env stop",
     "env:status": "wp-env status",
     "env:logs": "wp-env logs",
@@ -37,12 +38,22 @@
     "php": "wp-env run cli php",
     "format": "wp-scripts format",
     "lint:css": "wp-scripts lint-style \"assets/css/**/*.css\"",
-    "lint:js": "wp-scripts lint-js \"assets/js/**/*.js\" --no-error-on-unmatched-pattern",
+    "lint:js": "wp-scripts lint-js \"assets/js/**/*.js\" \"plugins/pivora-core/src/blocks/**/*.js\" --no-error-on-unmatched-pattern",
     "check:php": "wp-env run cli composer --working-dir=/var/www/html/wp-content/themes/pivora run check:php",
     "check:php:fix": "wp-env run cli composer --working-dir=/var/www/html/wp-content/themes/pivora run fix:php",
     "check:json": "wp-scripts lint-pkg-json",
-    "check": "npm run check:json && npm run lint:css && npm run check:php",
+    "check": "npm run check:json && npm run lint:css && npm run lint:js && npm run build && npm run check:php",
     "setup:demo": "wp-env run cli bash /var/www/html/wp-content/themes/pivora/scripts/setup-demo.sh",
-    "setup:demo:full": "PIVORA_INSTALL_WOO=1 npm run setup:demo"
+    "setup:demo:full": "PIVORA_INSTALL_WOO=1 npm run setup:demo",
+    "setup:demo:business": "PIVORA_DEMO_KIT=business npm run setup:demo",
+    "setup:demo:saas": "PIVORA_DEMO_KIT=saas npm run setup:demo",
+    "setup:demo:blog": "PIVORA_DEMO_KIT=blog npm run setup:demo",
+    "setup:demo:portfolio": "PIVORA_DEMO_KIT=portfolio npm run setup:demo",
+    "setup:demo:store": "PIVORA_INSTALL_WOO=1 PIVORA_DEMO_KIT=store npm run setup:demo",
+    "setup:demo:agency": "PIVORA_DEMO_KIT=agency npm run setup:demo",
+    "package:theme": "bash scripts/package-theme.sh",
+    "package:plugin": "bash scripts/package-plugin.sh",
+    "package": "npm run build && npm run package:theme && npm run package:plugin",
+    "templates:reset": "wp-env run cli bash /var/www/html/wp-content/themes/pivora/scripts/reset-template-customizations.sh"
   }
 }

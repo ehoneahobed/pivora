@@ -1,0 +1,32 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pivora/faq-item",
+	"version": "1.0.0",
+	"title": "FAQ Item",
+	"category": "pivora",
+	"icon": "editor-help",
+	"description": "Single accordion item for FAQ sections.",
+	"keywords": [ "faq", "accordion", "question" ],
+	"textdomain": "pivora-core",
+	"attributes": {
+		"question": {
+			"type": "string",
+			"default": "Do I need a page builder?"
+		},
+		"answer": {
+			"type": "string",
+			"default": "No. Pivora is built for the native block editor."
+		},
+		"openByDefault": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php",
+	"style": "file:./style-index.css"
+}

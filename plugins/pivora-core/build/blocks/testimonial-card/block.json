@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pivora/testimonial-card",
+  "version": "1.0.0",
+  "title": "Testimonial Card",
+  "category": "pivora",
+  "icon": "format-quote",
+  "description": "Quote card with avatar initials, name, and role.",
+  "keywords": [
+    "testimonial",
+    "quote",
+    "review"
+  ],
+  "textdomain": "pivora-core",
+  "attributes": {
+    "quote": {
+      "type": "string",
+      "default": "Pivora keeps our landing pages consistent without a page builder."
+    },
+    "initials": {
+      "type": "string",
+      "default": "AL"
+    },
+    "name": {
+      "type": "string",
+      "default": "Avery Lane"
+    },
+    "role": {
+      "type": "string",
+      "default": "Marketing lead"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "style": "file:./style-index.css"
+}

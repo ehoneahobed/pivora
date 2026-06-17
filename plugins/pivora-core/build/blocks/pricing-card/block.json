@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pivora/pricing-card",
+  "version": "1.0.0",
+  "title": "Pricing Card",
+  "category": "pivora",
+  "icon": "money-alt",
+  "description": "Single pricing tier with features and call to action.",
+  "keywords": [
+    "pricing",
+    "plan",
+    "subscription"
+  ],
+  "textdomain": "pivora-core",
+  "attributes": {
+    "tier": {
+      "type": "string",
+      "default": "Starter"
+    },
+    "price": {
+      "type": "string",
+      "default": "$19"
+    },
+    "term": {
+      "type": "string",
+      "default": "/mo"
+    },
+    "description": {
+      "type": "string",
+      "default": "For lean launches and brochure sites."
+    },
+    "features": {
+      "type": "string",
+      "default": "Core pages\nPattern layouts\nEmail support"
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "Choose plan"
+    },
+    "ctaUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "badgeText": {
+      "type": "string",
+      "default": "Popular"
+    },
+    "ctaOutline": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "style": "file:./style-index.css"
+}

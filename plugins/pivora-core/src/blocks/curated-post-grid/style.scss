@@ -1,0 +1,98 @@
+@use '../shared/surface';
+
+.wp-block-pivora-curated-post-grid .pivora-curated-post-grid__list {
+	display: grid;
+	gap: var(--wp--preset--spacing--60);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pivora-curated-post-card {
+	@include surface.pivora-core-card;
+	display: grid;
+	gap: var(--wp--preset--spacing--40);
+	height: 100%;
+}
+
+.pivora-curated-post-card__media {
+	margin: calc(var(--wp--preset--spacing--60, 1.5rem) * -1);
+	margin-block-end: 0;
+	overflow: clip;
+}
+
+.pivora-curated-post-card__image-link {
+	display: block;
+}
+
+.pivora-curated-post-card__image,
+.pivora-curated-post-card__media img {
+	aspect-ratio: 16 / 10;
+	display: block;
+	height: auto;
+	object-fit: cover;
+	width: 100%;
+}
+
+.pivora-curated-post-card__placeholder-image {
+	aspect-ratio: 16 / 10;
+	background: linear-gradient(
+		135deg,
+		var(--wp--preset--color--cloud, #f1f5f9) 0%,
+		var(--wp--preset--color--line, #e2e8f0) 100%
+	);
+	display: block;
+	width: 100%;
+}
+
+.pivora-curated-post-card__title {
+	margin: 0;
+}
+
+.pivora-curated-post-card__title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pivora-curated-post-card__title a:hover {
+	@include surface.pivora-core-accent;
+}
+
+.pivora-curated-post-card__excerpt {
+	@include surface.pivora-core-muted-copy;
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0;
+}
+
+.pivora-curated-post-card__more {
+	color: var(--wp--preset--color--teal, #0f766e);
+	display: inline-block;
+	font-weight: 600;
+	margin-inline-start: 0.35rem;
+	text-decoration: none;
+}
+
+.pivora-curated-post-card__more:hover {
+	text-decoration: underline;
+}
+
+.pivora-curated-post-card__date {
+	@include surface.pivora-core-muted-copy;
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0;
+}
+
+@media (max-width: 1080px) {
+
+	.wp-block-pivora-curated-post-grid .pivora-curated-post-grid__list {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 781px) {
+
+	.wp-block-pivora-curated-post-grid .pivora-curated-post-grid__list {
+		grid-template-columns: 1fr;
+	}
+}

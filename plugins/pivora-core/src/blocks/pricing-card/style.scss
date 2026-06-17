@@ -1,0 +1,42 @@
+@use '../shared/surface';
+
+.wp-block-pivora-pricing-card.pivora-pricing-card {
+	@include surface.pivora-core-card;
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--40);
+	height: 100%;
+	position: relative;
+}
+
+.pivora-pricing-card__badge {
+	background: var(--wp--preset--color--amber, #f59e0b);
+	border-radius: 999px;
+	color: var(--wp--preset--color--ink, #0f172a);
+	font-size: 0.75rem;
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	margin: 0;
+	padding: 0.25rem 0.65rem;
+	position: absolute;
+	right: var(--wp--preset--spacing--50);
+	text-transform: uppercase;
+	top: var(--wp--preset--spacing--50);
+}
+
+.pivora-pricing-card__price {
+	align-items: baseline;
+	display: flex;
+	gap: 0.15rem;
+	margin: 0;
+}
+
+.pivora-pricing-card .pivora-price-card__features {
+	flex: 1;
+	margin: 0;
+	padding-inline-start: 1.1rem;
+}
+
+.pivora-pricing-card .wp-block-button {
+	margin-block-start: auto;
+}

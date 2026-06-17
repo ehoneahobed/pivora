@@ -1,0 +1,100 @@
+.pivora-demo-import__intro {
+	max-width: 68rem;
+}
+
+.pivora-demo-import__grid {
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+	margin-block: 1.5rem 1rem;
+	max-width: 72rem;
+}
+
+.pivora-demo-kit-card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 8px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	display: grid;
+	gap: 0.75rem;
+	padding: 0.9rem;
+	transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.pivora-demo-kit-card.is-selected {
+	border-color: #2271b1;
+	box-shadow: 0 0 0 1px #2271b1;
+}
+
+.pivora-demo-kit-card__header {
+	align-items: flex-start;
+	display: flex;
+	gap: 0.65rem;
+}
+
+.pivora-demo-kit-card__header input {
+	margin-top: 0.2rem;
+}
+
+.pivora-demo-kit-card__title {
+	font-size: 0.98rem;
+	line-height: 1.35;
+	margin: 0;
+}
+
+.pivora-demo-kit-card__description {
+	color: #50575e;
+	font-size: 0.86rem;
+	line-height: 1.5;
+	margin: 0;
+}
+
+.pivora-demo-kit-card__note {
+	color: #646970;
+	font-size: 0.8rem;
+	margin: 0;
+}
+
+.pivora-demo-kit-card__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.pivora-demo-import__preview {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 8px;
+	margin-block: 1.25rem 1rem;
+	max-width: 72rem;
+	overflow: hidden;
+}
+
+.pivora-demo-import__preview-header {
+	align-items: center;
+	background: #f6f7f7;
+	border-bottom: 1px solid #dcdcde;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	justify-content: space-between;
+	padding: 0.75rem 1rem;
+}
+
+.pivora-demo-import__preview-title {
+	font-size: 0.92rem;
+	font-weight: 600;
+	margin: 0;
+}
+
+.pivora-demo-import__preview-frame {
+	background: #060a18;
+	border: 0;
+	display: block;
+	height: min(72vh, 52rem);
+	width: 100%;
+}
+
+.pivora-demo-import__after {
+	max-width: 68rem;
+}

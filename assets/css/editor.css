@@ -29,6 +29,13 @@ body {
 	text-transform: uppercase;
 }
 
+.pivora-page-display-panel__hint {
+	color: #646970;
+	font-size: 12px;
+	line-height: 1.45;
+	margin: 0;
+}
+
 .editor-styles-wrapper .pivora-feature-section .pivora-feature-grid {
 	display: grid !important;
 	gap: var(--wp--preset--spacing--60);
@@ -202,4 +209,63 @@ body {
 .editor-styles-wrapper .pivora-hero-preview__stats {
 	background: var(--wp--preset--color--ink);
 	color: var(--wp--preset--color--white);
+}
+
+.editor-styles-wrapper .pivora-testimonials-grid {
+	display: grid !important;
+	gap: var(--wp--preset--spacing--60);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.editor-styles-wrapper .pivora-testimonial {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.editor-styles-wrapper .pivora-faq-section__layout {
+	align-items: flex-start;
+	gap: var(--wp--preset--spacing--80);
+}
+
+.editor-styles-wrapper .pivora-team-grid,
+.editor-styles-wrapper .pivora-footer-columns__grid {
+	display: grid !important;
+	gap: var(--wp--preset--spacing--60);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.editor-styles-wrapper .pivora-footer-columns__grid {
+	grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
+}
+
+.editor-styles-wrapper .pivora-newsletter {
+	display: grid !important;
+	gap: var(--wp--preset--spacing--70);
+	grid-template-columns: 1.2fr 0.8fr;
+}
+
+.editor-styles-wrapper .pivora-newsletter-section__shell {
+	background: var(--wp--preset--color--ink);
+	border-radius: 18px;
+	color: var(--wp--preset--color--white);
+	padding: var(--wp--preset--spacing--70);
+}
+
+.editor-styles-wrapper .pivora-metrics--light {
+	display: grid !important;
+	gap: 0;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.editor-styles-wrapper .pivora-metrics--split-grid {
+	display: grid !important;
+	gap: var(--wp--preset--spacing--40);
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.editor-styles-wrapper .pivora-product-spotlight__query .wp-block-post-template {
+	display: grid !important;
+	gap: var(--wp--preset--spacing--60);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 }

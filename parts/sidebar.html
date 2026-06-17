@@ -1,0 +1,39 @@
+<!-- wp:group {"tagName":"aside","className":"pivora-sidebar","layout":{"type":"default"}} -->
+<aside class="wp-block-group pivora-sidebar">
+	<!-- wp:group {"className":"pivora-sidebar__widget","layout":{"type":"default"}} -->
+	<div class="wp-block-group pivora-sidebar__widget">
+		<!-- wp:heading {"level":3,"fontSize":"medium","className":"pivora-sidebar__title"} -->
+		<h3 class="wp-block-heading has-medium-font-size pivora-sidebar__title">Search</h3>
+		<!-- /wp:heading -->
+
+		<!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search this site","buttonText":"Search","className":"pivora-sidebar__search"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"pivora-sidebar__widget","layout":{"type":"default"}} -->
+	<div class="wp-block-group pivora-sidebar__widget">
+		<!-- wp:heading {"level":3,"fontSize":"medium","className":"pivora-sidebar__title"} -->
+		<h3 class="wp-block-heading has-medium-font-size pivora-sidebar__title">Categories</h3>
+		<!-- /wp:heading -->
+
+		<!-- wp:categories {"showPostCounts":true,"className":"pivora-sidebar__categories"} /-->
+	</div>
+	<!-- /wp:group -->
+
+	<!-- wp:group {"className":"pivora-sidebar__widget","layout":{"type":"default"}} -->
+	<div class="wp-block-group pivora-sidebar__widget">
+		<!-- wp:heading {"level":3,"fontSize":"medium","className":"pivora-sidebar__title"} -->
+		<h3 class="wp-block-heading has-medium-font-size pivora-sidebar__title">Recent posts</h3>
+		<!-- /wp:heading -->
+
+		<!-- wp:query {"query":{"perPage":4,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"pivora-sidebar__recent-posts"} -->
+		<div class="wp-block-query pivora-sidebar__recent-posts">
+			<!-- wp:post-template {"layout":{"type":"default"}} -->
+				<!-- wp:post-title {"isLink":true,"fontSize":"small"} /-->
+			<!-- /wp:post-template -->
+		</div>
+		<!-- /wp:query -->
+	</div>
+	<!-- /wp:group -->
+</aside>
+<!-- /wp:group -->

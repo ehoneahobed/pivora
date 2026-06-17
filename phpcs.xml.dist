@@ -7,6 +7,9 @@
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/plugins/pivora-core/src/*</exclude-pattern>
+	<exclude-pattern>*/plugins/pivora-core/build/*</exclude-pattern>
+	<exclude-pattern>*/dist/*</exclude-pattern>
 
 	<arg name="extensions" value="php"/>
 	<arg name="basepath" value="."/>
@@ -24,6 +27,7 @@
 		<properties>
 			<property name="text_domain" type="array">
 				<element value="pivora"/>
+				<element value="pivora-core"/>
 			</property>
 		</properties>
 	</rule>

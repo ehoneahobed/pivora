@@ -64,6 +64,11 @@
       "contentSize": "720px",
       "wideSize": "1120px"
     },
+    "dimensions": {
+      "aspectRatio": true,
+      "defaultAspectRatios": true,
+      "minHeight": true
+    },
     "spacing": {
       "defaultSpacingSizes": false,
       "spacingScale": {
@@ -174,7 +179,69 @@
         }
       ]
     },
-    "useRootPaddingAwareAlignments": true
+    "useRootPaddingAwareAlignments": true,
+    "blocks": {
+      "core/cover": {
+        "color": {
+          "background": true,
+          "text": true
+        },
+        "dimensions": {
+          "aspectRatio": true,
+          "minHeight": true
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "typography": {
+          "fontSize": true,
+          "lineHeight": true
+        }
+      },
+      "core/heading": {
+        "color": {
+          "background": true,
+          "text": true
+        },
+        "typography": {
+          "fontSize": true,
+          "fontWeight": true,
+          "letterSpacing": true,
+          "lineHeight": true,
+          "textTransform": true
+        }
+      },
+      "core/image": {
+        "dimensions": {
+          "aspectRatio": true,
+          "minHeight": true
+        }
+      },
+      "core/post-featured-image": {
+        "dimensions": {
+          "aspectRatio": true,
+          "minHeight": true
+        }
+      },
+      "core/post-title": {
+        "color": {
+          "background": true,
+          "text": true
+        },
+        "spacing": {
+          "margin": true,
+          "padding": true
+        },
+        "typography": {
+          "fontSize": true,
+          "fontWeight": true,
+          "letterSpacing": true,
+          "lineHeight": true,
+          "textTransform": true
+        }
+      }
+    }
   },
   "styles": {
     "color": {
@@ -245,9 +312,24 @@
       "title": "Header"
     },
     {
+      "area": "header",
+      "name": "header-centered",
+      "title": "Header: Centered"
+    },
+    {
+      "area": "header",
+      "name": "header-minimal",
+      "title": "Header: Minimal"
+    },
+    {
       "area": "footer",
       "name": "footer",
       "title": "Footer"
+    },
+    {
+      "area": "footer",
+      "name": "footer-columns",
+      "title": "Footer: Columns"
     },
     {
       "area": "blog",
@@ -278,6 +360,11 @@
       "area": "blog",
       "name": "blog-toolbar",
       "title": "Blog Toolbar"
+    },
+    {
+      "area": "sidebar",
+      "name": "sidebar",
+      "title": "Sidebar"
     }
   ],
   "customTemplates": [
@@ -294,6 +381,20 @@
         "page"
       ],
       "title": "Full Width Page"
+    },
+    {
+      "name": "single-product",
+      "postTypes": [
+        "product"
+      ],
+      "title": "Single Product"
+    },
+    {
+      "name": "page-with-sidebar",
+      "postTypes": [
+        "page"
+      ],
+      "title": "Page with Sidebar"
     },
     {
       "name": "page-blank",
@@ -322,6 +423,13 @@
         "post"
       ],
       "title": "Single: Feature Split"
+    },
+    {
+      "name": "single-with-sidebar",
+      "postTypes": [
+        "post"
+      ],
+      "title": "Single: With Sidebar"
     }
   ]
 }

@@ -1,0 +1,37 @@
+.wp-block-pivora-social-links-bar.pivora-social-links-bar {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--wp--preset--spacing--50);
+}
+
+.pivora-social-links-bar__label {
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.pivora-social-links-bar__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--wp--preset--spacing--40);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pivora-social-links-bar__list a {
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 999px;
+	color: inherit;
+	display: inline-flex;
+	padding: 0.45rem 0.9rem;
+	text-decoration: none;
+}
+
+.pivora-social-links-bar__list a:hover {
+	border-color: var(--wp--preset--color--teal);
+	color: var(--wp--preset--color--teal);
+}

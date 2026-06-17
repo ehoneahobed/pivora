@@ -1,0 +1,55 @@
+@use '../shared/surface';
+
+.wp-block-pivora-testimonial-card.pivora-testimonial-card {
+	@include surface.pivora-core-card;
+	display: grid;
+	gap: var(--wp--preset--spacing--50);
+}
+
+.pivora-testimonial-card__quote {
+	border: 0;
+	color: var(--wp--preset--color--ink, #0f172a);
+	margin: 0;
+	padding: 0;
+}
+
+.pivora-testimonial-card__quote p {
+	color: inherit;
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: 1.6;
+	margin: 0;
+}
+
+.pivora-testimonial-card__author {
+	align-items: center;
+	display: flex;
+	gap: var(--wp--preset--spacing--40);
+}
+
+.pivora-testimonial-card__avatar {
+	align-items: center;
+	background: var(--wp--preset--color--cloud, #f1f5f9);
+	border: 1px solid var(--wp--preset--color--line, #e2e8f0);
+	border-radius: 999px;
+	@include surface.pivora-core-accent;
+	display: flex;
+	flex-shrink: 0;
+	font-size: 0.875rem;
+	font-weight: 800;
+	height: 2.75rem;
+	justify-content: center;
+	letter-spacing: 0.04em;
+	margin: 0;
+	width: 2.75rem;
+}
+
+.pivora-testimonial-card__name {
+	font-weight: 700;
+	margin: 0;
+}
+
+.pivora-testimonial-card__role {
+	@include surface.pivora-core-muted-copy;
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0;
+}

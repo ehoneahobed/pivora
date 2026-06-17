@@ -20,6 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 function pivora_body_classes( array $classes ): array {
 	if ( is_front_page() ) {
 		$classes[] = 'pivora-front-page';
+
+		if ( 'header-centered' === pivora_get_active_header_slug() ) {
+			$classes[] = 'pivora-hero--centered';
+		}
 	}
 
 	return $classes;

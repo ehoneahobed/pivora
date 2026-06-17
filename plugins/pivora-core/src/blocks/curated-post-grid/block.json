@@ -1,0 +1,49 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pivora/curated-post-grid",
+	"version": "1.0.0",
+	"title": "Curated Post Grid",
+	"category": "pivora",
+	"icon": "grid-view",
+	"description": "Query-driven post cards with Pivora styling.",
+	"keywords": [ "posts", "blog", "grid", "query" ],
+	"textdomain": "pivora-core",
+	"attributes": {
+		"postsToShow": {
+			"type": "number",
+			"default": 3
+		},
+		"orderBy": {
+			"type": "string",
+			"default": "date"
+		},
+		"order": {
+			"type": "string",
+			"default": "desc"
+		},
+		"showFeaturedImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"excerptLength": {
+			"type": "number",
+			"default": 22
+		},
+		"readMoreText": {
+			"type": "string",
+			"default": "Read article"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php",
+	"style": "file:./style-index.css"
+}

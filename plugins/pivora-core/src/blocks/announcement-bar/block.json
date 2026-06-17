@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pivora/announcement-bar",
+	"version": "1.0.0",
+	"title": "Announcement Bar",
+	"category": "pivora",
+	"icon": "megaphone",
+	"description": "Dismissible top banner for promos and alerts.",
+	"keywords": [ "announcement", "banner", "notice" ],
+	"textdomain": "pivora-core",
+	"attributes": {
+		"announcementId": {
+			"type": "string",
+			"default": "default"
+		},
+		"message": {
+			"type": "string",
+			"default": "Pivora 1.0 is live — explore the new pattern library."
+		},
+		"linkText": {
+			"type": "string",
+			"default": "Learn more"
+		},
+		"linkUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"dismissible": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": [ "wide", "full" ]
+	},
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"render": "file:./render.php",
+	"style": "file:./style-index.css"
+}

@@ -99,6 +99,171 @@ a:hover {
 	line-height: 1.2;
 }
 
+.site-header--centered .site-header__inner--centered {
+	gap: var(--wp--preset--spacing--50);
+	justify-items: center;
+	text-align: center;
+}
+
+.site-header--centered .site-header__brand--centered {
+	justify-content: center;
+}
+
+.site-header--centered .site-header__nav--centered {
+	justify-content: center;
+	width: 100%;
+}
+
+.site-header--minimal {
+	border-bottom-color: transparent;
+}
+
+.site-header--minimal .site-header__inner--minimal {
+	gap: var(--wp--preset--spacing--50);
+}
+
+.site-header--minimal .site-header__nav--minimal .wp-block-navigation-item__content {
+	font-weight: 600;
+}
+
+.pivora-footer-columns__meta .pivora-footer-columns__copyright-title {
+	margin: 0;
+}
+
+.pivora-product-spotlight__grid,
+.pivora-product-spotlight__query .wp-block-post-template {
+	display: grid;
+	gap: var(--wp--preset--spacing--60);
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pivora-product-card {
+	display: grid;
+	gap: var(--wp--preset--spacing--40);
+	height: 100%;
+}
+
+.pivora-product-card__media :where(img) {
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	width: 100%;
+}
+
+.pivora-product-card__title {
+	margin: 0;
+}
+
+.pivora-product-card__price {
+	color: var(--wp--preset--color--slate);
+	margin: 0;
+}
+
+.pivora-product-categories__grid {
+	gap: var(--wp--preset--spacing--40);
+}
+
+.pivora-product-category-card {
+	margin: 0;
+}
+
+.pivora-product-category-card a {
+	background: var(--wp--preset--color--cloud);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--border-radius--medium);
+	color: inherit;
+	display: inline-flex;
+	font-weight: 700;
+	padding: 0.85rem 1.1rem;
+	text-decoration: none;
+}
+
+.pivora-product-category-card a:hover {
+	border-color: var(--wp--preset--color--teal);
+	color: var(--wp--preset--color--teal);
+}
+
+@media (max-width: 1080px) {
+
+	.pivora-product-spotlight__grid,
+	.pivora-product-spotlight__query .wp-block-post-template {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 781px) {
+
+	.pivora-product-spotlight__grid,
+	.pivora-product-spotlight__query .wp-block-post-template {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Pivora Core plugin patterns */
+
+.pivora-lead-capture-band__shell {
+	background: var(--wp--preset--color--cloud);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--border-radius--large);
+	padding: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.pivora-lead-capture-band__layout {
+	gap: var(--wp--preset--spacing--60);
+}
+
+.pivora-integrations-strip {
+	padding-block: var(--wp--preset--spacing--70);
+}
+
+.pivora-front-page .pivora-integrations-strip {
+	background: #0b1633;
+	color: var(--wp--preset--color--white);
+}
+
+.pivora-front-page .pivora-integrations-strip__inner {
+	margin-inline: auto;
+	max-width: min(
+		var(--wp--style--global--wide-size),
+		calc(100vw - (var(--pivora-site-shell-gutter) * 2))
+	);
+	text-align: center;
+	width: 100%;
+}
+
+.pivora-integrations-strip__label {
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin-block-end: var(--wp--preset--spacing--50);
+	text-transform: uppercase;
+}
+
+.pivora-front-page .pivora-integrations-strip__label {
+	color: rgba(255, 255, 255, 0.82);
+}
+
+.pivora-front-page .pivora-integrations-strip__logos {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.pivora-integrations-strip__logos {
+	gap: var(--wp--preset--spacing--40) var(--wp--preset--spacing--60);
+}
+
+.pivora-integrations-strip__item {
+	background: var(--wp--preset--color--white);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 999px;
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	margin: 0;
+	padding: 0.5rem 0.95rem;
+}
+
 
 .pivora-front-page {
 	--pivora-site-shell-gutter: clamp(1.75rem, 4.5vw, 4rem);
@@ -132,16 +297,61 @@ a:hover {
 	color: #f8c95d;
 }
 
+.pivora-front-page:not(.pivora-hero--centered) .pivora-hero__content {
+	text-align: left;
+}
+
+.pivora-front-page:not(.pivora-hero--centered) .pivora-hero__content > :where(
+	:not(.alignleft):not(.alignright):not(.alignfull)
+) {
+	margin-left: 0 !important;
+	margin-right: auto !important;
+}
+
+.pivora-front-page:not(.pivora-hero--centered) .pivora-hero h1,
+.pivora-front-page:not(.pivora-hero--centered) .pivora-hero__lede {
+	margin-inline: 0;
+	margin-right: auto;
+}
+
+.pivora-front-page:not(.pivora-hero--centered) .pivora-hero__actions,
+.pivora-front-page:not(.pivora-hero--centered) .pivora-hero__meta {
+	justify-content: flex-start;
+}
+
+.pivora-front-page.pivora-hero--centered .pivora-hero__content {
+	text-align: center;
+}
+
+.pivora-front-page.pivora-hero--centered .pivora-hero h1,
+.pivora-front-page.pivora-hero--centered .pivora-hero__lede {
+	margin-inline: auto;
+}
+
+.pivora-front-page.pivora-hero--centered .pivora-hero__actions,
+.pivora-front-page.pivora-hero--centered .pivora-hero__meta {
+	justify-content: center;
+}
+
+.pivora-front-page.pivora-hero--centered .pivora-hero__badge {
+	margin-inline: auto;
+}
+
 .pivora-front-page :where(
 	.site-header__inner,
 	.pivora-hero__content,
 	.pivora-metrics,
+	.pivora-integrations-strip__inner,
 	.pivora-feature-section__inner,
 	.pivora-feature-section > .alignwide,
 	.pivora-service-section__inner,
 	.pivora-service-section > .alignwide,
+	.pivora-team-section > .alignwide,
+	.pivora-testimonials-section > .alignwide,
+	.pivora-contact-section > .alignwide,
 	.pivora-posts-section__inner,
 	.pivora-posts-section > .alignwide,
+	.pivora-lead-capture-band__shell,
 	.pivora-cta-section__shell,
 	.pivora-cta-section > .alignwide,
 	.site-footer__inner
@@ -230,6 +440,114 @@ a:hover {
 	margin-block-start: 0;
 	max-width: none;
 	width: 100%;
+}
+
+.site-main--full-width {
+	margin-inline: calc(50% - 50vw) !important;
+	max-width: 100vw !important;
+	padding-bottom: 0;
+	padding-inline: 0 !important;
+	padding-top: 0;
+	width: 100vw !important;
+}
+
+.site-main--full-width .pivora-page__header-band--full .pivora-page__header {
+	margin-inline: auto;
+	max-width: var(--wp--style--global--wide-size);
+	padding-inline: var(--wp--style--root--padding-left, 3rem);
+	width: 100%;
+}
+
+.site-main--full-width .pivora-page--full-width {
+	margin-inline: 0;
+	max-width: none;
+	width: 100%;
+}
+
+.site-main--full-width .pivora-page__featured--full,
+.site-main--full-width .pivora-page__hero {
+	border-radius: 0;
+	line-height: 0;
+	margin-block: 0 !important;
+	margin-inline: 0 !important;
+	max-width: none !important;
+	overflow: clip;
+	padding: 0;
+	width: 100% !important;
+}
+
+.site-main--full-width .pivora-page__hero .wp-block-cover__image-background {
+	object-fit: cover;
+}
+
+.pivora-page__hero-stack {
+	position: relative;
+}
+
+.pivora-page__hero-title {
+	inset-inline: 0;
+	padding: clamp(1.5rem, 3vw, 2.5rem);
+	padding-inline: max(var(--wp--style--root--padding-left, 3rem), clamp(1.5rem, 3vw, 2.5rem));
+	pointer-events: none;
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+}
+
+.pivora-page__hero-title .wp-block-post-title {
+	margin: 0;
+	max-width: min(18em, 100%);
+	pointer-events: auto;
+	text-wrap: balance;
+}
+
+.site-main--full-width .pivora-page__hero .wp-block-cover__inner-container:empty {
+	display: none;
+}
+
+.site-main--full-width .pivora-page__featured--full :where(.wp-block-post-featured-image, figure) {
+	aspect-ratio: unset !important;
+	height: auto;
+	margin: 0;
+	min-height: unset;
+}
+
+.site-main--full-width .pivora-page__featured--full img {
+	display: block;
+	height: auto;
+	max-height: none;
+	width: 100%;
+}
+
+.site-main--full-width .pivora-page__featured--full :where(.wp-block-post-featured-image, figure)[style*="min-height"] img,
+.site-main--full-width .pivora-page__featured--full :where(.wp-block-post-featured-image, figure)[style*="height"] img {
+	height: 100%;
+	object-fit: cover;
+}
+
+.site-main--full-width .wp-block-post-content {
+	margin-block: 0;
+	max-width: none;
+	padding-inline: var(--wp--style--root--padding-left, 3rem);
+	width: 100%;
+}
+
+.site-main--full-width .wp-block-post-content > .alignwide {
+	margin-inline: auto;
+	max-width: var(--wp--style--global--wide-size);
+}
+
+.site-main--full-width > .pivora-page__header-band {
+	margin-inline: 0 !important;
+	max-width: none !important;
+	width: 100% !important;
+}
+
+.site-main--full-width .wp-block-post-content > .alignfull {
+	margin-inline: calc(50% - 50vw) !important;
+	max-width: 100vw !important;
+	padding-inline: 0;
+	width: 100vw !important;
 }
 
 .pivora-front-page .site-main {
@@ -422,6 +740,16 @@ a:hover {
 
 .site-main--front {
 	padding-top: 0;
+}
+
+/* Landing sections are direct children of main — collapse theme blockGap so the
+   front-page canvas does not bleed through between full-width bands. */
+.pivora-front-page .site-main--front {
+	--wp--style--block-gap: 0;
+}
+
+.pivora-front-page .site-main--front > * {
+	margin-block-start: 0;
 }
 
 .pivora-section {
@@ -725,7 +1053,7 @@ a:hover {
 	width: 100%;
 }
 
-:is(.pivora-posts-section, .site-main--blog) .pivora-post-card {
+:is(.pivora-posts-section, .site-main--blog) .pivora-post-card:not(.pivora-curated-post-card) {
 	background: var(--wp--preset--color--white);
 	border: 1px solid var(--wp--preset--color--line);
 	border-radius: 18px;
@@ -738,13 +1066,90 @@ a:hover {
 	transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
-:is(.pivora-posts-section, .site-main--blog) .pivora-post-card:hover {
+:is(.pivora-posts-section, .site-main--blog) .pivora-curated-post-card {
+	--pivora-post-card-gutter: clamp(1.35rem, 1.8vw, 1.65rem);
+	background: var(--wp--preset--color--white);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 18px;
+	box-shadow: 0 20px 56px rgba(15, 23, 42, 0.07);
+	display: grid;
+	gap: var(--wp--preset--spacing--40);
+	height: 100%;
+	overflow: clip;
+	padding: var(--pivora-post-card-gutter);
+	padding-block-start: 0;
+	transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+:is(.pivora-posts-section, .site-main--blog) .pivora-curated-post-card .pivora-curated-post-card__media {
+	margin: calc(var(--pivora-post-card-gutter) * -1);
+	margin-block-end: 0;
+}
+
+:is(.pivora-posts-section, .site-main--blog) .pivora-curated-post-card .pivora-curated-post-card__title {
+	color: var(--wp--preset--color--ink);
+	font-size: clamp(1.15rem, 1.35vw, 1.3rem);
+	font-weight: 750;
+	line-height: 1.25;
+	margin: 0;
+	padding-top: clamp(1.15rem, 1.5vw, 1.35rem);
+}
+
+:is(.pivora-posts-section, .site-main--blog) .pivora-curated-post-card .pivora-curated-post-card__title a {
+	color: inherit;
+	overflow-wrap: anywhere;
+	text-decoration: none;
+	word-break: break-word;
+}
+
+:is(.pivora-posts-section, .site-main--blog) .pivora-curated-post-card .pivora-curated-post-card__title a:hover {
+	color: var(--wp--preset--color--teal);
+}
+
+:is(.pivora-posts-section, .site-main--blog) .pivora-curated-post-card .pivora-curated-post-card__excerpt {
+	color: var(--wp--preset--color--slate);
+	flex: 1;
+	font-size: var(--wp--preset--font-size--base);
+	line-height: 1.65;
+	margin: 0;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+:is(.pivora-posts-section, .site-main--blog) .pivora-curated-post-card .pivora-curated-post-card__more {
+	color: var(--wp--preset--color--teal);
+	font-weight: 700;
+	text-decoration: none;
+}
+
+:is(.pivora-posts-section, .site-main--blog) .pivora-curated-post-card .pivora-curated-post-card__more:hover {
+	text-decoration: underline;
+}
+
+:is(.pivora-posts-section, .site-main--blog) .pivora-curated-post-card .pivora-curated-post-card__date {
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	margin-block-start: auto;
+	margin-top: auto;
+	padding-bottom: 0;
+	text-transform: uppercase;
+}
+
+:is(.pivora-posts-section, .site-main--blog) .pivora-post-card:not(.pivora-curated-post-card):hover {
 	border-color: rgba(15, 118, 110, 0.22);
 	box-shadow: 0 28px 72px rgba(15, 23, 42, 0.1);
 	transform: translateY(-3px);
 }
 
-:is(.pivora-posts-section, .site-main--blog) .pivora-post-card .wp-block-post-featured-image {
+:is(.pivora-posts-section, .site-main--blog) .pivora-curated-post-card:hover {
+	border-color: rgba(15, 118, 110, 0.22);
+	box-shadow: 0 28px 72px rgba(15, 23, 42, 0.1);
+	transform: translateY(-3px);
+}
+
+:is(.pivora-posts-section, .site-main--blog) .pivora-post-card:not(.pivora-curated-post-card) .wp-block-post-featured-image {
 	margin: 0;
 }
 
@@ -804,6 +1209,8 @@ a:hover {
 :is(.pivora-posts-section, .site-main--blog) .pivora-post-card .wp-block-post-title a {
 	color: inherit;
 	text-decoration: none;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
 :is(.pivora-posts-section, .site-main--blog) .pivora-post-card .wp-block-post-title a:hover {
@@ -817,6 +1224,14 @@ a:hover {
 	line-height: 1.65;
 	margin-block-end: var(--wp--preset--spacing--50);
 	margin-block-start: 0;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+:is(.pivora-posts-section, .site-main--blog) .pivora-post-card .wp-block-post-excerpt p {
+	margin: 0;
+	overflow-wrap: anywhere;
+	word-break: break-word;
 }
 
 :is(.pivora-posts-section, .site-main--blog) .pivora-post-card .wp-block-post-excerpt__more-link {
@@ -851,10 +1266,21 @@ a:hover {
 }
 
 .pivora-cta-section {
-	background: transparent;
+	background: #0b1633;
 	color: var(--wp--preset--color--white);
 	padding-bottom: clamp(5rem, 8vw, 7rem);
 	padding-top: clamp(3rem, 5vw, 4.5rem);
+}
+
+.pivora-newsletter-section {
+	background: #0b1633;
+	color: var(--wp--preset--color--white);
+	padding-bottom: clamp(2rem, 3vw, 2.5rem);
+	padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+.pivora-newsletter-section + .pivora-cta-section {
+	padding-top: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .pivora-cta-section__shell {
@@ -863,11 +1289,10 @@ a:hover {
 
 .pivora-cta-section .pivora-cta {
 	align-items: center;
-	background:
-		linear-gradient(135deg, rgba(15, 23, 42, 0.94) 0%, rgba(6, 10, 24, 0.98) 100%);
-	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.14);
 	border-radius: 18px;
-	box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+	box-shadow: none;
 	display: grid !important;
 	gap: clamp(1.5rem, 3vw, 2.5rem);
 	grid-template-columns: minmax(0, 1fr) auto;
@@ -1045,10 +1470,17 @@ a:hover {
 	max-width: var(--wp--style--global--wide-size);
 }
 
+/* Legacy alias: older customized templates may still use pivora-page--wide. */
+
 .pivora-pricing-section {
 	background: var(--wp--preset--color--white);
-	padding-bottom: clamp(5rem, 8vw, 7rem);
+	padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
 	padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+.pivora-pricing-section + .pivora-faq-section {
+	border-top: 1px solid var(--wp--preset--color--line);
+	padding-top: clamp(2.5rem, 4vw, 3.5rem);
 }
 
 .pivora-pricing-section__inner {
@@ -1264,14 +1696,16 @@ a:hover {
 }
 
 .pivora-project-card {
-	aspect-ratio: 4 / 3;
+	aspect-ratio: auto;
 	background: var(--wp--preset--color--cloud);
 	border: 1px solid var(--wp--preset--color--line);
 	border-radius: 18px;
 	box-shadow: 0 20px 56px rgba(15, 23, 42, 0.06);
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-end;
+	gap: var(--wp--preset--spacing--40);
+	justify-content: flex-start;
+	min-height: clamp(13.5rem, 18vw, 16.5rem);
 	padding: clamp(1.5rem, 2vw, 2rem);
 	transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
@@ -1283,14 +1717,14 @@ a:hover {
 }
 
 .pivora-project-card--accent {
-	background: var(--wp--preset--color--ink);
-	border-color: var(--wp--preset--color--ink);
+	background: linear-gradient(160deg, rgba(15, 23, 42, 0.97), rgba(10, 22, 54, 0.97));
+	border-color: rgba(255, 255, 255, 0.12);
 	color: var(--wp--preset--color--white);
 }
 
 .pivora-project-card--highlight {
 	background: linear-gradient(145deg, var(--wp--preset--color--blue), var(--wp--preset--color--teal));
-	border-color: transparent;
+	border-color: rgba(255, 255, 255, 0.1);
 	color: var(--wp--preset--color--white);
 }
 
@@ -1311,6 +1745,7 @@ a:hover {
 
 .pivora-project-card h3,
 .pivora-project-card p {
+	margin-block-end: 0;
 	margin-block-start: 0;
 }
 
@@ -1318,14 +1753,12 @@ a:hover {
 	font-size: clamp(1.2rem, 1.35vw, 1.45rem);
 	letter-spacing: -0.01em;
 	line-height: 1.2;
-	margin-block-end: var(--wp--preset--spacing--40);
 }
 
 .pivora-project-card p {
 	color: var(--wp--preset--color--slate);
 	font-size: var(--wp--preset--font-size--small);
 	line-height: 1.6;
-	margin-block-end: 0;
 }
 
 .pivora-project-card--accent p,
@@ -1493,6 +1926,63 @@ a:hover {
 	margin-block-start: 0;
 }
 
+.pivora-product-spotlight {
+	background: var(--wp--preset--color--ink);
+	color: var(--wp--preset--color--white);
+	padding-bottom: clamp(3rem, 5vw, 4rem);
+	padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+.pivora-product-categories {
+	background: var(--wp--preset--color--ink);
+	color: var(--wp--preset--color--white);
+	padding-bottom: clamp(5rem, 8vw, 7rem);
+	padding-top: clamp(3rem, 5vw, 4rem);
+}
+
+.pivora-product-spotlight .pivora-eyebrow,
+.pivora-product-categories .pivora-eyebrow {
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.pivora-product-spotlight h2,
+.pivora-product-categories h2 {
+	color: var(--wp--preset--color--white);
+}
+
+.pivora-product-spotlight .wp-block-query p {
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.pivora-product-spotlight .pivora-product-card {
+	background: rgba(255, 255, 255, 0.03);
+	border: 1px solid rgba(255, 255, 255, 0.24);
+	border-radius: var(--wp--custom--border-radius--medium);
+	color: var(--wp--preset--color--white);
+	padding: 0;
+	overflow: clip;
+}
+
+.pivora-product-spotlight .pivora-product-card__title a {
+	color: var(--wp--preset--color--white);
+	text-decoration: none;
+}
+
+.pivora-product-spotlight .pivora-product-card__title,
+.pivora-product-spotlight .pivora-product-card__price {
+	padding-inline: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+.pivora-product-spotlight .pivora-product-card__title {
+	margin-block-end: var(--wp--preset--spacing--30);
+	margin-block-start: var(--wp--preset--spacing--50);
+}
+
+.pivora-product-spotlight .pivora-product-card__price {
+	color: rgba(255, 255, 255, 0.72);
+	margin-block-end: var(--wp--preset--spacing--50);
+}
+
 .pivora-store-benefits-section {
 	background: var(--wp--preset--color--white);
 	padding-bottom: clamp(4rem, 7vw, 6rem);
@@ -1644,6 +2134,35 @@ a:hover {
 .pivora-store-benefit {
 	border-right: 1px solid var(--wp--preset--color--line);
 	padding: clamp(1.5rem, 2vw, 2rem);
+}
+
+.pivora-store-benefits > .wp-block-pivora-icon-box {
+	border-radius: 0;
+	border-right: 1px solid var(--wp--preset--color--line);
+	box-shadow: none;
+	height: 100%;
+}
+
+.pivora-store-benefits > .wp-block-pivora-icon-box:last-child {
+	border-right: 0;
+}
+
+.pivora-social-footer-section {
+	background: var(--wp--preset--color--cloud);
+	border-block: 1px solid var(--wp--preset--color--line);
+	padding-block: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.pivora-social-footer-section__inner {
+	gap: var(--wp--preset--spacing--50);
+	margin-inline: auto;
+	max-width: var(--wp--style--global--wide-size);
+	width: 100%;
+}
+
+.pivora-social-footer-section__copy {
+	color: var(--wp--preset--color--slate);
+	margin: 0;
 }
 
 .pivora-store-benefit h3 {
@@ -2866,6 +3385,124 @@ a:hover {
 	max-width: 720px;
 }
 
+.pivora-layout-with-sidebar {
+	align-items: flex-start !important;
+	gap: clamp(2rem, 3.5vw, 3rem) !important;
+	margin-block-start: clamp(2rem, 3.5vw, 3rem);
+}
+
+.pivora-layout-with-sidebar__content {
+	min-width: 0;
+}
+
+.pivora-layout-with-sidebar__content .pivora-blog-archive,
+.pivora-layout-with-sidebar__content .pivora-page__content,
+.pivora-layout-with-sidebar__content .pivora-single__content {
+	max-width: none;
+	width: 100%;
+}
+
+.pivora-layout-with-sidebar__sidebar {
+	min-width: 0;
+}
+
+.pivora-sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(1.15rem, 2vw, 1.5rem);
+	position: sticky;
+	top: calc(var(--pivora-header-height) + 1.5rem);
+	width: 100%;
+}
+
+.pivora-sidebar__widget {
+	background: var(--wp--preset--color--cloud);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 14px;
+	padding: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+.pivora-sidebar__widget > * {
+	margin-block-end: 0;
+	margin-block-start: 0;
+}
+
+.pivora-sidebar__widget > * + * {
+	margin-block-start: var(--wp--preset--spacing--50);
+}
+
+.pivora-sidebar__title {
+	font-size: 0.95rem;
+	font-weight: 800;
+	letter-spacing: -0.01em;
+	line-height: 1.25;
+	margin: 0;
+}
+
+.pivora-sidebar__search .wp-block-search__inside-wrapper {
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 999px;
+	overflow: clip;
+}
+
+.pivora-sidebar__search .wp-block-search__input {
+	font-size: 0.9rem;
+	min-height: 2.35rem;
+}
+
+.pivora-sidebar__search .wp-block-search__button {
+	background: var(--wp--preset--color--teal);
+	font-size: 0.84rem;
+	font-weight: 700;
+}
+
+.pivora-sidebar__categories :where(ul) {
+	display: grid;
+	gap: 0.45rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pivora-sidebar__categories :where(li) {
+	margin: 0;
+}
+
+.pivora-sidebar__categories :where(a) {
+	color: var(--wp--preset--color--ink);
+	font-size: 0.9rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.pivora-sidebar__categories :where(a:hover) {
+	color: var(--wp--preset--color--teal);
+}
+
+.pivora-sidebar__recent-posts .wp-block-post-template {
+	display: grid;
+	gap: 0.55rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pivora-sidebar__recent-posts .wp-block-post-title {
+	font-size: 0.9rem;
+	font-weight: 700;
+	line-height: 1.35;
+	margin: 0;
+}
+
+.pivora-sidebar__recent-posts .wp-block-post-title a {
+	color: var(--wp--preset--color--ink);
+	text-decoration: none;
+}
+
+.pivora-sidebar__recent-posts .wp-block-post-title a:hover {
+	color: var(--wp--preset--color--teal);
+}
+
 .site-main--404 {
 	padding-bottom: clamp(4rem, 7vw, 6rem);
 }
@@ -3011,6 +3648,20 @@ a:hover {
 		flex-direction: column;
 	}
 
+	.pivora-layout-with-sidebar {
+		flex-direction: column;
+	}
+
+	.pivora-layout-with-sidebar__content,
+	.pivora-layout-with-sidebar__sidebar {
+		flex-basis: 100% !important;
+		width: 100%;
+	}
+
+	.pivora-sidebar {
+		position: static;
+	}
+
 	.pivora-single__nav {
 		flex-direction: column;
 	}
@@ -3029,7 +3680,783 @@ a:hover {
 		border-right: 0;
 	}
 
+	.pivora-store-benefits > .wp-block-pivora-icon-box {
+		border-bottom: 1px solid var(--wp--preset--color--line);
+		border-right: 0;
+	}
+
+	.pivora-store-benefits > .wp-block-pivora-icon-box:last-child,
 	.pivora-store-benefit:last-child {
 		border-bottom: 0;
+	}
+}
+
+/* -------------------------------------------------------------------------
+ * Block style variations (inc/block-styles.php)
+ * ------------------------------------------------------------------------- */
+
+.wp-block-button.is-style-pivora-outline .wp-block-button__link {
+	background: transparent;
+	border: 1px solid currentColor;
+	color: var(--wp--preset--color--ink);
+}
+
+.wp-block-button.is-style-pivora-outline .wp-block-button__link:hover {
+	background: var(--wp--preset--color--cloud);
+}
+
+.wp-block-button.is-style-pivora-pill .wp-block-button__link {
+	border-radius: 999px;
+}
+
+.wp-block-button.is-style-pivora-ghost .wp-block-button__link {
+	background: transparent;
+	color: var(--wp--preset--color--ink);
+	padding-inline: 0;
+}
+
+.wp-block-button.is-style-pivora-ghost .wp-block-button__link:hover {
+	background: transparent;
+	color: var(--wp--preset--color--teal);
+}
+
+.wp-block-group.is-style-pivora-card {
+	background: var(--wp--preset--color--white);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--border-radius--medium);
+	padding: var(--wp--preset--spacing--60);
+}
+
+.wp-block-group.is-style-pivora-band {
+	background: var(--wp--preset--color--cloud);
+	border-block: 1px solid var(--wp--preset--color--line);
+	padding-block: var(--wp--preset--spacing--80);
+	padding-inline: var(--wp--preset--spacing--60);
+}
+
+.wp-block-group.is-style-pivora-bordered {
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--border-radius--medium);
+	padding: var(--wp--preset--spacing--60);
+}
+
+.wp-block-image.is-style-pivora-rounded :where(img) {
+	border-radius: 12px;
+}
+
+.wp-block-image.is-style-pivora-shadow :where(img) {
+	border-radius: 12px;
+	box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12);
+}
+
+.wp-block-list.is-style-pivora-checklist {
+	list-style: none;
+	padding-inline-start: 0;
+}
+
+.wp-block-list.is-style-pivora-checklist li {
+	padding-inline-start: 1.75rem;
+	position: relative;
+}
+
+.wp-block-list.is-style-pivora-checklist li::before {
+	color: var(--wp--preset--color--teal);
+	content: "✓";
+	font-weight: 700;
+	left: 0;
+	position: absolute;
+}
+
+.wp-block-list.is-style-pivora-steps {
+	counter-reset: pivora-step;
+	list-style: none;
+	padding-inline-start: 0;
+}
+
+.wp-block-list.is-style-pivora-steps li {
+	counter-increment: pivora-step;
+	padding-inline-start: 2.5rem;
+	position: relative;
+}
+
+.wp-block-list.is-style-pivora-steps li::before {
+	align-items: center;
+	background: var(--wp--preset--color--teal);
+	border-radius: 999px;
+	color: var(--wp--preset--color--white);
+	content: counter(pivora-step);
+	display: inline-flex;
+	font-size: 0.75rem;
+	font-weight: 700;
+	height: 1.5rem;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: 0.1rem;
+	width: 1.5rem;
+}
+
+.wp-block-quote.is-style-pivora-testimonial {
+	background: var(--wp--preset--color--white);
+	border: 1px solid var(--wp--preset--color--line);
+	border-inline-start: 0;
+	border-radius: var(--wp--custom--border-radius--medium);
+	margin: 0;
+	padding: var(--wp--preset--spacing--60);
+}
+
+.wp-block-quote.is-style-pivora-testimonial p {
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: 1.6;
+	margin-block-end: 0;
+}
+
+.wp-block-quote.is-style-pivora-pullquote {
+	border: 0;
+	color: var(--wp--preset--color--ink);
+	font-size: clamp(1.5rem, 2.5vw, 2rem);
+	font-weight: 700;
+	line-height: 1.25;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.wp-block-quote.is-style-pivora-pullquote p {
+	margin: 0;
+}
+
+/* -------------------------------------------------------------------------
+ * FAQ section pattern
+ * ------------------------------------------------------------------------- */
+
+.pivora-faq-section {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--ink);
+	padding-bottom: clamp(5rem, 8vw, 7rem);
+	padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+.pivora-faq-section .pivora-eyebrow {
+	color: var(--wp--preset--color--teal);
+}
+
+.pivora-faq-section h2 {
+	color: var(--wp--preset--color--ink);
+}
+
+.pivora-faq-section .pivora-section__lede {
+	color: var(--wp--preset--color--slate);
+}
+
+.pivora-faq-section__layout {
+	align-items: flex-start;
+	gap: var(--wp--preset--spacing--80);
+}
+
+.pivora-faq-section__intro {
+	display: grid;
+	gap: var(--wp--preset--spacing--40);
+	position: sticky;
+	top: var(--wp--preset--spacing--70);
+}
+
+.pivora-faq-list {
+	display: grid;
+	gap: var(--wp--preset--spacing--40);
+}
+
+.pivora-faq-item {
+	background: var(--wp--preset--color--white);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--border-radius--medium);
+	padding: var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);
+}
+
+.pivora-faq-item summary {
+	cursor: pointer;
+	font-weight: 700;
+	list-style: none;
+}
+
+.pivora-faq-item summary::-webkit-details-marker {
+	display: none;
+}
+
+.pivora-faq-item summary::after {
+	content: "+";
+	float: right;
+	font-size: 1.25rem;
+	font-weight: 400;
+	line-height: 1;
+}
+
+.pivora-faq-item[open] summary::after {
+	content: "−";
+}
+
+.pivora-faq-item p {
+	color: var(--wp--preset--color--slate);
+	margin-block: var(--wp--preset--spacing--40) 0;
+}
+
+/* -------------------------------------------------------------------------
+ * Testimonials grid pattern
+ * ------------------------------------------------------------------------- */
+
+.pivora-testimonials-section {
+	background: var(--wp--preset--color--ink);
+	color: var(--wp--preset--color--white);
+	padding-bottom: clamp(2rem, 3vw, 2.5rem);
+	padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+.pivora-testimonials-section + .pivora-cta-section {
+	background: var(--wp--preset--color--ink);
+	padding-top: clamp(1.5rem, 2.5vw, 2rem);
+}
+
+.pivora-testimonials-section .pivora-eyebrow {
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.pivora-testimonials-section h2 {
+	color: var(--wp--preset--color--white);
+}
+
+.pivora-testimonials-section .pivora-section__lede {
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.pivora-testimonials-section :is(
+	.wp-block-pivora-testimonial-card,
+	.pivora-testimonial-card
+) {
+	color: var(--wp--preset--color--ink);
+}
+
+.pivora-testimonials-section .pivora-testimonial-card__quote,
+.pivora-testimonials-section .pivora-testimonial-card__quote p {
+	color: var(--wp--preset--color--ink);
+}
+
+.pivora-testimonials-section .pivora-section__heading {
+	margin-block-end: var(--wp--preset--spacing--80);
+	max-width: 42rem;
+}
+
+.pivora-testimonials-grid {
+	align-items: stretch;
+	gap: var(--wp--preset--spacing--60);
+}
+
+.pivora-testimonial {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--50);
+	height: 100%;
+}
+
+.pivora-testimonial .wp-block-quote {
+	flex: 1;
+}
+
+.pivora-testimonial__author {
+	align-items: center;
+	display: flex;
+	gap: var(--wp--preset--spacing--40);
+}
+
+.pivora-testimonial__avatar {
+	align-items: center;
+	background: var(--wp--preset--color--cloud);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 999px;
+	color: var(--wp--preset--color--teal);
+	display: flex;
+	flex-shrink: 0;
+	font-size: 0.875rem;
+	font-weight: 800;
+	height: 2.75rem;
+	justify-content: center;
+	letter-spacing: 0.04em;
+	margin: 0;
+	width: 2.75rem;
+}
+
+.pivora-testimonial__meta {
+	display: grid;
+	gap: 0.15rem;
+}
+
+.pivora-testimonial__name {
+	font-weight: 700;
+	margin: 0;
+}
+
+.pivora-testimonial__role {
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+	margin: 0;
+}
+
+@media (max-width: 781px) {
+
+	.pivora-faq-section__layout {
+		flex-direction: column;
+	}
+
+	.pivora-faq-section__intro {
+		position: static;
+	}
+
+	.pivora-testimonials-grid {
+		flex-direction: column;
+	}
+}
+
+/* -------------------------------------------------------------------------
+ * Logo cloud, team, contact, newsletter, comparison, page header, footer
+ * ------------------------------------------------------------------------- */
+
+.pivora-logo-cloud-section {
+	background: var(--wp--preset--color--white);
+	padding-block: var(--wp--preset--spacing--70);
+}
+
+.pivora-logo-cloud__label {
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	margin-block-end: var(--wp--preset--spacing--60);
+	text-transform: uppercase;
+}
+
+.pivora-logo-cloud {
+	gap: var(--wp--preset--spacing--50) var(--wp--preset--spacing--70);
+}
+
+.pivora-logo-cloud__item {
+	color: var(--wp--preset--color--slate);
+	font-size: clamp(1rem, 1.5vw, 1.2rem);
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	margin: 0;
+	opacity: 0.72;
+	text-transform: uppercase;
+}
+
+.pivora-team-section .pivora-section__heading {
+	margin-block-end: var(--wp--preset--spacing--80);
+	max-width: 42rem;
+}
+
+.pivora-team-grid {
+	align-items: stretch;
+	gap: var(--wp--preset--spacing--60);
+}
+
+.pivora-team-member {
+	display: grid;
+	gap: var(--wp--preset--spacing--40);
+	height: 100%;
+}
+
+.pivora-team-member__avatar {
+	align-items: center;
+	background: linear-gradient(145deg, rgba(15, 118, 110, 0.12), rgba(37, 99, 235, 0.18));
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: 999px;
+	color: var(--wp--preset--color--teal);
+	display: flex;
+	font-size: 0.95rem;
+	font-weight: 800;
+	height: 4rem;
+	justify-content: center;
+	letter-spacing: 0.05em;
+	margin: 0;
+	width: 4rem;
+}
+
+.pivora-team-member__name {
+	margin: 0;
+}
+
+.pivora-team-member__role {
+	color: var(--wp--preset--color--teal);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	margin: 0;
+}
+
+.pivora-team-member__bio {
+	color: var(--wp--preset--color--slate);
+	margin: 0;
+}
+
+.pivora-contact-section__layout {
+	align-items: stretch;
+	gap: var(--wp--preset--spacing--80);
+}
+
+.pivora-contact-details {
+	display: grid;
+	gap: var(--wp--preset--spacing--50);
+	margin-block-start: var(--wp--preset--spacing--60);
+}
+
+.pivora-contact-details__item {
+	margin: 0;
+}
+
+.pivora-contact-form-card h3 {
+	margin-block-start: 0;
+}
+
+.pivora-contact-form-card__hint {
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.pivora-contact-form-placeholder {
+	display: grid;
+	gap: var(--wp--preset--spacing--40);
+	margin-block: var(--wp--preset--spacing--50);
+}
+
+.pivora-contact-form-placeholder__field {
+	background: var(--wp--preset--color--cloud);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--border-radius--medium);
+	color: var(--wp--preset--color--slate);
+	margin: 0;
+	padding: 0.85rem 1rem;
+}
+
+.pivora-contact-form-placeholder__field--area {
+	min-height: 7rem;
+}
+
+.pivora-newsletter-section__shell {
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.14);
+	border-radius: var(--wp--custom--border-radius--large);
+	color: var(--wp--preset--color--white);
+	padding: clamp(2rem, 4vw, 3rem);
+}
+
+.pivora-newsletter {
+	align-items: center;
+	display: grid;
+	gap: var(--wp--preset--spacing--70);
+	grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+}
+
+.pivora-newsletter .pivora-eyebrow {
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.pivora-newsletter h2 {
+	color: var(--wp--preset--color--white);
+	margin-block-end: var(--wp--preset--spacing--30);
+	margin-block-start: 0;
+}
+
+.pivora-newsletter__lede {
+	color: rgba(255, 255, 255, 0.78);
+	margin: 0;
+}
+
+.pivora-newsletter__form {
+	align-items: center;
+	gap: var(--wp--preset--spacing--40);
+}
+
+.pivora-newsletter__input {
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 999px;
+	color: rgba(255, 255, 255, 0.72);
+	flex: 1;
+	margin: 0;
+	min-width: 12rem;
+	padding: 0.9rem 1.1rem;
+}
+
+.pivora-comparison-section .pivora-section__heading {
+	margin-block-end: var(--wp--preset--spacing--70);
+	max-width: 42rem;
+}
+
+.pivora-comparison-table {
+	margin: 0;
+	overflow-x: auto;
+}
+
+.pivora-comparison-table table {
+	border-collapse: collapse;
+	min-width: 36rem;
+	width: 100%;
+}
+
+.pivora-comparison-table th,
+.pivora-comparison-table td {
+	border: 1px solid var(--wp--preset--color--line);
+	padding: 0.9rem 1rem;
+	text-align: left;
+	vertical-align: top;
+}
+
+.pivora-comparison-table thead th {
+	background: var(--wp--preset--color--cloud);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.pivora-comparison-table tbody tr:nth-child(even) td {
+	background: rgba(248, 250, 252, 0.72);
+}
+
+.pivora-page-header-section {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--ink);
+	border-bottom: 1px solid var(--wp--preset--color--line);
+	padding-block: var(--wp--preset--spacing--80);
+}
+
+.pivora-page-header__breadcrumb {
+	color: var(--wp--preset--color--slate);
+	font-size: var(--wp--preset--font-size--small);
+	margin-block-end: var(--wp--preset--spacing--40);
+}
+
+.pivora-page-header__breadcrumb a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pivora-page-header__breadcrumb a:hover {
+	color: var(--wp--preset--color--teal);
+}
+
+.pivora-page-header h1 {
+	color: var(--wp--preset--color--ink);
+	margin-block: 0 var(--wp--preset--spacing--40);
+	max-width: 18ch;
+}
+
+.pivora-page-header__lede {
+	color: var(--wp--preset--color--slate);
+	margin: 0;
+	max-width: 48rem;
+}
+
+.pivora-footer-columns {
+	padding-block: var(--wp--preset--spacing--90);
+}
+
+.pivora-footer-columns__grid {
+	gap: var(--wp--preset--spacing--70);
+}
+
+.pivora-footer-columns__brand {
+	margin-block-end: var(--wp--preset--spacing--40);
+}
+
+.pivora-footer-columns__blurb,
+.pivora-footer-columns__note {
+	color: var(--wp--preset--color--slate);
+	margin: 0;
+	max-width: 22rem;
+}
+
+.pivora-footer-columns__title {
+	font-size: var(--wp--preset--font-size--small);
+	letter-spacing: 0.06em;
+	margin-block: 0 var(--wp--preset--spacing--40);
+	text-transform: uppercase;
+}
+
+.pivora-footer-columns__links {
+	display: grid;
+	gap: 0.55rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pivora-footer-columns__links a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.pivora-footer-columns__links a:hover {
+	color: var(--wp--preset--color--teal);
+}
+
+.pivora-footer-columns__divider {
+	margin-block: var(--wp--preset--spacing--70);
+	opacity: 0.35;
+}
+
+.pivora-footer-columns__meta {
+	align-items: center;
+	gap: var(--wp--preset--spacing--40);
+}
+
+.pivora-footer-columns__copyright,
+.pivora-footer-columns__legal {
+	color: var(--wp--preset--color--slate);
+	margin: 0;
+}
+
+.pivora-metrics--light {
+	--pivora-metrics-overlap: 0px;
+	background: var(--wp--preset--color--cloud);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--border-radius--large);
+	box-shadow: none;
+	color: var(--wp--preset--color--ink);
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	margin-block: 0;
+}
+
+.pivora-metrics--light .pivora-metric {
+	background: transparent;
+	padding: var(--wp--preset--spacing--60);
+}
+
+.pivora-metrics--light .pivora-metric__label {
+	color: var(--wp--preset--color--slate);
+}
+
+.pivora-metrics--light .pivora-metric h3 {
+	color: var(--wp--preset--color--ink);
+}
+
+.pivora-metrics--light .pivora-metric__copy {
+	color: var(--wp--preset--color--slate);
+}
+
+.pivora-metrics-section--split,
+.pivora-metrics-section--light {
+	color: var(--wp--preset--color--ink);
+	padding-bottom: clamp(5rem, 8vw, 7rem);
+	padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+.pivora-metrics-section--split {
+	background: var(--wp--preset--color--white);
+}
+
+.pivora-metrics-section--light {
+	background: var(--wp--preset--color--cloud);
+}
+
+.pivora-metrics-section--split .pivora-eyebrow,
+.pivora-comparison-section .pivora-eyebrow,
+.pivora-team-section .pivora-eyebrow,
+.pivora-contact-section .pivora-eyebrow {
+	color: var(--wp--preset--color--teal);
+}
+
+.pivora-metrics-section--split h2,
+.pivora-comparison-section h2,
+.pivora-team-section h2,
+.pivora-contact-section h2 {
+	color: var(--wp--preset--color--ink);
+}
+
+.pivora-metrics-section--split .pivora-section__lede,
+.pivora-comparison-section .pivora-section__lede,
+.pivora-team-section .pivora-section__lede,
+.pivora-contact-section .pivora-section__lede {
+	color: var(--wp--preset--color--slate);
+}
+
+.pivora-comparison-section {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--ink);
+	padding-bottom: clamp(5rem, 8vw, 7rem);
+	padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+.pivora-team-section {
+	background: var(--wp--preset--color--white);
+	color: var(--wp--preset--color--ink);
+	padding-bottom: clamp(5rem, 8vw, 7rem);
+	padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+.pivora-contact-section {
+	background: var(--wp--preset--color--cloud);
+	color: var(--wp--preset--color--ink);
+	padding-bottom: clamp(5rem, 8vw, 7rem);
+	padding-top: clamp(5rem, 8vw, 7rem);
+}
+
+.pivora-metrics-split__layout {
+	gap: var(--wp--preset--spacing--80);
+}
+
+.pivora-metrics--split-grid {
+	--pivora-metrics-overlap: 0px;
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+	color: var(--wp--preset--color--ink);
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	margin-block: 0;
+}
+
+.pivora-metric--split {
+	background: var(--wp--preset--color--white);
+	border: 1px solid var(--wp--preset--color--line);
+	border-radius: var(--wp--custom--border-radius--medium);
+	padding: var(--wp--preset--spacing--60);
+}
+
+.pivora-metric--split h3 {
+	color: var(--wp--preset--color--teal);
+	font-size: 2.2rem;
+	margin-block-end: var(--wp--preset--spacing--30);
+	margin-block-start: 0;
+}
+
+.pivora-metric--split .pivora-metric__copy {
+	color: var(--wp--preset--color--slate);
+	margin: 0;
+}
+
+@media (max-width: 1080px) {
+
+	.pivora-metrics--light {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.pivora-newsletter {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 781px) {
+
+	.pivora-contact-section__layout,
+	.pivora-team-grid,
+	.pivora-footer-columns__grid {
+		flex-direction: column;
+	}
+
+	.pivora-metrics--light,
+	.pivora-metrics--split-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.pivora-footer-columns__meta {
+		align-items: flex-start;
+		flex-direction: column;
 	}
 }

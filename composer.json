@@ -1,7 +1,7 @@
 {
   "name": "pivora/pivora",
   "description": "A modern, block-first, multi-purpose WordPress theme built for fast, accessible, SEO-ready websites.",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "wordpress-theme",
   "license": "GPL-2.0-or-later",
   "require-dev": {

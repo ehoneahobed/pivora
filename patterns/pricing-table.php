@@ -8,6 +8,66 @@
  * @package Pivora
  */
 
+$contact_url = home_url( '/contact/' );
+
+$plans = array(
+	array(
+		'tier'        => __( 'Starter', 'pivora' ),
+		'price'       => '$19',
+		'term'        => __( '/mo', 'pivora' ),
+		'description' => __( 'For lean launches and brochure sites.', 'pivora' ),
+		'features'    => implode(
+			"\n",
+			array(
+				__( 'Core pages', 'pivora' ),
+				__( 'Pattern-based layouts', 'pivora' ),
+				__( 'Email support', 'pivora' ),
+			)
+		),
+		'ctaText'     => __( 'Choose Starter', 'pivora' ),
+		'ctaUrl'      => $contact_url,
+		'featured'    => false,
+		'ctaOutline'  => true,
+	),
+	array(
+		'tier'        => __( 'Growth', 'pivora' ),
+		'price'       => '$49',
+		'term'        => __( '/mo', 'pivora' ),
+		'description' => __( 'For teams shipping campaigns and content hubs.', 'pivora' ),
+		'features'    => implode(
+			"\n",
+			array(
+				__( 'Advanced sections', 'pivora' ),
+				__( 'Landing pages', 'pivora' ),
+				__( 'Priority support', 'pivora' ),
+			)
+		),
+		'ctaText'     => __( 'Choose Growth', 'pivora' ),
+		'ctaUrl'      => $contact_url,
+		'featured'    => true,
+		'badgeText'   => __( 'Most popular', 'pivora' ),
+		'ctaOutline'  => false,
+	),
+	array(
+		'tier'        => __( 'Scale', 'pivora' ),
+		'price'       => '$99',
+		'term'        => __( '/mo', 'pivora' ),
+		'description' => __( 'For multi-site rollouts and commerce.', 'pivora' ),
+		'features'    => implode(
+			"\n",
+			array(
+				__( 'Multi-site rollout', 'pivora' ),
+				__( 'Commerce-ready layouts', 'pivora' ),
+				__( 'Dedicated support', 'pivora' ),
+			)
+		),
+		'ctaText'     => __( 'Choose Scale', 'pivora' ),
+		'ctaUrl'      => $contact_url,
+		'featured'    => false,
+		'ctaOutline'  => true,
+	),
+);
+
 ?>
 <!-- wp:group {"align":"full","className":"pivora-section pivora-pricing-section","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull pivora-section pivora-pricing-section">
@@ -31,117 +91,47 @@
 
 		<!-- wp:columns {"className":"pivora-pricing"} -->
 		<div class="wp-block-columns pivora-pricing">
-			<!-- wp:column -->
-			<div class="wp-block-column">
-				<!-- wp:group {"className":"pivora-card pivora-price-card","layout":{"type":"constrained"}} -->
-				<div class="wp-block-group pivora-card pivora-price-card">
-					<!-- wp:paragraph {"className":"pivora-price-card__tier"} -->
-					<p class="pivora-price-card__tier"><?php esc_html_e( 'Starter', 'pivora' ); ?></p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:heading {"level":3} -->
-					<h3 class="wp-block-heading"><?php esc_html_e( '$19', 'pivora' ); ?><span class="pivora-price-card__term"><?php esc_html_e( '/mo', 'pivora' ); ?></span></h3>
-					<!-- /wp:heading -->
-
-					<!-- wp:paragraph {"className":"pivora-price-card__copy"} -->
-					<p class="pivora-price-card__copy"><?php esc_html_e( 'For lean launches and brochure sites.', 'pivora' ); ?></p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:list {"className":"pivora-price-card__features"} -->
-					<ul class="pivora-price-card__features">
-						<li><?php esc_html_e( 'Core pages', 'pivora' ); ?></li>
-						<li><?php esc_html_e( 'Pattern-based layouts', 'pivora' ); ?></li>
-						<li><?php esc_html_e( 'Email support', 'pivora' ); ?></li>
-					</ul>
-					<!-- /wp:list -->
-
-					<!-- wp:buttons -->
-					<div class="wp-block-buttons">
-						<!-- wp:button {"className":"is-style-outline","url":"<?php echo esc_url( home_url( '/contact/' ) ); ?>"} -->
-						<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Choose Starter', 'pivora' ); ?></a></div>
-						<!-- /wp:button -->
+			<?php if ( pivora_is_core_active() ) : ?>
+				<?php foreach ( $plans as $plan ) : ?>
+					<!-- wp:column -->
+					<div class="wp-block-column">
+						<?php pivora_block( 'pivora/pricing-card', $plan ); ?>
 					</div>
-					<!-- /wp:buttons -->
-				</div>
-				<!-- /wp:group -->
-			</div>
-			<!-- /wp:column -->
-
-			<!-- wp:column -->
-			<div class="wp-block-column">
-				<!-- wp:group {"className":"pivora-card pivora-price-card pivora-price-card--featured","layout":{"type":"constrained"}} -->
-				<div class="wp-block-group pivora-card pivora-price-card pivora-price-card--featured">
-					<!-- wp:paragraph {"className":"pivora-price-card__badge"} -->
-					<p class="pivora-price-card__badge"><?php esc_html_e( 'Most popular', 'pivora' ); ?></p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:paragraph {"className":"pivora-price-card__tier"} -->
-					<p class="pivora-price-card__tier"><?php esc_html_e( 'Growth', 'pivora' ); ?></p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:heading {"level":3} -->
-					<h3 class="wp-block-heading"><?php esc_html_e( '$49', 'pivora' ); ?><span class="pivora-price-card__term"><?php esc_html_e( '/mo', 'pivora' ); ?></span></h3>
-					<!-- /wp:heading -->
-
-					<!-- wp:paragraph {"className":"pivora-price-card__copy"} -->
-					<p class="pivora-price-card__copy"><?php esc_html_e( 'For teams shipping campaigns and content hubs.', 'pivora' ); ?></p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:list {"className":"pivora-price-card__features"} -->
-					<ul class="pivora-price-card__features">
-						<li><?php esc_html_e( 'Advanced sections', 'pivora' ); ?></li>
-						<li><?php esc_html_e( 'Landing pages', 'pivora' ); ?></li>
-						<li><?php esc_html_e( 'Priority support', 'pivora' ); ?></li>
-					</ul>
-					<!-- /wp:list -->
-
-					<!-- wp:buttons -->
-					<div class="wp-block-buttons">
-						<!-- wp:button {"url":"<?php echo esc_url( home_url( '/contact/' ) ); ?>"} -->
-						<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Choose Growth', 'pivora' ); ?></a></div>
-						<!-- /wp:button -->
+					<!-- /wp:column -->
+				<?php endforeach; ?>
+			<?php else : ?>
+				<?php foreach ( $plans as $plan ) : ?>
+					<!-- wp:column -->
+					<div class="wp-block-column">
+						<!-- wp:group {"className":"pivora-card pivora-price-card<?php echo $plan['featured'] ? ' pivora-price-card--featured' : ''; ?>","layout":{"type":"constrained"}} -->
+						<div class="wp-block-group pivora-card pivora-price-card<?php echo $plan['featured'] ? ' pivora-price-card--featured' : ''; ?>">
+							<?php if ( $plan['featured'] && ! empty( $plan['badgeText'] ) ) : ?>
+								<!-- wp:paragraph {"className":"pivora-price-card__badge"} -->
+								<p class="pivora-price-card__badge"><?php echo esc_html( (string) $plan['badgeText'] ); ?></p>
+								<!-- /wp:paragraph -->
+							<?php endif; ?>
+							<!-- wp:paragraph {"className":"pivora-price-card__tier"} -->
+							<p class="pivora-price-card__tier"><?php echo esc_html( $plan['tier'] ); ?></p>
+							<!-- /wp:paragraph -->
+							<!-- wp:heading {"level":3} -->
+							<h3 class="wp-block-heading"><?php echo esc_html( $plan['price'] ); ?><span class="pivora-price-card__term"><?php echo esc_html( $plan['term'] ); ?></span></h3>
+							<!-- /wp:heading -->
+							<!-- wp:paragraph {"className":"pivora-price-card__copy"} -->
+							<p class="pivora-price-card__copy"><?php echo esc_html( $plan['description'] ); ?></p>
+							<!-- /wp:paragraph -->
+							<!-- wp:buttons -->
+							<div class="wp-block-buttons">
+								<!-- wp:button {"className":"<?php echo $plan['ctaOutline'] ? 'is-style-outline' : ''; ?>","url":"<?php echo esc_url( $contact_url ); ?>"} -->
+								<div class="wp-block-button <?php echo $plan['ctaOutline'] ? 'is-style-outline' : ''; ?>"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( $contact_url ); ?>"><?php echo esc_html( $plan['ctaText'] ); ?></a></div>
+								<!-- /wp:button -->
+							</div>
+							<!-- /wp:buttons -->
+						</div>
+						<!-- /wp:group -->
 					</div>
-					<!-- /wp:buttons -->
-				</div>
-				<!-- /wp:group -->
-			</div>
-			<!-- /wp:column -->
-
-			<!-- wp:column -->
-			<div class="wp-block-column">
-				<!-- wp:group {"className":"pivora-card pivora-price-card","layout":{"type":"constrained"}} -->
-				<div class="wp-block-group pivora-card pivora-price-card">
-					<!-- wp:paragraph {"className":"pivora-price-card__tier"} -->
-					<p class="pivora-price-card__tier"><?php esc_html_e( 'Scale', 'pivora' ); ?></p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:heading {"level":3} -->
-					<h3 class="wp-block-heading"><?php esc_html_e( '$99', 'pivora' ); ?><span class="pivora-price-card__term"><?php esc_html_e( '/mo', 'pivora' ); ?></span></h3>
-					<!-- /wp:heading -->
-
-					<!-- wp:paragraph {"className":"pivora-price-card__copy"} -->
-					<p class="pivora-price-card__copy"><?php esc_html_e( 'For multi-site rollouts and commerce.', 'pivora' ); ?></p>
-					<!-- /wp:paragraph -->
-
-					<!-- wp:list {"className":"pivora-price-card__features"} -->
-					<ul class="pivora-price-card__features">
-						<li><?php esc_html_e( 'Multi-site rollout', 'pivora' ); ?></li>
-						<li><?php esc_html_e( 'Commerce-ready layouts', 'pivora' ); ?></li>
-						<li><?php esc_html_e( 'Dedicated support', 'pivora' ); ?></li>
-					</ul>
-					<!-- /wp:list -->
-
-					<!-- wp:buttons -->
-					<div class="wp-block-buttons">
-						<!-- wp:button {"className":"is-style-outline","url":"<?php echo esc_url( home_url( '/contact/' ) ); ?>"} -->
-						<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Choose Scale', 'pivora' ); ?></a></div>
-						<!-- /wp:button -->
-					</div>
-					<!-- /wp:buttons -->
-				</div>
-				<!-- /wp:group -->
-			</div>
-			<!-- /wp:column -->
+					<!-- /wp:column -->
+				<?php endforeach; ?>
+			<?php endif; ?>
 		</div>
 		<!-- /wp:columns -->
 	</div>

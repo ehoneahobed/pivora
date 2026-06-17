@@ -1,0 +1,21 @@
+/**
+ * Self-contained surface primitives for Pivora Core blocks.
+ * Uses theme.json presets when the Pivora theme is active, with portable fallbacks.
+ */
+
+@mixin pivora-core-card {
+	background: var(--wp--preset--color--white, #fff);
+	border: 1px solid var(--wp--preset--color--line, #e2e8f0);
+	border-radius: var(--wp--custom--border-radius--medium, 8px);
+	color: var(--wp--preset--color--ink, #0f172a);
+	overflow: clip;
+	padding: var(--wp--preset--spacing--60, 1.5rem);
+}
+
+@mixin pivora-core-muted-copy {
+	color: var(--wp--preset--color--slate, #334155);
+}
+
+@mixin pivora-core-accent {
+	color: var(--wp--preset--color--teal, #0f766e);
+}

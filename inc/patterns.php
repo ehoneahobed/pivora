@@ -44,6 +44,26 @@ function pivora_register_pattern_categories(): void {
 		'pivora-starters',
 		array( 'label' => __( 'Pivora Starters', 'pivora' ) )
 	);
+
+	register_block_pattern_category(
+		'pivora-editorial',
+		array( 'label' => __( 'Pivora Editorial', 'pivora' ) )
+	);
+
+	register_block_pattern_category(
+		'pivora-saas',
+		array( 'label' => __( 'Pivora SaaS', 'pivora' ) )
+	);
+
+	register_block_pattern_category(
+		'pivora-portfolio',
+		array( 'label' => __( 'Pivora Portfolio', 'pivora' ) )
+	);
+
+	register_block_pattern_category(
+		'pivora-local',
+		array( 'label' => __( 'Pivora Local', 'pivora' ) )
+	);
 }
 add_action( 'init', 'pivora_register_pattern_categories' );
 
@@ -131,10 +151,108 @@ function pivora_register_patterns(): void {
 			'viewport'   => 1200,
 		),
 		array(
+			'name'       => 'pivora/faq-section',
+			'title'      => __( 'FAQ section', 'pivora' ),
+			'categories' => array( 'pivora-sections', 'pivora-saas', 'pivora-business' ),
+			'file'       => 'patterns/faq-section.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/testimonials-grid',
+			'title'      => __( 'Testimonials grid', 'pivora' ),
+			'categories' => array( 'pivora-sections', 'pivora-business', 'pivora-saas' ),
+			'file'       => 'patterns/testimonials-grid.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/logo-cloud',
+			'title'      => __( 'Logo cloud', 'pivora' ),
+			'categories' => array( 'pivora-sections', 'pivora-business', 'pivora-saas' ),
+			'file'       => 'patterns/logo-cloud.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/team-grid',
+			'title'      => __( 'Team grid', 'pivora' ),
+			'categories' => array( 'pivora-sections', 'pivora-business', 'pivora-local' ),
+			'file'       => 'patterns/team-grid.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/contact-section',
+			'title'      => __( 'Contact section', 'pivora' ),
+			'categories' => array( 'pivora-sections', 'pivora-business', 'pivora-local' ),
+			'file'       => 'patterns/contact-section.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/newsletter-cta',
+			'title'      => __( 'Newsletter CTA', 'pivora' ),
+			'categories' => array( 'pivora-ctas', 'pivora-sections', 'pivora-editorial' ),
+			'file'       => 'patterns/newsletter-cta.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/comparison-table',
+			'title'      => __( 'Comparison table', 'pivora' ),
+			'categories' => array( 'pivora-sections', 'pivora-business', 'pivora-saas' ),
+			'file'       => 'patterns/comparison-table.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/page-header',
+			'title'      => __( 'Page header', 'pivora' ),
+			'categories' => array( 'pivora-sections', 'pivora-content', 'pivora-editorial' ),
+			'file'       => 'patterns/page-header.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/footer-columns',
+			'title'      => __( 'Footer columns', 'pivora' ),
+			'categories' => array( 'pivora-sections', 'pivora-business' ),
+			'file'       => 'patterns/footer-columns.php',
+			'viewport'   => 1440,
+		),
+		array(
+			'name'       => 'pivora/metrics-band-light',
+			'title'      => __( 'Metrics band (light)', 'pivora' ),
+			'categories' => array( 'pivora-business', 'pivora-sections', 'pivora-saas' ),
+			'file'       => 'patterns/metrics-band-light.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/metrics-band-split',
+			'title'      => __( 'Metrics band (split)', 'pivora' ),
+			'categories' => array( 'pivora-business', 'pivora-sections', 'pivora-saas' ),
+			'file'       => 'patterns/metrics-band-split.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/product-spotlight',
+			'title'      => __( 'Product spotlight', 'pivora' ),
+			'categories' => array( 'pivora-ecommerce', 'pivora-sections' ),
+			'file'       => 'patterns/product-spotlight.php',
+			'viewport'   => 1200,
+		),
+		array(
+			'name'       => 'pivora/product-categories',
+			'title'      => __( 'Product categories', 'pivora' ),
+			'categories' => array( 'pivora-ecommerce', 'pivora-sections' ),
+			'file'       => 'patterns/product-categories.php',
+			'viewport'   => 1200,
+		),
+		array(
 			'name'       => 'pivora/starter-business-landing',
 			'title'      => __( 'Business landing starter', 'pivora' ),
 			'categories' => array( 'pivora-starters' ),
 			'file'       => 'patterns/starter-business-landing.php',
+			'viewport'   => 1440,
+		),
+		array(
+			'name'       => 'pivora/starter-saas-landing',
+			'title'      => __( 'SaaS landing starter', 'pivora' ),
+			'categories' => array( 'pivora-starters', 'pivora-saas' ),
+			'file'       => 'patterns/starter-saas-landing.php',
 			'viewport'   => 1440,
 		),
 		array(

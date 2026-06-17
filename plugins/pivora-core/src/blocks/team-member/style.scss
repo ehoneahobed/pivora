@@ -1,0 +1,41 @@
+@use '../shared/surface';
+
+.wp-block-pivora-team-member.pivora-team-member {
+	@include surface.pivora-core-card;
+	display: grid;
+	gap: var(--wp--preset--spacing--40);
+	height: 100%;
+}
+
+.pivora-team-member__avatar {
+	align-items: center;
+	background: var(--wp--preset--color--cloud, #f1f5f9);
+	border: 1px solid var(--wp--preset--color--line, #e2e8f0);
+	border-radius: 999px;
+	@include surface.pivora-core-accent;
+	display: flex;
+	flex-shrink: 0;
+	font-size: 0.875rem;
+	font-weight: 800;
+	height: 3.25rem;
+	justify-content: center;
+	letter-spacing: 0.04em;
+	margin: 0;
+	width: 3.25rem;
+}
+
+.pivora-team-member__name {
+	margin: 0;
+}
+
+.pivora-team-member__role {
+	@include surface.pivora-core-accent;
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 700;
+	margin: 0;
+}
+
+.pivora-team-member__bio {
+	@include surface.pivora-core-muted-copy;
+	margin: 0;
+}

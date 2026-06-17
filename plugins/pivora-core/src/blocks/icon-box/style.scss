@@ -1,0 +1,25 @@
+@use '../shared/surface';
+
+.wp-block-pivora-icon-box.pivora-icon-box {
+	@include surface.pivora-core-card;
+	display: grid;
+	gap: var(--wp--preset--spacing--40);
+	height: 100%;
+}
+
+.pivora-icon-box__icon {
+	@include surface.pivora-core-accent;
+	font-size: 0.95rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	margin: 0;
+}
+
+.pivora-icon-box__title {
+	margin: 0;
+}
+
+.pivora-icon-box__copy {
+	@include surface.pivora-core-muted-copy;
+	margin: 0;
+}

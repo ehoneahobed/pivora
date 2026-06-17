@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pivora/team-member",
+  "version": "1.0.0",
+  "title": "Team Member",
+  "category": "pivora",
+  "icon": "groups",
+  "description": "Team profile card with avatar initials, name, role, and bio.",
+  "keywords": [
+    "team",
+    "staff",
+    "profile",
+    "about"
+  ],
+  "textdomain": "pivora-core",
+  "attributes": {
+    "initials": {
+      "type": "string",
+      "default": "JL"
+    },
+    "name": {
+      "type": "string",
+      "default": "Jordan Lee"
+    },
+    "role": {
+      "type": "string",
+      "default": "Founder & strategist"
+    },
+    "bio": {
+      "type": "string",
+      "default": "Leads discovery, information architecture, and the first draft of every major launch."
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "style": "file:./style-index.css"
+}
