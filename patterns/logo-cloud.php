@@ -19,6 +19,7 @@ if ( defined( 'PIVORA_CORE_VERSION' ) ) :
 			'pivora/logo-grid',
 			array(
 				'heading' => __( 'Trusted by product teams, studios, and publishers', 'pivora' ),
+				'source'  => 'cpt',
 			)
 		);
 		?>

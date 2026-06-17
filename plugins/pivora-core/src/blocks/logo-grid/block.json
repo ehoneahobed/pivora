@@ -19,6 +19,18 @@
 			"type": "string",
 			"default": "Trusted by product teams, studios, and publishers"
 		},
+		"source": {
+			"type": "string",
+			"default": "manual"
+		},
+		"postsToShow": {
+			"type": "number",
+			"default": 6
+		},
+		"industrySlug": {
+			"type": "string",
+			"default": ""
+		},
 		"logos": {
 			"type": "array",
 			"default": [

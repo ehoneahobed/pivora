@@ -1,0 +1,34 @@
+.pivora-case-study-grid__list {
+	display: grid;
+	gap: var(--wp--preset--spacing--50, 1.25rem);
+	grid-template-columns: repeat(var(--pivora-case-study-columns, 3), minmax(0, 1fr));
+}
+
+.pivora-case-study-grid__placeholder,
+.pivora-case-study-grid__empty {
+	border: 1px dashed var(--wp--preset--color--line, #d8dee8);
+	border-radius: var(--wp--custom--border-radius--medium, 0.5rem);
+	margin: 0;
+	padding: 1rem 1.25rem;
+}
+
+.pivora-case-study-grid .pivora-project-card {
+	display: grid;
+	gap: 0.5rem;
+	height: 100%;
+	text-decoration: none;
+}
+
+.pivora-case-study-grid .pivora-project-card__media img {
+	border-radius: var(--wp--custom--border-radius--medium, 0.5rem);
+	display: block;
+	height: auto;
+	width: 100%;
+}
+
+@media (max-width: 781px) {
+
+	.pivora-case-study-grid__list {
+		grid-template-columns: 1fr;
+	}
+}

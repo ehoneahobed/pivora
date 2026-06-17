@@ -12,6 +12,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Lighthouse performance and accessibility gates on representative pages
 - WordPress.org / public release after stability is confirmed
 
+## [0.7.0] - 2026-06-17
+
+Pivora Core plugin only (theme remains 0.1.0).
+
+### Added
+
+**Phase 4 — portable content types**
+
+- **Client logos** CPT (`pivora_client_logo`) with optional industry taxonomy and logo grid CPT source mode
+- **Case studies** CPT (`pivora_case_study`) with project tag, client, and card variant meta
+- **Team members** CPT (`pivora_team_member`) with role, initials, and featured image support
+- **Case study grid** (`pivora/case-study-grid`) and **team grid** (`pivora/team-grid`) blocks with admin empty states
+- Admin list table image + excerpt columns; REST meta for headless-ready fields
+- Demo seed content for portfolio and agency kit imports
+
+### Changed
+
+- **Team member** block accepts `memberId` to pull from the Team Members library
+- `logo-cloud`, `portfolio-grid`, and `team-grid` patterns use CPT-powered blocks when Core is active
+
 ## [0.6.0] - 2026-06-17
 
 Pivora Core plugin only (theme remains 0.1.0).

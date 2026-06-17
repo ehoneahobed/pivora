@@ -16,7 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $heading = isset( $attributes['heading'] ) ? (string) $attributes['heading'] : '';
+$source  = isset( $attributes['source'] ) ? sanitize_key( (string) $attributes['source'] ) : 'manual';
 $logos   = isset( $attributes['logos'] ) && is_array( $attributes['logos'] ) ? $attributes['logos'] : array();
+
+if ( 'cpt' === $source ) {
+	$posts_to_show = isset( $attributes['postsToShow'] ) ? (int) $attributes['postsToShow'] : 6;
+	$industry_slug = isset( $attributes['industrySlug'] ) ? (string) $attributes['industrySlug'] : '';
+	$logos         = pivora_core_query_client_logos( $posts_to_show, $industry_slug );
+}
 
 $wrapper_attributes = pivora_core_get_block_wrapper_attributes(
 	$attributes,

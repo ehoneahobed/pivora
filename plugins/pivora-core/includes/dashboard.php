@@ -126,6 +126,8 @@ function pivora_core_render_blocks_help_page(): void {
 		'product-grid'           => __( 'Product grid — curated WooCommerce product cards.', 'pivora-core' ),
 		'lead-capture'           => __( 'Lead capture — name, email, and message form via wp_mail or webhook.', 'pivora-core' ),
 		'form-embed'             => __( 'Form embed — WPForms, CF7, Forminator, or custom shortcode wrapper.', 'pivora-core' ),
+		'team-grid'              => __( 'Team grid — query team members from the CPT library.', 'pivora-core' ),
+		'case-study-grid'        => __( 'Case study grid — portfolio cards from Case Studies CPT.', 'pivora-core' ),
 		'slide-in-cta'           => __( 'Slide-in CTA — accessible once-per-session conversion panel.', 'pivora-core' ),
 		'testimonial-card'       => __( 'Testimonial card — quote, avatar, and role.', 'pivora-core' ),
 		'pricing-card'           => __( 'Pricing card — plan name, price, features, and CTA.', 'pivora-core' ),
@@ -173,6 +175,12 @@ function pivora_core_render_help_page(): void {
 			<li><a href="<?php echo esc_url( admin_url( 'admin.php?page=pivora-dashboard' ) ); ?>"><?php esc_html_e( 'Starter Kits', 'pivora-core' ); ?></a></li>
 			<li><a href="<?php echo esc_url( admin_url( 'site-editor.php' ) ); ?>"><?php esc_html_e( 'Site Editor', 'pivora-core' ); ?></a></li>
 			<li><a href="https://github.com/ehoneahobed/pivora" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'GitHub repository', 'pivora-core' ); ?></a></li>
+		</ul>
+		<h2><?php esc_html_e( 'Content libraries', 'pivora-core' ); ?></h2>
+		<ul class="ul-disc">
+			<li><a href="<?php echo esc_url( admin_url( 'edit.php?post_type=pivora_client_logo' ) ); ?>"><?php esc_html_e( 'Client logos', 'pivora-core' ); ?></a></li>
+			<li><a href="<?php echo esc_url( admin_url( 'edit.php?post_type=pivora_case_study' ) ); ?>"><?php esc_html_e( 'Case studies', 'pivora-core' ); ?></a></li>
+			<li><a href="<?php echo esc_url( admin_url( 'edit.php?post_type=pivora_team_member' ) ); ?>"><?php esc_html_e( 'Team members', 'pivora-core' ); ?></a></li>
 		</ul>
 		<h2><?php esc_html_e( 'CLI', 'pivora-core' ); ?></h2>
 		<p><code>PIVORA_DEMO_KIT=agency npm run setup:demo</code></p>

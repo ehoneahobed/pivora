@@ -41,3 +41,17 @@
 	@include surface.pivora-core-muted-copy;
 	margin: 0;
 }
+
+.pivora-team-member__avatar--image {
+	background: transparent;
+	border: 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+.pivora-team-member__photo {
+	display: block;
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}

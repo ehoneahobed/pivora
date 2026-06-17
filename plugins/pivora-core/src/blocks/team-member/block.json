@@ -19,6 +19,14 @@
 			"type": "string",
 			"default": "JL"
 		},
+		"memberId": {
+			"type": "number",
+			"default": 0
+		},
+		"imageId": {
+			"type": "number",
+			"default": 0
+		},
 		"name": {
 			"type": "string",
 			"default": "Jordan Lee"

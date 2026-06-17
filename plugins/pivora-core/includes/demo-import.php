@@ -52,6 +52,7 @@ function pivora_get_demo_kits(): array {
 			'header'      => 'header-minimal',
 			'footer'      => 'footer-columns',
 			'seed_posts'  => false,
+			'seed_cpts'   => true,
 			'woocommerce' => false,
 		),
 		'store'          => array(
@@ -70,6 +71,7 @@ function pivora_get_demo_kits(): array {
 			'header'      => 'header-centered',
 			'footer'      => 'footer-columns',
 			'seed_posts'  => true,
+			'seed_cpts'   => true,
 			'woocommerce' => false,
 		),
 		'local-business' => array(
@@ -388,6 +390,9 @@ function pivora_import_demo_kit( string $kit_slug, array $args = array() ) {
 		}
 
 		$steps_done[] = 'homepage';
+
+		pivora_core_seed_cpt_demo_content( $kit_slug );
+		$steps_done[] = 'cpt_seed';
 	}
 
 	if ( ! empty( $scopes['pages'] ) ) {

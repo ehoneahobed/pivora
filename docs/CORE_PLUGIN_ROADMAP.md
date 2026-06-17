@@ -173,15 +173,15 @@ plugins/pivora-core/
 
 | # | CPT | Blocks | Status | Notes |
 |---|-----|--------|--------|-------|
-| P4.1 | **Client logo** | Logo grid block (manual + query) | pending | Taxonomy: industry optional |
-| P4.2 | **Case study** | Card, grid, featured hero | pending | Template parts in **theme**; query in **plugin** |
-| P4.3 | **Team member** (CPT) | Migrate from static block-only | pending | Block reads CPT or manual override |
+| P4.1 | **Client logo** | Logo grid block (manual + query) | done | `pivora_client_logo` CPT + logo grid `source: cpt` |
+| P4.2 | **Case study** | Card, grid, featured hero | done | `pivora/case-study-grid` + `portfolio-grid` pattern |
+| P4.3 | **Team member** (CPT) | Migrate from static block-only | done | `pivora/team-grid` + `memberId` on team member block |
 
 | # | Item | Status |
 |---|------|--------|
-| P4.4 | Admin list tables with featured image + excerpt | pending |
-| P4.5 | Seed demo content for portfolio + agency kits | pending |
-| P4.6 | REST exposure for headless-ready fields (optional) | pending |
+| P4.4 | Admin list tables with featured image + excerpt | done | `includes/cpt/admin-columns.php` |
+| P4.5 | Seed demo content for portfolio + agency kits | done | `includes/cpt/seed-demo.php` |
+| P4.6 | REST exposure for headless-ready fields (optional) | done | `register_post_meta` + `show_in_rest` |
 
 **Acceptance criteria**
 
@@ -247,6 +247,8 @@ Update this table when adding blocks.
 | Curated post grid | `pivora/curated-post-grid` | No | `latest-posts` | Core query loop |
 | Team member | `pivora/team-member` | No | `team-grid` | Core image + text |
 | Logo grid | `pivora/logo-grid` | No | `logo-cloud` | Static paragraphs |
+| Case study grid | `pivora/case-study-grid` | No | `portfolio-grid` | Static project cards |
+| Team grid | `pivora/team-grid` | No | `team-grid` | Static team columns |
 | Stats grid | `pivora/stats-grid` | No | `metrics-band` | Static metric groups |
 | Process steps | `pivora/process-steps` | No | `process-steps` | Core ordered list |
 | Comparison tabs | `pivora/comparison-tabs` | Yes (`view.js`) | `comparison-table` | Core table |

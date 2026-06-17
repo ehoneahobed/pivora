@@ -37,6 +37,17 @@
 		</div>
 		<!-- /wp:group -->
 
+		<?php if ( defined( 'PIVORA_CORE_VERSION' ) ) : ?>
+			<?php
+			pivora_block(
+				'pivora/case-study-grid',
+				array(
+					'postsToShow' => 3,
+					'columns'     => 3,
+				)
+			);
+			?>
+		<?php else : ?>
 		<!-- wp:group {"className":"pivora-portfolio-grid","layout":{"type":"grid","minimumColumnWidth":"260px"}} -->
 		<div class="wp-block-group pivora-portfolio-grid">
 			<!-- wp:group {"className":"pivora-project-card","layout":{"type":"constrained"}} -->
@@ -88,6 +99,7 @@
 			<!-- /wp:group -->
 		</div>
 		<!-- /wp:group -->
+		<?php endif; ?>
 	</div>
 	<!-- /wp:group -->
 </div>

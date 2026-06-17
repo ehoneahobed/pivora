@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "pivora/case-study-grid",
+  "version": "1.0.0",
+  "title": "Case Study Grid",
+  "category": "pivora",
+  "icon": "portfolio",
+  "description": "Portfolio cards from Case Studies CPT entries.",
+  "keywords": [
+    "case study",
+    "portfolio",
+    "projects",
+    "work"
+  ],
+  "textdomain": "pivora-core",
+  "attributes": {
+    "postsToShow": {
+      "type": "number",
+      "default": 3
+    },
+    "columns": {
+      "type": "number",
+      "default": 3
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "left",
+      "center",
+      "right",
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php",
+  "style": "file:./style-index.css"
+}
